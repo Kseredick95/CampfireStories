@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const compression = require("compression");
 const mongoose = require("mongoose");
+const path = require("path");
 
 //CHANGE TO CONFIGURED PASSPORT FILE
 const passport = require("passport");
@@ -15,7 +16,7 @@ const passport = require("passport");
 
 //Express set-up
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -42,7 +43,7 @@ process.env.MONGODB_URI || "mongodb://localhost/campfirestories",
 );
 
 //UNCOMMENT WHEN ROUTES MADE
-//app.use("/api, routes")
+//app.use("/api", routes)
 
 
 //Sets homepage to index.html
