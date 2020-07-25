@@ -1,11 +1,9 @@
 import React from "react";
 
-function StoryText() {
-    return ( <p>
-        ipsum lorem gaudaumus igitur juenes dum sumus, post jucendem juentutem post molestum sencetutem nos habebit humus, ipsum lorem gaudaumus igitur juenes dum sumus, post jucendem juentutem post molestum sencetutem nos habebit humus,
-        ipsum lorem gaudaumus igitur juenes dum sumus, post jucendem juentutem post molestum sencetutem nos habebit humus,
-        ipsum lorem gaudaumus igitur juenes dum sumus, post jucendem juentutem post molestum sencetutem nos habebit humus,
-        ipsum lorem gaudaumus igitur juenes dum sumus, post jucendem juentutem post molestum sencetutem nos habebit humus, 
+function StoryText(props){
+    return(
+        <p>
+            {props.text}
         </p>
     )
 }

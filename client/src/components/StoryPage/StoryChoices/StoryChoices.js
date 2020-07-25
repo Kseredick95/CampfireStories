@@ -1,41 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import "./StoryChoices.css"
 
-function StoryChoices() {
+function StoryChoices(props){
 
-    const [choice, setChoice] = useState("");
 
-    const choiceSubmit = event => {
-        event.preventDefault();
-        setChoice(event.target.value)
-        console.log(choice)
-    }
-
-    return ( <
-        div >
-
-        <
-        button onClick = { choiceSubmit } >
-        Do Stuff <
-        /button>
-
-        <
-        button onClick = { choiceSubmit } >
-        Do Other Stuff <
-        /button>
-
-        <
-        button onClick = { choiceSubmit } >
-        Do More Stuff <
-        /button>
-
-        <
-        button onClick = { choiceSubmit } >
-        Do Even More Stuff <
-        /button>
-
-        <
-        /div>
+    return (
+        <div> 
+        <button onClick={e=>props.choiceSubmit(props.id)}>
+        {props.text}
+        </button>
+        </div>
     )
 }
 
