@@ -21,7 +21,7 @@ class StoryPage extends Component {
     // {this.setState({ book: res.data, page: res.data[0] })}
     choiceSubmit = e => {
         const choice = this.state.book.find(choice => {
-            return choice.id === e
+            return choice.pageId === e
         })
         this.setState({ page: choice })
         console.log(choice)
@@ -43,12 +43,12 @@ class StoryPage extends Component {
             
              
             {this.state.page.choices ?
-            this.state.page.choices.map(choice => <StoryChoices key = { choice.id }
-                id = { choice.id }
+            this.state.page.choices.map(choice => <StoryChoices key = { choice.pageId }
+                id = { choice.pageId }
                 text = { choice.text }
                 choiceSubmit = { this.choiceSubmit }
                 />
-            ) : <RestartBtn restartBook = { this.restartBook }/>
+            ) : <RestartBtn restartBook = { this.restartBook} />
         }
 
         </div>
