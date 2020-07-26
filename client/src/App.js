@@ -1,23 +1,23 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import RenderReg from "./pages/Register";
-import RenderStoryPage from "./pages/StoryPage"
+import RenderStoryPage from "./pages/StoryPage";
 
 function App() {
   return (
     <Router>
       <div>
-        {/* <Switch>
+        <Switch>
           <Route exact path={["/", "/register"]}>
             <RenderReg />
           </Route>
-        </Switch> */}
+        </Switch>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path={["/", "/storypage"]}>
             <RenderStoryPage />
           </Route>
-        </Switch>
+        </Switch> */}
       </div>
     </Router>
   );
