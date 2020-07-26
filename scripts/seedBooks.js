@@ -48,19 +48,7 @@ const bookSeed = [{
         "pageId": "choice aa",
         "image": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixpageId=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
         "text": "sTUpId IMAGE",
-        "choices": [{
-                "text": "Approach the gates and hope for the best",
-                "pageId": "choice aaa"
-            },
-            {
-                "text": "Search the crumbled walls",
-                "pageId": "choice aab"
-            },
-            {
-                "text": "Search the siege weapons",
-                "pageId": "choice aac"
-            }
-        ]
+        "choices": []
     },
     {
         "pageId": "choice b",
