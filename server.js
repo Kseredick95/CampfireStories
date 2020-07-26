@@ -3,16 +3,10 @@ const express = require("express");
 const session = require("express-session");
 const compression = require("compression");
 const mongoose = require("mongoose");
-const path = require("path");
+const routes = require("./routes")
 
 //CHANGE TO CONFIGURED PASSPORT FILE
 const passport = require("passport");
-
-//UNCOMMENT WHEN MODELS MADE
-//const db = require("./models")
-
-//UCOMMENT WHEN ROUTES MADE -- add /filename
-//const routes = require("./routes");
 
 //Express set-up
 const app = express();
@@ -41,14 +35,8 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/campfirestories", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 
-//UNCOMMENT WHEN ROUTES MADE
-//app.use("/api", routes)
-
-
-//Sets homepage to index.html
-app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
+//Routes
+app.use(routes)
 
 
 app.listen(PORT, function() {
