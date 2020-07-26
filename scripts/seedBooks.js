@@ -47,8 +47,7 @@ const bookSeed = [{
     {
         "pageId": "choice aa",
         "image": "https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-1.2.1&ixpageId=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-        "text": "sTUpId IMAGE",
-        "choices": []
+        "text": "sTUpId IMAGE"
     },
     {
         "pageId": "choice b",
