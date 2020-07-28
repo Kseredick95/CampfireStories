@@ -4,7 +4,6 @@ import "./style.less";
 function Footer() {
     return (
         <footer class="site-footer">
-            {/* <hr></hr> */}
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
