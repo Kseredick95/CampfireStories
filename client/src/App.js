@@ -7,17 +7,17 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Switch>
+        <Switch>
           <Route exact path={["/", "/register"]}>
             <RenderReg />
           </Route>
-        </Switch> */}
+        </Switch>
 
-        <Switch>
+        {/* <Switch>
           <Route exact path={["/", "/storypage"]}>
             <RenderStoryPage />
           </Route>
-        </Switch>
+        </Switch> */}
       </div>
     </Router>
   );
