@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
-// MENU CSS
 .hoverable {
     display: inline-block;
     backface-visibility: hidden;
@@ -24,7 +23,6 @@
     opacity: 0;
     background: -webkit-radial-gradient(center, ellipse, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
     background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0) 80%);
-    /* W3C */
     transition-duration: 0.3s;
     transition-property: transform, opacity;
 }
@@ -92,12 +90,9 @@ nav ul {
     transition: 1s;
 }
 
-// Logo
 .navbar-brand {
     display: inline-block;
 }
-
-// Page Setup
 
 @media (min-width: 768px) {
     .navbar {
@@ -108,7 +103,7 @@ nav ul {
 }
 
 #nav-body {
-    background-color: rgba(50, 42, 38, 1);
+    background-color: #322a26;
     font-weight: 600;
     text-align: center !important;
     color: white;
@@ -119,21 +114,21 @@ nav ul {
 }
 
 nav {
-    background-color: rgba(0, 0, 0, 1);
+    background-color: #000000;
     font-weight: 600;
     text-align: center !important;
     color: white;
     background: none !important;
     text-transform: uppercase;
+}
 
-    li {
-        margin-left: 3em;
-        margin-right: 3em;
+nav li {
+    margin-left: 3em;
+    margin-right: 3em;
+}
 
-        a {
-            transition: .5s color ease-in-out;
-        }
-    }
+nav li a {
+    transition: .5s color ease-in-out;
 }
 
 .navbar.navbar-inverse .navbar-nav .hoverable>.fas {
