@@ -3,11 +3,11 @@ import "./style.css";
 
 function Footer() {
     return (
-        <footer class="site-footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-12">
-                        <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+        <footer className="site-footer">
+            <div className="container-fluid">
+                <div className="row">
+                    <div className="col-12">
+                        <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by
                         <a href="#">Campfire Stories</a>. </p>
                     </div>
                 </div>

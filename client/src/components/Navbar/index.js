@@ -4,15 +4,15 @@ import "./style.css";
 
 function Navbar() {
     return (
-        <nav class="navbar navbar-inverse navbar-expand-lg navbar-toggleable-sm">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                data-target="#navCollapse"><span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-inverse navbar-expand-lg navbar-toggleable-sm">
+            <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                data-target="#navCollapse"><span className="navbar-toggler-icon"></span>
             </button>
             <Link className="navbar-brand" to="/">
                 <img src="../../../public/images/CampfireLogo.png" width="120" height="120" alt="" loading="lazy" />
             </Link>
-            <div class="collapse navbar-collapse" id="navCollapse">
-                <ul class="navbar-nav ml-auto" id="nav-menu">
+            <div className="collapse navbar-collapse" id="navCollapse">
+                <ul className="navbar-nav ml-auto" id="nav-menu">
                     <li className="hoverable" id="nav-item1">
                         <Link
                             to="/profile"
