@@ -63,9 +63,17 @@ class Register extends Component {
     API.saveUser({
       firstname: this.state.firstName,
       lastname: this.state.lastName,
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password,
-      achievements: [ null ],
+      achievements: [ {
+        achievements: [
+            { name: "newUser" },
+            { image: { type: String } },
+            { date: { type: Date } },
+            { id: { type: String } }
+        ]
+    } ],
       profileImage: null
     }).then(
       console.log("Saved user successfully")
