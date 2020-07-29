@@ -5,18 +5,20 @@ import { UserCard, ConnectCard } from '../components/Card'
 
 const Profile = () => {
     return (
-        <Banner />
-        <Container>
-            <div class="row justify-content-center">
-                <div class="col-md" id="left">
-                    <UserCard />
-                    <ConnectCard />
+        <div>
+            <Banner />
+            <Container>
+                <div class="row justify-content-center">
+                    <div class="col-md" id="left">
+                        <UserCard />
+                        <ConnectCard />
+                    </div>
+                    <Col size="md">
+
+                    </Col>
                 </div>
-                <Col size="md">
-                    
-                </Col>
-            </div>
-        </Container>
+            </Container>
+        </div>
     );
 };
 
