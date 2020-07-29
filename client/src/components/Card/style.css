@@ -1,1 +1,132 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+.btn {
+    cursor: pointer;
+}
+
+.btn.btn-primary {
+    background: #95B46A;
+    border-color: #95B46A;
+}
+
+.btn.btn-primary:hover {
+    background: #709255;
+    border-color: #1e441f;
+}
+
+.btn.btn-primary:focus {
+    box-shadow: 0 0 0 2px rgba(149, 180, 106, 0.5);
+}
+
+.btn.btn-secondary {
+    background: #95B46A;
+    color: #fff;
+    border-color: #95B46A;
+}
+
+.btn.btn-secondary:hover {
+    background: #709255;
+    border-color: #1e441f;
+}
+
+.btn.btn-secondary:focus {
+    box-shadow: 0 0 0 2px rgba(61, 139, 64, 0.5);
+}
+
+.card {
+    border: none;
+    border-top: 5px solid lightgray;
+    border-radius: 0;
+    margin-bottom: 30px;
+}
+
+.card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 700;
+    font-variant-caps: petite-caps;
+}
+
+.card .row {
+    width: 100%;
+}
+
+a.action {
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    color: #03a9f4;
+}
+
+a.action:hover {
+    color: #0288d1;
+}
+
+#left {
+    margin-top: -150px;
+    flex: 0 0 300px;
+}
+
+#user .fa {
+    font-size: 20px;
+}
+
+#user #userImage {
+    background: #95B46A;
+    height: 200px;
+}
+
+#user .row {
+    width: auto;
+}
+
+#connections .list {
+    margin: 15px 30px;
+}
+
+#connections .list .list-item {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background: #95B46A;
+    color: #fff;
+    cursor: pointer;
+}
+
+#connections .list .list-item:hover {
+    background: #709255;
+}
+
+#recentActivity {
+    margin-top: 30px;
+}
+
+#recentActivity em {
+    font-style: normal;
+    color: #95B46A;
+}
+
+#recentActivity .right {
+    flex: 0 0 100px;
+    height: 100%;
+}
+
+#recentActivity .right .view {
+    display: flex;
+    justify-content: center;
+}
+
+.icon {
+    position: relative;
+    flex: 0 0 40px;
+    text-align: center;
+    flex-shrink: 0;
+    margin-right: 10px;
+    font: normal normal normal 14px/1 FontAwesome;
+}
+
+#medal-list .fas {
+    display: inline;
+    margin-right: 5%;
+}
