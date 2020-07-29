@@ -1,10 +1,6 @@
 import React from "react";
+import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
-
-// Activate tooltip
-$(document).ready(function () {
-    $("i.fas").popover({ 'trigger': 'hover' });
-});
 
 // export card whose id is user
 export function UserCard() {
@@ -16,9 +12,11 @@ export function UserCard() {
             <img id="userImage" />
             <div className="card-block">
                 <h4 className="card-title">Welcome, User</h4>
-                <div className="row mt-2">
-                    <div className="col-1"><i className="fas fa-medal"></i></div>
-                    <div className="col"><strong>Achievments:</strong><br />
+                <RowMt size="2">
+                    <Col size="1">
+                        <i className="fas fa-medal"></i>
+                    </Col>
+                    <Column><strong>Achievments:</strong><br />
                         <div id="medal-list">
                             <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
                                 title="Thanks for signing up" id="badge-0"></i>
@@ -29,21 +27,21 @@ export function UserCard() {
                             <i className="fas fa-user-graduate" data-toggle="tooltip" data-placement="top"
                                 title="Completed All Stories" id="badge-3"></i>
                         </div>
-                    </div>
-                </div>
-                <div className="row mt-2">
-                    <div className="col-1"><i className="fas fa-envelope"></i></div>
-                    <div className="col">mail@email.com</div>
-                </div>
-                <div className="row mt-2">
-                    <div className="col">Joined: 05/10/2010</div>
-                </div>
+                    </Column>
+                </RowMt>
+                <RowMt size="2">
+                    <Col size="1"><i className="fas fa-envelope"></i></Col>
+                    <Column>mail@email.com</Column>
+                </RowMt>
+                <RowMt size="2">
+                    <Column>Joined: 05/10/2010</Column>
+                </RowMt>
             </div>
         </div>
     );
 }
 
-// export card whose id is connections 
+// export card whose id is connections
 export function ConnectCard() {
     return (
         <div className="card" id="connections">
@@ -69,36 +67,36 @@ export function HistoryCard() {
             <ul className="list-group">
                 <li className="list-group-item">
                     <div className="row no-gutters">
-                        <div className="col">
+                        <Column>
                             <div className="row no-gutters align-content-center">
-                                <div className="col icon"><i className="fas fa-book-reader fa-2x"></i></div>
-                                <div className="col">You have recently viewed <em>story name goes here!</em>
-                                </div>
+                                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
+                                <Column>You have recently viewed <em>story name goes here!</em>
+                                </Column>
                             </div>
-                        </div>
-                        <div className="col right">
+                        </Column>
+                        <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
                                 <div className="view"><button className="btn btn-primary">Resume</button></div>
                                 <div className="text-center">5 Days Ago</div>
                             </div>
-                        </div>
+                        </Column>
                     </div>
                 </li>
                 <li className="list-group-item">
                     <div className="row no-gutters">
-                        <div className="col">
+                        <Column>
                             <div className="row no-gutters align-content-center">
-                                <div className="col icon"><i className="fas fa-book fa-2x"></i></div>
-                                <div className="col">You have recently completed <em>story name goes
-                                    here</em></div>
+                                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
+                                <Column>You have recently completed <em>story name goes
+                                    here</em></Column>
                             </div>
-                        </div>
-                        <div className="col right">
+                        </Column>
+                        <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
                                 <div className="view"><button className="btn btn-primary">Again</button></div>
                                 <div className="text-center">7 Days Ago</div>
                             </div>
-                        </div>
+                        </Column>
                     </div>
                 </li>
             </ul>
