@@ -16,7 +16,11 @@ function Navbar() {
                     <li className="hoverable" id="nav-item1">
                         <Link
                             to="/profile"
-                            className={window.location.pathname === "/profile" ? "nav-link active" : "nav-link"}
+                            className={
+                                window.location.pathname === "/" || window.location.pathname === "/profile"
+                                    ? "nav-link active"
+                                    : "nav-link"
+                            }
                         >
                             <i className="fas fa-user"></i> My Profile
                         </Link>
@@ -24,7 +28,11 @@ function Navbar() {
                     <li className="hoverable" id="nav-item2">
                         <Link
                             to="/storypage"
-                            className={window.location.pathname === "/storypage" ? "nav-link active" : "nav-link"}
+                            className={
+                                window.location.pathname === "/storypage"
+                                    ? "nav-link active"
+                                    : "nav-link"
+                            }
                         >
                             <i className="fas fa-book"></i> Stories
                         </Link>
@@ -32,7 +40,11 @@ function Navbar() {
                     <li className="hoverable" id="nav-item2">
                         <Link
                             to="/signout"
-                            className={window.location.pathname === "/signout" ? "nav-link active" : "nav-link"}
+                            className={
+                                window.location.pathname === "/signout"
+                                    ? "nav-link active"
+                                    : "nav-link"
+                            }
                         >
                             <i className="fas fa-sign-out-alt"></i> Signout
                         </Link>
