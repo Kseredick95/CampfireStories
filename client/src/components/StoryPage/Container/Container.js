@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
-// import StoryItems from "../../../story-one.json";
+import StoryItems from "../../../story-one.json";
 import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book"
 
@@ -22,7 +22,7 @@ class StoryPage extends Component {
     choiceSubmit = e => {
         const choice = this.state.book.find(choice => {
             console.log(choice)
-            return choice.pageId === e
+            return choice.id === e
         })
         this.setState({ page: choice })
         console.log(choice)
@@ -44,8 +44,8 @@ class StoryPage extends Component {
             
              
             {this.state.page.choices?
-            this.state.page.choices.map(choice => <StoryChoices key = { choice.pageId }
-                id = { choice.pageId }
+            this.state.page.choices.map(choice => <StoryChoices key = { choice.id }
+                id = { choice.id }
                 text = { choice.text }
                 choiceSubmit = { this.choiceSubmit }
                 />
