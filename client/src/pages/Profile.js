@@ -1,7 +1,7 @@
 import React from "react";
-import Banner from "../components/Banner";
-import { Container, Col } from "../components/Grid";
-import { UserCard, ConnectCard } from '../components/Card'
+import { Banner, CTA } from "../components/Banner";
+import { Container, Col, RowMt, Row, Column } from "../components/Grid";
+import { UserCard, ConnectCard, HistoryCard } from '../components/Card'
 
 const Profile = () => {
     return (
@@ -14,7 +14,15 @@ const Profile = () => {
                         <ConnectCard />
                     </div>
                     <Col size="md">
-
+                        <RowMt size="4">
+                            <div class="col font-weight-bold">MY DASHBOARD</div>
+                        </RowMt>
+                        <CTA />
+                        <Row>
+                            <Column>
+                                <HistoryCard />
+                            </Column>
+                        </Row>
                     </Col>
                 </div>
             </Container>
