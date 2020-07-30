@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
-
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -57,19 +57,18 @@ class Register extends Component {
       return;
     }
 
-    console.log(this.state.firstName)
-    
+    console.log(this.state.firstName);
 
     API.saveUser({
       firstname: this.state.firstName,
       lastname: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      achievements: [ null ],
-      profileImage: null
-    }).then(
-      console.log("Saved user successfully")
-    ).catch(err => console.log(err))
+      achievements: [null],
+      profileImage: null,
+    })
+      .then(console.log("Saved user successfully"))
+      .catch((err) => console.log(err));
   };
 
   handleChange = (e) => {
@@ -183,7 +182,7 @@ class Register extends Component {
             }
             <div className="createAccount">
               <button type="submit"> Create Account </button>
-              <small>Already Have an Account?</small>
+              <Link to="/login">Already Have an Account?</Link>
             </div>
           </form>
         </div>
