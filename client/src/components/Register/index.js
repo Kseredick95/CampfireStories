@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./style.css";
-import RenderLogin from "../../pages/Login";
+import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 
 const emailRegex = RegExp(
@@ -182,7 +182,7 @@ class Register extends Component {
             }
             <div className="createAccount">
               <button type="submit"> Create Account </button>
-              <small onClick={RenderLogin} /> Already Have an Account?
+              <Link to="/login">Already Have an Account?</Link>
             </div>
           </form>
         </div>
