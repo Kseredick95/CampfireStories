@@ -27,7 +27,7 @@ export function RowMt({ size, children }) {
 // Export the col div
 // export for the col that does not use dash i.e. <div classname={col justify-center}> or div <classname={col}>
 export function Column({ classType, children }) {
-    return <div className={`col${(classType != "") ? ` ${classType}` : ""}`}>{children}</div>;
+    return <div className={`col${(classType !== "") ? ` ${classType}` : ""}`}>{children}</div>;
 }
 
 // This Col component lets us size bootstrap columns with less syntax

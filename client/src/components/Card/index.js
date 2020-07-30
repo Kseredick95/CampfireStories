@@ -7,9 +7,9 @@ export function UserCard() {
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: 1010012<a className="action" href="#">Edit Profile</a>
+                Profile ID: 1010012<a className="action" href="/#">Edit Profile</a>
             </div>
-            <img id="userImage" />
+            <img id="userImage" alt="" />
             <div className="card-block">
                 <h4 className="card-title">Welcome, User</h4>
                 <RowMt size="2">
@@ -46,13 +46,13 @@ export function ConnectCard() {
     return (
         <div className="card" id="connections">
             <div className="card-header">
-                <div className="label">All Stories</div><a className="action" href="#">Find</a>
+                <div className="label">All Stories</div><a className="action" href="/#">Find</a>
             </div>
             <div className="list d-flex justify-content-between flex-wrap">
-                <img className="list-item" />
-                <img className="list-item" />
-                <img className="list-item" />
-                <img className="list-item" />
+                <img className="list-item" alt="" />
+                <img className="list-item" alt="" />
+                <img className="list-item" alt="" />
+                <img className="list-item" alt="" />
             </div>
         </div>
     );

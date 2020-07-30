@@ -131,7 +131,7 @@ nav li a {
     transition: .5s color ease-in-out;
 }
 
-.navbar.navbar-inverse .navbar-nav .hoverable>.fas {
+.navbar.navbar-inverse .navbar-nav .hoverable .nav-link>.fas {
     position: relative;
     width: 36px;
     font-size: 24px;
@@ -149,7 +149,7 @@ nav li a {
         padding-bottom: 0;
     }
 
-    .navbar.navbar-inverse.navbar-expand-sm .navbar-nav .hoverable>.fas {
+    .navbar.navbar-inverse.navbar-expand-sm .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
         margin: 2px auto 4px auto;
@@ -168,7 +168,7 @@ nav li a {
         padding-bottom: 0;
     }
 
-    .navbar.navbar-inverse.navbar-expand-md .navbar-nav .hoverable>.fas {
+    .navbar.navbar-inverse.navbar-expand-md .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
         margin: 2px auto 4px auto;
@@ -187,7 +187,7 @@ nav li a {
         padding-bottom: 0;
     }
 
-    .navbar.navbar-inverse.navbar-expand-lg .navbar-nav .hoverable>.fas {
+    .navbar.navbar-inverse.navbar-expand-lg .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
         margin: 2px auto 4px auto;
@@ -206,7 +206,7 @@ nav li a {
         padding-bottom: 0;
     }
 
-    .navbar.navbar-inverse.navbar-expand-xl .navbar-nav .hoverable>.fas {
+    .navbar.navbar-inverse.navbar-expand-xl .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
         margin: 2px auto 4px auto;
