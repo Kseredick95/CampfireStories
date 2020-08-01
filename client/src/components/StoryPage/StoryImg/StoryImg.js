@@ -3,7 +3,7 @@ import "./StoryImg.css"
 
 function StoryImg(props) {
     return ( <
-        img src ={props.image}/>
+        img src ={props.image} alt="storyimage" />
     )
 }
 
