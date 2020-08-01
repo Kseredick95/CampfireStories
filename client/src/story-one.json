@@ -285,6 +285,38 @@
             }
         ]
     },
+
+
+
+    {
+        "id": "choice acab",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You search for the hole around back that the men spoke of. Ater a few minutes, find the hole behind a patch of briars, right where the men said it would be. You are thankful to have met the men as you and Marcus squeeze yourselves though, with Marcus and his belly having more trouble than you. You have entered a main hall, lit only by the light of the moon peaking through cracks in the ceiling. You scan the room and recieve quite a shock of adrenaline as your eyes fall on a behemoth troll, just as the men said. Your nerves still when you see the steady rise and fall of the brute's check; it appeares he is sleeping. The rest of the room reveals a door on the left and a set of stairs leading up on the right...",
+        "choices": [{
+                "text": "Creep to the door...",
+                "id": "choice caa"
+            },
+            {
+                "text": "Go silently to the stairs...",
+                "id": "choice cab"
+            },
+            {
+                "text": "Inspect the troll",
+                "id": "inspect troll"
+            },
+            {
+                "text": "This is too scary! Run home!",
+                "id": "choice cd"
+            }
+        ]
+    },
+
+    {
+        "id": "inspect troll",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You decide that inspecting the sleeping troll is the best course of action. You slowly approach, making sure not to make the drooling troll. You think you see a bit of silver under it's huge hand. You make your way hoping to get a better look. Quickly, the troll reaches out and grabs you in it's sleep. He snuggles up to you like you are a stuffed animal. Unfortunately, the weight of the troll is crushing. You feel the air escape your lungs as you suffocate... You are a deady bear..."
+    },
+
     {
         "id": "choice bba",
         "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
@@ -559,6 +591,8 @@
     {
         "id": "victory",
         "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
-        "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You think of Marcus and wonder what this victory has cost you... With full pockets, you take your riches back home. Your forefathers would be proud!!!"
+        "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You think of Marcus and wonder what this victory has cost you... With full pockets, you take your riches back home. Your forefathers would be proud!!!",
+        "achievement": "At what cost..."
     }
+
 ]

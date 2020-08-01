@@ -295,6 +295,35 @@ const bookSeed = [{
             }
         ]
     },
+
+    {
+        "id": "choice acab",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You search for the hole around back that the men spoke of. Ater a few minutes, find the hole behind a patch of briars, right where the men said it would be. You are thankful to have met the men as you and Marcus squeeze yourselves though, with Marcus and his belly having more trouble than you. You have entered a main hall, lit only by the light of the moon peaking through cracks in the ceiling. You scan the room and recieve quite a shock of adrenaline as your eyes fall on a behemoth troll, just as the men said. Your nerves still when you see the steady rise and fall of the brute's check; it appeares he is sleeping. The rest of the room reveals a door on the left and a set of stairs leading up on the right...",
+        "choices": [{
+                "text": "Creep to the door...",
+                "id": "choice caa"
+            },
+            {
+                "text": "Go silently to the stairs...",
+                "id": "choice cab"
+            },
+            {
+                "text": "Inspect the troll",
+                "id": "inspect troll"
+            },
+            {
+                "text": "This is too scary! Run home!",
+                "id": "choice cd"
+            }
+        ]
+    },
+
+    {
+        "id": "inspect troll",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You decide that inspecting the sleeping troll is the best course of action. You slowly approach, making sure not to make the drooling troll. You think you see a bit of silver under it's huge hand. You make your way hoping to get a better look. Quickly, the troll reaches out and grabs you in it's sleep. He snuggles up to you like you are a stuffed animal. Unfortunately, the weight of the troll is crushing. You feel the air escape your lungs as you suffocate... You are a deady bear..."
+    },
     {
         "id": "choice bba",
         "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
@@ -570,7 +599,44 @@ const bookSeed = [{
         "id": "victory",
         "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
         "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You think of Marcus and wonder what this victory has cost you... With full pockets, you take your riches back home. Your forefathers would be proud!!!"
-    }
+    },
+
+    {
+        "id": "the cellar",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "The stairs down are steep. You feel the air begin to get cool as you continue to descend. Luckily your eyes have adjusted to the darkness by now. You reach a small, tight crypt. Rats scurry away as you approach two burial sarcophagi. They both have your family crest on them. you deduce that this must have been the burial site of your forebearers and feel a wave of saddness and pride wash over you. You wish Marcus was here to brighten your mood. He always had a way of making you smile. You think which box you should choose",
+        "choices": [{
+                "text": "Open the one on the right...",
+                "id": "cellar alone a"
+            },
+            {
+                "text": "Open the one on the left...",
+                "id": "cellar alone b"
+            },
+            {
+                "text": "Ignore them and press ahead...",
+                "id": "cellar marcus c"
+            },
+            {
+                "text": "Head back up the stairs...",
+                "id": "cellar marcus d"
+            }
+        ]
+    },
+    {
+        "id": "cellar alone b",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You open the sarcaphogus to find an elegantly bound skeleton. It is obviously a woman bones judging by the size and height. You scan the box with your eyes, when you suddenly believe you see the skeleton's hand move. You believe it to be but your imagination caused by the stress you have endured today. You find nothing in the sarcophogus and begin to walk to the other one. An icey cold hand grabs you by the back of your neck as you walk away. In an instant, you are pulled into the sarcophogus and the lid closes. You can scream all you want, but the only one around is your new tomb mate..."
+    },
+    {
+        "id": "cellar alone a",
+        "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+        "text": "You rummage through the sarcophogus after a difficult struggle with the lid. Inside their is a finely adorned skeleton. The man inside is obviously one of your family, the golden crest of your family carved into the bones of his forehead. whether or not that happened before or after death, you do not know. You notice, clutched in his left hand, a small piece of paper. It alost looks like a corner to a map... Your family's map!!! It shows a secret passage way leading out of the tomb to the burial place of your family's treasure!!",
+        "choices": [{
+            "text": "Hurry!! To the treasure!!",
+            "id": "victory"
+        }]
+    },
 ]
 
 db.Book

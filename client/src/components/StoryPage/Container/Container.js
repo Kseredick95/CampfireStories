@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
-import StoryItems from "../../../story-one.json";
 import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book"
 
@@ -10,8 +9,20 @@ class StoryPage extends Component {
 
     state = {
         book: [],
-        page: { }
+        page: { },
+        prevPage: {}
     }
+
+//     achievements: [
+//         {achievement: "At what cost..."},
+//     {achievement: "At what cost..."},
+//     {achievement: "At what cost..."}
+// ]
+
+//     const achievement=this.state.page.achievement
+//     if(achievement) {this.setState({achievement: achievement})}
+//     pull the user... add the achievements array items to the user.achievements... push the user info
+
 
     componentDidMount() {
         API.getSavedBooks()
@@ -24,12 +35,15 @@ class StoryPage extends Component {
             console.log(choice)
             return choice.id === e
         })
-        this.setState({ page: choice })
-        console.log(choice)
+        this.setState({ prevPage: this.state.page, page: choice })
     }
 
     restartBook = e => {
         this.setState({ page: this.state.book[0] })
+    }
+
+    prevPage = e =>{
+        this.setState({page: this.state.prevPage})
     }
 
     render() {
@@ -49,7 +63,7 @@ class StoryPage extends Component {
                 text = { choice.text }
                 choiceSubmit = { this.choiceSubmit }
                 />
-            ) : <RestartBtn restartBook={this.restartBook} />
+            ) : <RestartBtn restartBook={this.restartBook} prevPage={this.prevPage}/>
         }
         
         </div>
