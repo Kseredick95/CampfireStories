@@ -1,5 +1,31 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
+.card {
+    font-size: 14px;
+}
+
+h4 {
+    font-size: 24px;
+}
+
+.col>strong {
+    font-size: 15px;
+}
+
+.col-1 .fas,
+.col>strong,
+#medal-list>.fas,
+.row.mt-2>.col {
+    vertical-align: -webkit-baseline-middle;
+}
+
+.label {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    background: #f7f7f9;
+    color: #322A26;
+}
+
 .btn {
     cursor: pointer;
 }
