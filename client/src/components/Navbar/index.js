@@ -9,9 +9,11 @@ function Navbar() {
                 <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
                     data-target="#navCollapse"><span className="navbar-toggler-icon"></span>
                 </button>
-                <Link className="navbar-brand" to="/">
-                    <img src="../../../public/images/CampfireLogo.png" width="120" height="120" alt="" loading="lazy" />
-                </Link>
+                <div id="logo">
+                    <Link className="navbar-brand" to="/">
+                        <img src={process.env.PUBLIC_URL + '/images/CampfireLogo.png'} alt="Campfire Stories Logo" loading="lazy" />
+                    </Link>
+                </div>
                 <div className="collapse navbar-collapse" id="navCollapse">
                     <ul className="navbar-nav ml-auto" id="nav-menu">
                         <li className="hoverable" id="nav-item1">
