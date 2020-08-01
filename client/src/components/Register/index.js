@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
+import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
-
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -184,7 +184,7 @@ class Register extends Component {
             }
             <div className="createAccount">
               <button type="submit"> Create Account </button>
-              <small>Already Have an Account?</small>
+              <Link to="/login">Already Have an Account?</Link>
             </div>
           </form>
         </div>

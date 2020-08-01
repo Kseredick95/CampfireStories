@@ -15,7 +15,7 @@ const userSchema = new Schema ({
     }]
 });
 
-userSchema.plugin(require("mongoose-bcrypt"))
+userSchema.plugin(require("mongoose-bcrypt"));
 
 const User = mongoose.model("User", userSchema);
 
