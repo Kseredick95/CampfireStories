@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
-import StoryItems from "../../../story-one.json";
+//import StoryItems from "../../../story-one.json";
 import RestartBtn from "../RestartBtn/RestartBtn";
-import API from "../../../utils/API_book"
+//import API from "../../../utils/API_book"
 
 class StoryPage extends Component {
 
@@ -14,9 +14,9 @@ class StoryPage extends Component {
     }
 
     componentDidMount() {
-        API.getSavedBooks()
-        .then(res => {this.setState({ book: res.data, page: res.data[0] })})
-        .catch(err => console.log(err))
+        // API.getSavedBooks()
+        // .then(res => {this.setState({ book: res.data, page: res.data[0] })})
+        // .catch(err => console.log(err))
     }
     // {this.setState({ book: res.data, page: res.data[0] })}
     choiceSubmit = e => {

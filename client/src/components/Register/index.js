@@ -55,20 +55,22 @@ class Register extends Component {
     } else {
       console.error("FORM INVALID - SEE ERROR MESSAGES");
       return;
-    }
-
-    console.log(this.state.firstName);
+    }    
 
     API.saveUser({
       firstname: this.state.firstName,
       lastname: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
-      achievements: [null],
-      profileImage: null,
-    })
-      .then(console.log("Saved user successfully"))
-      .catch((err) => console.log(err));
+      deathCount: 0,
+      achievements: [{
+        name : "newUserAchievement",
+        date : Date.now()
+      }],
+      profileImage: null
+    }).then(
+      console.log("Saved user successfully")
+    ).catch(err => console.log(err))
   };
 
   handleChange = (e) => {
@@ -98,7 +100,7 @@ class Register extends Component {
         break;
     }
 
-    this.setState({ formErrors, [name]: value }, () => console.log(this.state));
+    this.setState({ formErrors, [name]: value });
   };
 
   render() {
