@@ -10,7 +10,7 @@
         "install": "cd client && npm install",
         "build": "cd client && npm run build",
         "heroku-postbuild": "npm run build",
-        "seed": "node scripts/seedBooks.js"
+        "seed": "node scripts/seedBooks.js && node scripts/seedAchievements.js"
     },
     "author": "Karolyn Seredick, Andrew Reeves, Dany Grimaldo, Terry Cetoute",
     "license": "MIT",
