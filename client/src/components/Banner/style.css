@@ -5,19 +5,46 @@
     background: #709255;
 }
 
+.bg-primary {
+    background: #91af4c !important;
+}
+
 .alert {
     margin-top: 30px;
 }
 
 #banner-title {
     font-variant-caps: petite-caps;
-    font-size: 16pt;
+}
+
+.small {
+    font-size: 14px;
 }
 
 .small {
     color: rgba(97, 97, 97, 0.8);
 }
 
-.story-btn {
+.col-lg.story-btn {
     flex: 0 0 125px;
+}
+
+#dashboard,
+#banner-title>strong {
+    font-size: 18px;
+}
+
+.btn.btn-secondary {
+    background: #95B46A;
+    color: #fff;
+    border-color: #95B46A;
+}
+
+.btn.btn-secondary:hover {
+    background: #709255;
+    border-color: #1e441f;
+}
+
+.btn.btn-secondary:focus {
+    box-shadow: 0 0 0 2px rgba(61, 139, 64, 0.5);
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Banner, CTA } from "../components/Banner";
+import { Banner, CTA, Header } from "../components/Banner";
 import { Container, Col, RowMt, Row, Column } from "../components/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
@@ -17,7 +17,11 @@ const Profile = () => {
                     </div>
                     <Col size="md">
                         <RowMt size="4">
-                            <div className="col font-weight-bold">MY DASHBOARD</div>
+                            <Header>
+                                <Column>
+                                    MY DASHBOARD
+                                </Column>
+                            </Header>
                         </RowMt>
                         <CTA />
                         <Row>

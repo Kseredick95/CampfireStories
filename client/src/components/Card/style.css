@@ -33,6 +33,7 @@ h4 {
 .btn.btn-primary {
     background: #95B46A;
     border-color: #95B46A;
+    font-size: 16px;
 }
 
 .btn.btn-primary:hover {
@@ -48,6 +49,7 @@ h4 {
     background: #95B46A;
     color: #fff;
     border-color: #95B46A;
+    font-size: 16px;
 }
 
 .btn.btn-secondary:hover {
@@ -72,6 +74,11 @@ h4 {
     align-items: center;
     font-weight: 700;
     font-variant-caps: petite-caps;
+    font-size: 18px;
+}
+
+#user .card-header {
+    font-size: 14px;
 }
 
 .card .row {
@@ -155,4 +162,9 @@ a.action:hover {
 #medal-list .fas {
     display: inline;
     margin-right: 5%;
+}
+
+.activity-text {
+    align-self: center;
+    font-size: 16px;
 }

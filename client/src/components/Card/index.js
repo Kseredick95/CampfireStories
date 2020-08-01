@@ -58,8 +58,32 @@ export function ConnectCard() {
     );
 }
 
-// export recent activity card
+// export the acivity for appending and prepending purposes
+// need props of the icon, timestamp
 
+/* 
+export function UserActivity(props) {
+    return (
+        <div className="row no-gutters">
+            <Column>
+                <div className="row no-gutters align-content-center">
+                    <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
+                    <Column classType="activity-text">You have recently viewed <em>story name goes here!</em>
+                    </Column>
+                </div>
+            </Column>
+            <Column classType="right">
+                <div className="row no-gutters justify-content-center align-items-center">
+                    <div className="view"><button className="btn btn-primary">Resume</button></div>
+                    <div className="text-center">5 Days Ago</div>
+                </div>
+            </Column>
+        </div>
+    );
+}
+*/
+
+// export recent activity card
 export function HistoryCard() {
     return (
         <div className="card" id="recentActivity">
@@ -70,7 +94,7 @@ export function HistoryCard() {
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
-                                <Column>You have recently viewed <em>story name goes here!</em>
+                                <Column classType="activity-text">You have recently viewed <em>story name goes here!</em>
                                 </Column>
                             </div>
                         </Column>
@@ -87,7 +111,7 @@ export function HistoryCard() {
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                                <Column>You have recently completed <em>story name goes
+                                <Column classType="activity-text">You have recently completed <em>story name goes
                                     here</em></Column>
                             </div>
                         </Column>
