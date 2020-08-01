@@ -67,14 +67,11 @@ class Login extends Component {
         <div className="form-wrapper">
           <h1>Login</h1>
           <form onSubmit={this.handleSubmit} noValidate>
-            {
-              //Input for First Name
-            }
             <div className="email">
-              <label htmlFor="email"> Email</label>
+              <label htmlFor="email"></label>
               <input
                 className=""
-                placeholder="email"
+                placeholder="Email"
                 type="email"
                 name="email"
                 formNoValidate
@@ -83,7 +80,7 @@ class Login extends Component {
             </div>
 
             <div className="password">
-              <label htmlFor="password"> Password</label>
+              <label htmlFor="password"></label>
               <input
                 className=""
                 placeholder="Password"
