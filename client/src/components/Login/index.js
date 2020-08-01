@@ -3,6 +3,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 
+
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -26,11 +27,15 @@ class Login extends Component {
     console.log(this.state.email)
 
     let email = this.state.email
+    let password = this.state.password
 
     API.getEmail(email).then(res =>
-      console.log(res.data)
-    )
-  };
+      console.log(res.data.password + "   " + password)
+
+      //VERIFY PASSWORD FUNCTION
+    );
+  }
+
 
   handleChange = (e) => {
     e.preventDefault();
@@ -48,7 +53,7 @@ class Login extends Component {
         formErrors.password =
           value.length < 6 ? "minimum 6 characters required" : "";
         break;
-        default:
+      default:
         break;
     }
 
