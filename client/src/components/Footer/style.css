@@ -12,7 +12,15 @@
     color: whitesmoke;
 }
 
-@media (min-width: 576px) {
+a {
+    color: #709255;
+}
+
+a:hover {
+    color: #95B46A;
+}
+
+@media (min-width: 276px) {
     .site-footer {
         padding-bottom: 0
     }
