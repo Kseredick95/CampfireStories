@@ -5,9 +5,12 @@ function RestartBtn(props){
 
     return (
         <div> 
-        <button onClick={() => props.restartBook()}>
-        Restart Book
-        </button>
+            <button onClick={() => props.prevPage()}>
+            Previous Page
+            </button>
+            <button onClick={() => props.restartBook()}>
+            Restart Book
+            </button>
         </div>
     )
 }
