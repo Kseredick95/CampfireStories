@@ -12,11 +12,11 @@
     color: whitesmoke;
 }
 
-a {
+.copyright-text>a {
     color: #709255;
 }
 
-a:hover {
+.copyright-text>a:hover {
     color: #95B46A;
 }
 
