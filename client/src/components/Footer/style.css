@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
+
+.site-footer {
+    width: auto;
+    height: auto;
+    line-height: 40px;
+    background-color: #322A26;
+    font-size: 14px;
+}
+
+.site-footer p {
+    color: whitesmoke;
+}
+
+a {
+    color: #709255;
+}
+
+a:hover {
+    color: #95B46A;
+}
+
+@media (min-width: 276px) {
+    .site-footer {
+        padding-bottom: 0
+    }
+
+    .site-footer .copyright-text,
+    .site-footer .social-icons {
+        text-align: center
+    }
+}
