@@ -2,8 +2,14 @@ import React, { Component } from "react";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
+<<<<<<< HEAD
 import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book"
+=======
+//import StoryItems from "../../../story-one.json";
+import RestartBtn from "../RestartBtn/RestartBtn";
+//import API from "../../../utils/API_book";
+>>>>>>> d02fc55fb305512a1574f5e21a983d44634b362b
 
 class StoryPage extends Component {
 
