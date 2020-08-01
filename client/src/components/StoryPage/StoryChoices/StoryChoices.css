@@ -1,4 +1,7 @@
 button {
-    width: 25%;
-    height: 75px
+    width: 500px;
+    height: 50px;
+    font-size: large;
+    margin-left: 3rem;
+    margin-bottom: 20px;
 }

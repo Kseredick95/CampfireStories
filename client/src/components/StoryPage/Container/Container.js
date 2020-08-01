@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Container, Row, Col } from "../../Grid";
+import Navbar from "../../Navbar"
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
@@ -48,24 +50,30 @@ class StoryPage extends Component {
 
     render() {
         return ( <div className = "container" >
-            { this.state.page.image?
+        <Container>
+        <Navbar></Navbar>
+        <Row>
+            {this.state.page.image?
             <StoryImg image = { this.state.page.image }/> :
-             <div></div>}
-
+            <div></div>}
+        </Row>
+        <Row>
             {this.state.page.text?
             <StoryText text = { this.state.page.text }/>:
             <div></div>}
-            
-             
+        </Row>
+        <Row>
             {this.state.page.choices?
-            this.state.page.choices.map(choice => <StoryChoices key = { choice.id }
-                id = { choice.id }
-                text = { choice.text }
-                choiceSubmit = { this.choiceSubmit }
+            this.state.page.choices.map(choice => <StoryChoices         className="col" 
+            key = { choice.id }
+            id = { choice.id }
+            text = { choice.text }
+            choiceSubmit = { this.choiceSubmit }
                 />
             ) : <RestartBtn restartBook={this.restartBook} prevPage={this.prevPage}/>
         }
-        
+        </Row>
+        </Container>
         </div>
     )
 }
