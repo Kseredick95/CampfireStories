@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, Col } from "../../Grid";
+import { Container, Row} from "../../Grid";
 import Navbar from "../../Navbar"
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
@@ -26,9 +26,9 @@ class StoryPage extends Component {
 //     pull the user... add the achievements array items to the user.achievements... push the user info
 
 
-    componentDidMount() {
-        API.getSavedBooks()
-        .then(res => {this.setState({ book: res.data, page: res.data[0] })})
+   componentDidMount() {
+        API.findByTitle()
+        .then(res => {this.setState({ book: res.data.bookPages, page: res.data.bookPages[0] })})
         .catch(err => console.log(err))
     }
 
@@ -64,12 +64,12 @@ class StoryPage extends Component {
         </Row>
         <Row>
             {this.state.page.choices?
-            this.state.page.choices.map(choice => <StoryChoices         className="col" 
+            this.state.page.choices.map(choice => <StoryChoices         
+            className="col" 
             key = { choice.id }
             id = { choice.id }
             text = { choice.text }
-            choiceSubmit = { this.choiceSubmit }
-                />
+            choiceSubmit = { this.choiceSubmit }/>
             ) : <RestartBtn restartBook={this.restartBook} prevPage={this.prevPage}/>
         }
         </Row>
