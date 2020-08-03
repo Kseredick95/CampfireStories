@@ -3,7 +3,6 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 
-
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -22,18 +21,20 @@ class Login extends Component {
     }
   }
 
+
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state.email)
 
-    let email = this.state.email
-    let password = this.state.password
-
-    API.getEmail(email).then(res =>
-      console.log(res.data.password + "   " + password)
-
-      //VERIFY PASSWORD FUNCTION
-    );
+    API.loginUser({
+      email: this.state.email,
+      password: this.state.password
+    })
+    .then(function(res) {
+      console.log(res)
+      //window.location.replace("/profile")
+    }).catch(function(err) {
+      console.log(err)
+    })
   }
 
 

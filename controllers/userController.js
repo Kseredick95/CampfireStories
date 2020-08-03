@@ -1,4 +1,7 @@
 const db = require("../models");
+const bcrypt = require("bcrypt")
+const { request, response } = require("express");
+const User = require("../models/user");
 
 module.exports = {
   findAll: function(req, res) {
@@ -16,10 +19,15 @@ module.exports = {
     .then(dbUser => res.json(dbUser))
     .catch(err => res.status(422).json(err));
   },
-  create: function(req, res) {
-    db.User.create(req.body)
-      .then(dbUser => res.json(dbUser))
-      .catch(err => res.status(422).json(err));
+  create: async function(req, res) {
+    try {
+      req.body.password = bcrypt.hashSync(req.body.password, 10);
+      let user = new User(req.body);
+      let result = await user.save();
+      res.send(result);
+    } catch (err) {
+      res.status(500).send(err);
+    }
   },
   update: function(req, res) {
     db.User.findOneAndUpdate({ email: req.params.email }, req.body)
