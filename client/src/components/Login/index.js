@@ -31,7 +31,6 @@ class Login extends Component {
     })
     .then(function(res) {
       console.log(res)
-      //window.location.replace("/profile")
     }).catch(function(err) {
       console.log(err)
     })
