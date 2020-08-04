@@ -55,7 +55,7 @@ class Register extends Component {
     } else {
       console.error("FORM INVALID - SEE ERROR MESSAGES");
       return;
-    }
+    }    
 
     API.saveUser({
       firstname: this.state.firstName,
@@ -63,16 +63,14 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,
-      achievements: [
-        {
-          name: "newUserAchievement",
-          date: Date.now(),
-        },
-      ],
-      profileImage: null,
-    })
-      .then(console.log("Saved user successfully"))
-      .catch((err) => console.log(err));
+      achievements: [{
+        name : "newUserAchievement",
+        date : Date.now()
+      }],
+      profileImage: null
+    }).then(
+      console.log("Saved user successfully")
+    ).catch(err => console.log(err))
   };
 
   handleChange = (e) => {
@@ -116,7 +114,7 @@ class Register extends Component {
               //Input for First Name
             }
             <div className="firstName">
-              <label htmlFor="firstName"></label>
+              <label htmlFor="firstName"> First Name</label>
               <input
                 className={formErrors.firstName.length > 0 ? "error" : null}
                 placeholder="First Name"
@@ -133,7 +131,7 @@ class Register extends Component {
               //Form input for Last Name
             }
             <div className="lastName">
-              <label htmlFor="lastName"></label>
+              <label htmlFor="lastName"> Last Name</label>
               <input
                 className={formErrors.lastName.length > 0 ? "error" : null}
                 placeholder="Last Name"
@@ -150,7 +148,7 @@ class Register extends Component {
               //Form input for Email
             }
             <div className="email">
-              <label htmlFor="email"></label>
+              <label htmlFor="email"> Email</label>
               <input
                 className={formErrors.email.length > 0 ? "error" : null}
                 placeholder="Email"
@@ -167,7 +165,7 @@ class Register extends Component {
               //Form input for Password
             }
             <div className="password">
-              <label htmlFor="password"></label>
+              <label htmlFor="password"> Password</label>
               <input
                 className={formErrors.password.length > 0 ? "error" : null}
                 placeholder="Password"
@@ -180,6 +178,7 @@ class Register extends Component {
                 <span className="errorMessage">{formErrors.password}</span>
               )}
             </div>
+
             {
               //Create Account Button
             }
