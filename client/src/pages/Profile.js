@@ -5,15 +5,15 @@ import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
 import APIuser from "../utils/APIuser";
 
-//let userId = window.location.pathname.split("/")[2];
 
 function Profile () {
 
     function getUser() {
-        APIuser.getById({ $where: { _id: window.location.pathname.split("/")[2]}})
+        
+        APIuser.getById(window.location.pathname.split("/")[2])
         .then(res => {
-            console.log(res.data[0])
-            let user = res.data[0]
+            console.log(res.data)
+            //let user = res.data[0]
             
         })
     }

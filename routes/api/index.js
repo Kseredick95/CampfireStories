@@ -3,7 +3,6 @@ const userRoutes = require("./user");
 const bookRoutes = require("./book");
 const achievementRoutes = require("./achievement");
 const db = require("../../models/");
-const axios = require ("axios")
 //User routes
 
 router.use("/user", userRoutes);
@@ -32,8 +31,6 @@ router.route("/login").post(async (req, res) => {
         res.status(500).send(error);
     }
 });
-
-
 
 //If no api - reroute
 router.use(function(req, res) {
