@@ -3,10 +3,16 @@ import { Banner, CTA, Header } from "../components/Banner";
 import { Container, Col, RowMt, Row, Column } from "../components/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
-import APIuser from "../utils/APIuser";
+import { Redirect } from "react-router-dom";
+import isLoggedIn from "./authenticate"
+import APIuser from "../utils/APIuser"
 
 
 function Profile () {
+
+    // if(!isLoggedIn()) {
+    //     return <Redirect to = "/login" />
+    // }
 
     function getUser() {
         
