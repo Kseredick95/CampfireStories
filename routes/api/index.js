@@ -1,5 +1,4 @@
 const router = require("express").Router();
-const bcrypt = require("bcrypt")
 const userRoutes = require("./user");
 const bookRoutes = require("./book");
 const achievementRoutes = require("./achievement")
@@ -15,7 +14,6 @@ router.route("/login").post(async (req, res) => {
     try {
         let user = await db.User.findOne({ email: req.body.email }).exec();
 
-        console.log(user.password , req.body.password)
         if (!user) {
             return res.status(400).send({ message: "This email does not exist" });
         }
@@ -24,6 +22,7 @@ router.route("/login").post(async (req, res) => {
             if (err) throw err;
             else if (!match) {
                 console.log("Password is not correct")
+                return res.status(400).send({ message: "Password is incorrect" })
             } else {
                 console.log("Password is correct")
             }
