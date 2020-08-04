@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import LibraryContainer from "./components/Library/LibraryContainer/LibraryContainer"
 import StoryPage from "./components/StoryPage/Container/Container";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer"
@@ -14,7 +15,8 @@ function App() {
           <Route exact path="/" component={Login} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
-          <Route exact path="/storypage" component={StoryPage} />
+          <Route exact path="/library" component={LibraryContainer} />
+          <Route exact path="/storypage/:bookTitle" component={StoryPage} />
           <Route exact path="/profile" component={Profile} />
         </Switch>
         <Footer />

@@ -30,14 +30,14 @@ function Navbar() {
                         </li>
                         <li className="hoverable" id="nav-item2">
                             <Link
-                                to="/storypage"
+                                to="/library"
                                 className={
-                                    window.location.pathname === "/storypage"
+                                    window.location.pathname === "/library"
                                         ? "nav-link active"
                                         : "nav-link"
                                 }
                             >
-                                <i className="fas fa-book"></i> Stories
+                                <i className="fas fa-book"></i> Library
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
