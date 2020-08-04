@@ -1,10 +1,11 @@
 import React from "react";
+import "./StoryText.css"
 
 function StoryText(props){
     return(
-        <p>
+        <h2>
             {props.text}
-        </p>
+        </h2>
     )
 }
 

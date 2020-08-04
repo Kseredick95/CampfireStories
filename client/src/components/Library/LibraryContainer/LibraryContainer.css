@@ -1,0 +1,16 @@
+.card {
+    /* height: 50%; */
+    width: 33%;
+    padding: 50px;
+    background-color: gainsboro;
+}
+
+h3 {
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer
+}
+
+img {
+    cursor: pointer
+}
