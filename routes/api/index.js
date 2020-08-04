@@ -22,7 +22,11 @@ router.route("/login").post(async (req, res) => {
         //FIX ME - compareSync not working
         user.comparePassword(req.body.password, (err, match) => {
             if (err) throw err;
-            console.log("Password is correct")
+            else if (!match) {
+                console.log("Password is not correct")
+            } else {
+                console.log("Password is correct")
+            }
         });
     } catch (error) {
         res.status(500).send(error);
