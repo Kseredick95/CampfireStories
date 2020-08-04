@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
-import { authenticate } from "passport";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
