@@ -17,7 +17,6 @@ const userSchema = new Schema({
     }]
 });
 
-
 userSchema.methods.comparePassword = function(password, callback) {
     console.log(this.password + " and " + password)
     return callback(null, bcrypt.compareSync(password, this.password));

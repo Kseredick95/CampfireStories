@@ -17,7 +17,7 @@ function App() {
           <Route exact path="/register" component={Register} />
           <Route exact path="/library" component={LibraryContainer} />
           <Route exact path="/storypage/:bookTitle" component={StoryPage} />
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile/:_id" component={Profile} />
         </Switch>
         <Footer />
       </div>

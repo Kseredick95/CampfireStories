@@ -68,9 +68,10 @@ class Register extends Component {
         date : Date.now()
       }],
       profileImage: null
-    }).then(
-      console.log("Saved user successfully")
-    ).catch(err => console.log(err))
+    }).then( res => {
+       console.log(res.data._id)
+       window.location.replace("/profile/" + res.data._id)
+    }).catch(err => console.log(err))
   };
 
   handleChange = (e) => {
