@@ -9,9 +9,13 @@ export default {
   getEmail: function(email) {
     return axios.get("/api/user/" + email);
   },
+  getById: function(id) {
+    console.log(id)
+    return axios.get("/api/user/" + id)
+  },
   // Deletes the saved user with the given id
-  deleteUser: function(email) {
-    return axios.delete("/api/user/" + email);
+  deleteUser: function(id) {
+    return axios.delete("/api/user/" + id);
   },
   // Saves an user to the database
   saveUser: function(userData) {
@@ -20,5 +24,8 @@ export default {
 
   loginUser: function(userData) {
     return axios.post("/api/login", userData)
+  },
+  logoutUser: function() {
+    return axios.post("/api/logout")
   }
 };

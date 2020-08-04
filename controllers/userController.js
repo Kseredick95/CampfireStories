@@ -10,12 +10,13 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   findById: function(req, res) {
-    db.User.findById(req.params.id)
+    console.log(req.params)
+    db.User.findById({ _id: req.params.id})
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },
   findByEmail: function(req, res) {
-    db.User.findOne(req.params)
+    db.User.findOne(req.body)
     .then(dbUser => res.json(dbUser))
     .catch(err => res.status(422).json(err));
   },
@@ -30,7 +31,7 @@ module.exports = {
     }
   },
   update: function(req, res) {
-    db.User.findOneAndUpdate({ email: req.params.email }, req.body)
+    db.User.findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbUser => res.json(dbUser))
       .catch(err => res.status(422).json(err));
   },

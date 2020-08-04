@@ -24,15 +24,16 @@ class Login extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-
+    
     API.loginUser({
       email: this.state.email,
       password: this.state.password
-    })
-    .then(function(res) {
-      console.log(res)
-    }).catch(function(err) {
-      console.log(err)
+    }).then(res => {
+      console.log(res.data._id)
+
+      if(res.data) {
+        window.location.replace("/profile/" + res.data._id)
+      }
     })
   }
 
