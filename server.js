@@ -3,10 +3,8 @@ const express = require("express");
 const session = require("express-session");
 const compression = require("compression");
 const mongoose = require("mongoose");
-const routes = require("./routes")
-
-//CHANGE TO CONFIGURED PASSPORT FILE
-const passport = require("passport");
+const routes = require("./routes");
+var passport = require("./config/passport");
 
 //Express set-up
 const app = express();
