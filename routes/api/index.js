@@ -1,9 +1,9 @@
 const router = require("express").Router();
 const userRoutes = require("./user");
 const bookRoutes = require("./book");
-const achievementRoutes = require("./achievement")
-const db = require("../../models/")
-
+const achievementRoutes = require("./achievement");
+const db = require("../../models/");
+const axios = require ("axios")
 //User routes
 
 router.use("/user", userRoutes);
@@ -17,7 +17,7 @@ router.route("/login").post(async (req, res) => {
         if (!user) {
             return res.status(400).send({ message: "This email does not exist" });
         }
-        //FIX ME - compareSync not working
+        
         user.comparePassword(req.body.password, (err, match) => {
             if (err) throw err;
             else if (!match) {
@@ -25,12 +25,15 @@ router.route("/login").post(async (req, res) => {
                 return res.status(400).send({ message: "Password is incorrect" })
             } else {
                 console.log("Password is correct")
+                return res.json(user)
             }
-        });
+        })
     } catch (error) {
         res.status(500).send(error);
     }
 });
+
+
 
 //If no api - reroute
 router.use(function(req, res) {
