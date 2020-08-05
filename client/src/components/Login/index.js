@@ -17,28 +17,27 @@ class Login extends Component {
       password: null,
       formErrors: {
         email: "",
-        password: ""
+        password: "",
       },
-      isLoggedIn: false
-    }
+      isLoggedIn: false,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { history } = this.props
-    
+    const { history } = this.props;
+
     API.loginUser({
       email: this.state.email,
-      password: this.state.password
-    }).then(res => {
-      console.log(res.data._id)
+      password: this.state.password,
+    }).then((res) => {
+      console.log(res.data._id);
 
-      if(res.data) {
+      if (res.data) {
         this.setState({
           email: res.data.email,
           firstname: res.data.firstname,
@@ -47,14 +46,14 @@ class Login extends Component {
           deathCount: res.data.deathCount,
           profileImage: res.data.profileImage,
           achievements: res.data.achievements,
-          isLoggedIn: true })
+          isLoggedIn: true,
+        });
 
         store.set(`loggedIn`, true);
-        history.push(`/profile/${res.data._id}`)
+        history.push(`/profile/${res.data._id}`);
       }
-    })
-  }
-
+    });
+  };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -78,7 +77,6 @@ class Login extends Component {
 
     this.setState({ formErrors, [name]: value });
   };
-
 
   render() {
     return (
@@ -110,11 +108,8 @@ class Login extends Component {
               />
             </div>
 
-            {
-              //Create Account Button
-            }
             <div className="createAccount">
-              <button type="submit"> Sign In </button>
+              <button type="submit">Sign In</button>
               <Link to="/register">Create an account</Link>
               <Link to="/storypage">Story Page</Link>
             </div>
