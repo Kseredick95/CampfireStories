@@ -16,26 +16,25 @@ class Login extends Component {
       password: null,
       formErrors: {
         email: "",
-        password: ""
-      }
-    }
+        password: "",
+      },
+    };
   }
-
 
   handleSubmit = (e) => {
     e.preventDefault();
 
     API.loginUser({
       email: this.state.email,
-      password: this.state.password
+      password: this.state.password,
     })
-    .then(function(res) {
-      console.log(res)
-    }).catch(function(err) {
-      console.log(err)
-    })
-  }
-
+      .then(function (res) {
+        console.log(res);
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -59,7 +58,6 @@ class Login extends Component {
 
     this.setState({ formErrors, [name]: value });
   };
-
 
   render() {
     return (
@@ -91,11 +89,8 @@ class Login extends Component {
               />
             </div>
 
-            {
-              //Create Account Button
-            }
             <div className="createAccount">
-              <button type="submit"> Sign In </button>
+              <button type="submit">Sign In</button>
               <Link to="/register">Create an account</Link>
               <Link to="/storypage">Story Page</Link>
             </div>
