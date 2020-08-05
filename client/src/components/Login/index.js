@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
+import store from "store";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -17,13 +18,19 @@ class Login extends Component {
       formErrors: {
         email: "",
         password: ""
-      }
+      },
+      isLoggedIn: false
     }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
+
+    const { history } = this.props
     
     API.loginUser({
       email: this.state.email,
@@ -32,7 +39,18 @@ class Login extends Component {
       console.log(res.data._id)
 
       if(res.data) {
-        window.location.replace("/profile/" + res.data._id)
+        this.setState({
+          email: res.data.email,
+          firstname: res.data.firstname,
+          lastname: res.data.lastname,
+          username: res.data.username,
+          deathCount: res.data.deathCount,
+          profileImage: res.data.profileImage,
+          achievements: res.data.achievements,
+          isLoggedIn: true })
+
+        store.set(`loggedIn`, true);
+        history.push(`/profile/${res.data._id}`)
       }
     })
   }

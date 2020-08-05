@@ -1,8 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
+import store from "store"
 
-function Navbar() {
+// const handleLogout = history => () => {
+//     store.remove(`loggedIn`)
+//     history.push(`/login`)
+// }
+
+const Navbar = () => {
+    
+
     return (
         <div id="nav-body">
             <nav className="navbar navbar-inverse navbar-expand-lg navbar-toggleable-sm">
@@ -41,16 +49,16 @@ function Navbar() {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                            <Link
-                                to="/signout"
-                                className={
-                                    window.location.pathname === "/signout"
-                                        ? "nav-link active"
-                                        : "nav-link"
+                            <button
+                                className={ "logoutt"
+                                    // window.location.pathname === "/signout"
+                                    //     ? "nav-link active"
+                                    //     : "nav-link"
                                 }
+                                //onClick = {handleLogout(history)}
                             >
                                 <i className="fas fa-sign-out-alt"></i> Signout
-                        </Link>
+                        </button>
                         </li>
                     </ul>
                 </div>

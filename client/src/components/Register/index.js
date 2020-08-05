@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
+import store from "store";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -69,9 +70,12 @@ class Register extends Component {
       }],
       profileImage: null
     }).then( res => {
-       console.log(res.data._id)
-       window.location.replace("/profile/" + res.data._id)
-    }).catch(err => console.log(err))
+       const { history } = this.props;
+
+       store.set(`loggedIn`, true);
+       history.push(`/profile/${res.data._id}`);
+      
+    }).catch(err => console.log(err));
   };
 
   handleChange = (e) => {
