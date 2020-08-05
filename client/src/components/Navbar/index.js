@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import store from "store"
 
-// const handleLogout = history => () => {
-//     store.remove(`loggedIn`)
-//     history.push(`/login`)
-// }
+function handleLogout() {
+    store.remove(`loggedIn`)
+    window.location.replace("/login")
+}
 
 const Navbar = () => {
     
@@ -50,12 +50,12 @@ const Navbar = () => {
                         </li>
                         <li className="hoverable" id="nav-item2">
                             <button
-                                className={ "logoutt"
+                                className={ "logout"
                                     // window.location.pathname === "/signout"
                                     //     ? "nav-link active"
                                     //     : "nav-link"
                                 }
-                                //onClick = {handleLogout(history)}
+                                onClick = {handleLogout}
                             >
                                 <i className="fas fa-sign-out-alt"></i> Signout
                         </button>

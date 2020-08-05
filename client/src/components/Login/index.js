@@ -39,15 +39,6 @@ class Login extends Component {
       console.log(res.data._id)
 
       if(res.data) {
-        this.setState({
-          email: res.data.email,
-          firstname: res.data.firstname,
-          lastname: res.data.lastname,
-          username: res.data.username,
-          deathCount: res.data.deathCount,
-          profileImage: res.data.profileImage,
-          achievements: res.data.achievements,
-          isLoggedIn: true })
 
         store.set(`loggedIn`, true);
         history.push(`/profile/${res.data._id}`)

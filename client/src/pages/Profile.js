@@ -10,9 +10,9 @@ import APIuser from "../utils/APIuser"
 
 function Profile () {
 
-    // if(isLoggedIn()) {
-    //     return <Redirect to = "/login" />
-    // }
+    if(isLoggedIn()) {
+        return <Redirect to = "/login" />
+    }
 
     function getUser() {
         
