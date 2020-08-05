@@ -64,7 +64,6 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,
-<<<<<<< HEAD
       achievements: [
         {
           name: "newUserAchievement",
@@ -73,22 +72,13 @@ class Register extends Component {
       ],
       profileImage: null,
     })
-      .then(console.log("Saved user successfully"))
-      .catch((err) => console.log(err));
-=======
-      achievements: [{
-        name : "newUserAchievement",
-        date : Date.now()
-      }],
-      profileImage: null
-    }).then( res => {
-       const { history } = this.props;
+      .then((res) => {
+        const { history } = this.props;
 
-       store.set(`loggedIn`, true);
-       history.push(`/profile/${res.data._id}`);
-      
-    }).catch(err => console.log(err));
->>>>>>> a1d4d1bf697261f726817efc1f50a696c3769b1b
+        store.set(`loggedIn`, true);
+        history.push(`/profile/${res.data._id}`);
+      })
+      .catch((err) => console.log(err));
   };
 
   handleChange = (e) => {

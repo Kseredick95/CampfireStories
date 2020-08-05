@@ -17,44 +17,27 @@ class Login extends Component {
       password: null,
       formErrors: {
         email: "",
-<<<<<<< HEAD
         password: "",
       },
+      isLoggedIn: false,
     };
-=======
-        password: ""
-      },
-      isLoggedIn: false
-    }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
->>>>>>> a1d4d1bf697261f726817efc1f50a696c3769b1b
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { history } = this.props
-    
+    const { history } = this.props;
+
     API.loginUser({
       email: this.state.email,
-<<<<<<< HEAD
       password: this.state.password,
-    })
-      .then(function (res) {
-        console.log(res);
-      })
-      .catch(function (err) {
-        console.log(err);
-      });
-  };
-=======
-      password: this.state.password
-    }).then(res => {
-      console.log(res.data._id)
+    }).then((res) => {
+      console.log(res.data._id);
 
-      if(res.data) {
+      if (res.data) {
         this.setState({
           email: res.data.email,
           firstname: res.data.firstname,
@@ -63,15 +46,14 @@ class Login extends Component {
           deathCount: res.data.deathCount,
           profileImage: res.data.profileImage,
           achievements: res.data.achievements,
-          isLoggedIn: true })
+          isLoggedIn: true,
+        });
 
         store.set(`loggedIn`, true);
-        history.push(`/profile/${res.data._id}`)
+        history.push(`/profile/${res.data._id}`);
       }
-    })
-  }
-
->>>>>>> a1d4d1bf697261f726817efc1f50a696c3769b1b
+    });
+  };
 
   handleChange = (e) => {
     e.preventDefault();
