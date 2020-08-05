@@ -4,7 +4,6 @@ const session = require("express-session");
 const compression = require("compression");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-var passport = require("./config/passport");
 
 //Express set-up
 const app = express();
@@ -24,9 +23,6 @@ if (process.env.NODE_ENV === "production") {
 app.use(
     session({ secret: 'keyboard cat', resave: true, saveUninitialized: true })
 );
-
-app.use(passport.initialize());
-app.use(passport.session())
 
 //Database connection
 mongoose.connect(

@@ -3,8 +3,29 @@ import { Banner, CTA, Header } from "../components/Banner";
 import { Container, Col, RowMt, Row, Column } from "../components/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
+import { Redirect } from "react-router-dom";
+import isLoggedIn from "./authenticate"
+import APIuser from "../utils/APIuser"
 
-const Profile = () => {
+
+function Profile () {
+
+    // if(isLoggedIn()) {
+    //     return <Redirect to = "/login" />
+    // }
+
+    function getUser() {
+        
+        APIuser.getById(window.location.pathname.split("/")[2])
+        .then(res => {
+            console.log(res.data)
+            //let user = res.data[0]
+            
+        })
+    }
+
+    getUser();
+    
     return (
         <div>
             <Navbar />

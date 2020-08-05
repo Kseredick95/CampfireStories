@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
+import store from "store";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -63,6 +64,7 @@ class Register extends Component {
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,
+<<<<<<< HEAD
       achievements: [
         {
           name: "newUserAchievement",
@@ -73,6 +75,20 @@ class Register extends Component {
     })
       .then(console.log("Saved user successfully"))
       .catch((err) => console.log(err));
+=======
+      achievements: [{
+        name : "newUserAchievement",
+        date : Date.now()
+      }],
+      profileImage: null
+    }).then( res => {
+       const { history } = this.props;
+
+       store.set(`loggedIn`, true);
+       history.push(`/profile/${res.data._id}`);
+      
+    }).catch(err => console.log(err));
+>>>>>>> a1d4d1bf697261f726817efc1f50a696c3769b1b
   };
 
   handleChange = (e) => {
