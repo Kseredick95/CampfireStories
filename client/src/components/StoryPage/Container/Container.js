@@ -8,7 +8,7 @@ import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book"
 
 class StoryPage extends Component {
-
+   
     state = {
         book: [],
         page: { },
@@ -27,7 +27,9 @@ class StoryPage extends Component {
 
 
    componentDidMount() {
-        API.findByTitle()
+        const {match: {params}} = this.props
+
+        API.findByTitle(`${params.bookTitle}`)
         .then(res => {this.setState({ book: res.data.bookPages, page: res.data.bookPages[0] })})
         .catch(err => console.log(err))
     }

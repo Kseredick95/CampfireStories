@@ -6,7 +6,7 @@ export default {
         return axios.get("/api/book");
     },
 
-    findByTitle: function() {
-        return axios.get("/api/book/:bookTitle")
+    findByTitle: function(bookTitle) {
+        return axios.get("/api/book/" + bookTitle)
     }
 }

@@ -49,16 +49,15 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                            <button
-                                className={ "logoutt"
-                                    // window.location.pathname === "/signout"
-                                    //     ? "nav-link active"
-                                    //     : "nav-link"
+                        <Link to="/Login"
+                                className={
+                                    window.location.pathname === "Login"
+                                        ? "nav-link active"
+                                        : "nav-link"
                                 }
-                                //onClick = {handleLogout(history)}
-                            >
-                                <i className="fas fa-sign-out-alt"></i> Signout
-                        </button>
+                        >
+                        <i className="fas fa-sign-out-alt"></i>Signout 
+                        </Link>
                         </li>
                     </ul>
                 </div>
