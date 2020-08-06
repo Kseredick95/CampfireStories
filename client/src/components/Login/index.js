@@ -17,21 +17,20 @@ class Login extends Component {
       password: null,
       formErrors: {
         email: "",
-        password: ""
+        password: "",
       },
-      isLoggedIn: false
-    }
+      isLoggedIn: false,
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { history } = this.props
-    
+    const { history } = this.props;
+
     API.loginUser({
       email: this.state.email,
       password: this.state.password
@@ -49,12 +48,11 @@ class Login extends Component {
           profileImage: res.data.profileImage,
           loggedIn : true
         })
-        
-        history.push(`/profile/${res.data._id}`)
-      }
-    })
-  }
 
+        history.push(`/profile/${res.data._id}`);
+      }
+    });
+  };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -78,7 +76,6 @@ class Login extends Component {
 
     this.setState({ formErrors, [name]: value });
   };
-
 
   render() {
     return (
@@ -110,13 +107,9 @@ class Login extends Component {
               />
             </div>
 
-            {
-              //Create Account Button
-            }
             <div className="createAccount">
-              <button type="submit"> Sign In </button>
+              <button type="submit">Sign In</button>
               <Link to="/register">Create an account</Link>
-              <Link to="/storypage">Story Page</Link>
             </div>
           </form>
         </div>

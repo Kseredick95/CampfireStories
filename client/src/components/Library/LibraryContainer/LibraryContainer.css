@@ -1,16 +1,16 @@
-.card {
+.LibCard {
     /* height: 50%; */
     width: 33%;
     padding: 50px;
-    background-color: gainsboro;
+    background: #95B46A;
 }
 
-h3 {
+.libh3 {
     text-align: center;
     padding-top: 20px;
     cursor: pointer
 }
 
-img {
+.libImg {
     cursor: pointer
 }

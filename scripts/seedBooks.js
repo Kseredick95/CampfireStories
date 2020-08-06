@@ -122,12 +122,12 @@ const bookSeed = [{
             },
             {
                 "id": "choice aa",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You run over to the vial, attempting to grab it. Unfortunately, you trip over one of the many discarded bones. You turn over just in time to see the hideous green face of a goblin. You feel the sting of his spear pierce your chest and the warmth of blood spread across your body. You should have never come to this camp... You chould have never come on this adventure..."
             },
             {
                 "id": "choice ab",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You continue your search, hoping for fortune... However, your curiousity has gotten the better of you. The owners of the camp WERE coming back and they are not happy to find you and your brother. A vicious blow strikes you on the back of the head... As you fall from conciousness, the last thing you see is your brother fall as well..."
             },
             {
@@ -163,7 +163,7 @@ const bookSeed = [{
             },
             {
                 "id": "choice ba",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You run over to the vial, attempting to grab it. Unfortunately, you trip over one of the many discarded bones. You turn over just in time to see the hideous green face of a goblin. You feel the sting of his spear pierce your chest and the warmth of blood spread across your body. You should have never come to this camp... You chould have never come on this adventure..."
             },
             {
@@ -244,7 +244,7 @@ const bookSeed = [{
             },
             {
                 "id": "choice cd",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "Like the coward you are, you and your brother return home. Treasure-less and not fulfilling your family's legacy, you feel the weight of your shame your whole life until you die of old age..."
             },
             {
@@ -267,12 +267,12 @@ const bookSeed = [{
             },
             {
                 "id": "choice dc",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You and the men have a stare off for a while. Finally, one of the men invites you over. These men seem suspicious but when one of them offers you a slice of meat, your suspicions fade. You are so hungry from travelling, it is a welcoming invitation when the men invite you to join them for a meal... Unfortunately, your suspicions were correct. Being distracted by your hunger, you dont notice the men sneak behind you. they cut your throat and steal your belongings. Your last sight as you gasp for air is on of the men throwing your family's map into the fire. It goes up in smoke, much like your chances of survival..."
             },
             {
                 "id": "choice dd",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You run towards the men with your brother, swords raised! The pair of you make quite a terifying duo! The men begin to rout but the largest of the bunch steels his nerves. He cajoles the men to stand their ground. He lunges at you, but a lucky strike from your sword sends the man to his knees. With your sword held ready to send the final blow, a gust of wind hits the side of your face... Suddenly, you cannot breathe and feel blood trickling from your neck. You look towards the direction it came, just in time to see another arrow flying at your head before the fatal blow lands true..."
             },
             {
@@ -323,7 +323,7 @@ const bookSeed = [{
 
             {
                 "id": "inspect troll",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You decide that inspecting the sleeping troll is the best course of action. You slowly approach, making sure not to make the drooling troll. You think you see a bit of silver under it's huge hand. You make your way hoping to get a better look. Quickly, the troll reaches out and grabs you in it's sleep. He snuggles up to you like you are a stuffed animal. Unfortunately, the weight of the troll is crushing. You feel the air escape your lungs as you suffocate... You are a deady bear..."
             },
             {
@@ -360,17 +360,17 @@ const bookSeed = [{
             },
             {
                 "id": "choice cac",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You and Marcus look at each other and realize there is no other way out of this than to fight. You rush the troll.... and are quickly dispatched by the huge beast. At least your death was quick..."
             },
             {
                 "id": "choice cad",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You muster an ingenious plan on the fly! You begin to sing the song your mother would sing when you as a child. The troll stops its onslaughtjust feet from you with an inquisitive look. Seeing that your plan might be working, Marcus joins you in song... Your ballad is cut short as the troll suddenly switches back to its vengeful demeanor and smashes you into jelly... It's a bard knock life for an adventurer..."
             },
             {
                 "id": "choice cba",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You decide to try and use the ancient catapult to reach the towers window... You and Marcus load yourselves into the barrel of the catapult. You count down from three and cut the rope that works the mechanism... The catapult does, in fact, work but your aim is off. You and marcus miss the window by several feet and fall to your deaths..."
             },
             {
@@ -397,7 +397,7 @@ const bookSeed = [{
             },
             {
                 "id": "choice bbaaa",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "As the troll rushes forward, you remember the potion from camp that hangs at your side! You are sure it is an explosive element! You throw the vial as hard as you can at the troll and cover your ears to deafened the impending explosion... Instead of exploding upon impact, the troll unexpectingly vanishes. The strangest part of the ordeal is the fact that the troll's thunderous footsteps still echoed throught the hall. Before you even have a sigh of relief, you are struck with a thunderous force. You crash into the wall head first, realizing the potion was actually an invisibility potion... Didn't see that coming..."
             },
             {
@@ -416,7 +416,7 @@ const bookSeed = [{
             },
             {
                 "id": "choice bbaac",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "The potion!! You quickly down the bottle, hoping for a strength buffering effect or a protective barrier; anything that can help in this situation!! You feel a tingle deep in your belly. Slowly your insides warm.... and do not stop warming! You are left helpless as the troll pummels you into the ground..."
             },
             {
@@ -443,7 +443,7 @@ const bookSeed = [{
             },
             {
                 "id": "tower a",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You call out to the woman as to not startle her with your approach. The woman abruptly stops her spinning. Slowly... she stands and turns... Your hair stands on end as you see the womans face. The eyes have an evil glow to them. Her mouth is a collection of mangled fangs. suddenly the room turns to blood. It was not linen she was weaving, but a patchwork of human skin, probably from those foolish enough to have trespassed on her domain before. You try to run but your legs do not move. The strings of fate have spoken... Your fate has come to an end..."
             },
             {
@@ -565,12 +565,12 @@ const bookSeed = [{
             },
             {
                 "id": "cellar skelton c",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You decide enough is enough! No more scary crypt for you! You sprint back up the stairs, terified at what you just witnessed. Unfortunately, your first passage was enough to weaken the stairs and walls beyond what it's years could bear. As you climb, the ceiling gives way and you are crushed under a millinia of rocks... The end of the tomb raider..."
             },
             {
                 "id": "cellar skelton d",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "Terrified and torn by your brother's death right in front of your eyes, you venture further into the crypt. Not long into your venturing, does the crypt break in to a large room. You are standing on the cliff of a large hole so deep you cannot see the bottom. As you turn to go back the way you came, the walls begin to move. Slowly you recognize that skeletons are pouring out of the walls. Hundreds of them group up at the passage from where you just came from... the only exit out... You fight valiantly but their numbers are too great... You are boned...."
             },
             {
@@ -584,12 +584,12 @@ const bookSeed = [{
             },
             {
                 "id": "cellar marcus c",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You have had enough surprises for today and believe the sarcophogi to be more trouble than they are worth. You venture further into the crypt. Not long into your venturing, does the crypt break in to a large room. You are standing on the cliff of a large hole so deep you cannot see the bottom. As you turn to go back the way you came, the walls begin to move. Slowly you recognize that skeletons are pouring out of the walls. Hundreds of them group up at the passage from where you just came from... the only exit out... You fight valiantly but their numbers are too great... You are boned...."
             },
             {
                 "id": "cellar marcus d",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You decide enough is enough! No more scary crypt for you! You venture back up the stairs with your brother. Unfortunately, your first passage was enough to weaken the stairs and walls beyond what it's years could bear. As you climb, the ceiling gives way and you are crushed under a millinia of rocks... The end of the tomb raider..."
             },
             {
@@ -627,7 +627,7 @@ const bookSeed = [{
             },
             {
                 "id": "cellar alone b",
-                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You open the sarcaphogus to find an elegantly bound skeleton. It is obviously a woman bones judging by the size and height. You scan the box with your eyes, when you suddenly believe you see the skeleton's hand move. You believe it to be but your imagination caused by the stress you have endured today. You find nothing in the sarcophogus and begin to walk to the other one. An icey cold hand grabs you by the back of your neck as you walk away. In an instant, you are pulled into the sarcophogus and the lid closes. You can scream all you want, but the only one around is your new tomb mate..."
             },
             {
