@@ -16,7 +16,6 @@ function Profile () {
 
     let user = store.get(`user`)
 
-    console.log(user)
     
     return (
         <div>
@@ -25,8 +24,8 @@ function Profile () {
             <Container>
                 <div className="row justify-content-center">
                     <div className="col-md" id="left">
-                        <UserCard />
-                        <ConnectCard />
+                        <UserCard value = { user }/>
+                        <ConnectCard value = { user }/>
                     </div>
                     <Col size="md">
                         <RowMt size="4">
@@ -39,7 +38,7 @@ function Profile () {
                         <CTA />
                         <Row>
                             <Column>
-                                <HistoryCard />
+                                <HistoryCard value = { user }/>
                             </Column>
                         </Row>
                     </Col>
