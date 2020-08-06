@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavbarTwo from "../NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
@@ -115,6 +116,7 @@ class Register extends Component {
     const { formErrors } = this.state;
     return (
       <div className="wrapper">
+        <NavbarTwo />
         <div className="form-wrapper">
           <h1>Create Account</h1>
           <form onSubmit={this.handleSubmit} noValidate>
