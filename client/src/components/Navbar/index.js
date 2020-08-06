@@ -4,12 +4,13 @@ import "./style.css";
 import store from "store"
 
 function handleLogout() {
-    store.remove(`loggedIn`)
+    store.remove(`user`)
     window.location.replace("/login")
 }
 
 const Navbar = () => {
     
+    let user = store.get(`user`)
 
     return (
         <div id="nav-body">
@@ -26,9 +27,8 @@ const Navbar = () => {
                     <ul className="navbar-nav ml-auto" id="nav-menu">
                         <li className="hoverable" id="nav-item1">
                             <Link
-                                to="/profile"
-                                className={
-                                    window.location.pathname === "/" || window.location.pathname === "/profile"
+                                to= {"/profile/" + user.id}
+                                className={ "profile"
                                         ? "nav-link active"
                                         : "nav-link"
                                 }
@@ -49,16 +49,16 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                            <button
+                            <Link to = "#"
                                 className={ "logout"
-                                    // window.location.pathname === "/signout"
-                                    //     ? "nav-link active"
-                                    //     : "nav-link"
+                                    
+                                        ? "nav-link active"
+                                        : "nav-link"
                                 }
                                 onClick = {handleLogout}
                             >
                                 <i className="fas fa-sign-out-alt"></i> Signout
-                        </button>
+                        </Link>
                         </li>
                     </ul>
                 </div>
