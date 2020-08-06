@@ -1,18 +1,18 @@
 import React from "react";
 import "../StoryChoices/StoryChoices.css"
 
-function RestartBtn(props){
+function RestartBtn(props) {
 
     return (
-        <div> 
-            <button onClick={() => props.prevPage()}>
-            Previous Page
+        <div id="restartBtn">
+            <button className="btn btn-primary" onClick={() => props.prevPage()}>
+                Previous Page
             </button>
-            <button onClick={() => props.restartBook()}>
-            Restart Book
+            <button className="btn btn-secondary" onClick={() => props.restartBook()}>
+                Restart Book
             </button>
         </div>
-    )
-}
+    );
+};
 
-export default RestartBtn
+export default RestartBtn;

@@ -9,4 +9,4 @@ function StoryText(props){
     )
 }
 
-export default StoryText
+export default StoryText;
