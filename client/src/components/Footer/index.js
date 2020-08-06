@@ -9,7 +9,7 @@ function Footer() {
             <Container fluid>
                 <Row>
                     <Col size="12">
-                        <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by <a href= "/">Campfire Stories</a>. </p>
+                        <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by <a href= "#>Campfire Stories</a>. </p>
                     </Col>
                 </Row>
             </Container>
