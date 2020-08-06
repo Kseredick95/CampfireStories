@@ -49,9 +49,8 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                            <Link to = "#"
-                                className={ "logout"
-                                    
+                            <Link to = "/"
+                                className={ window.location.pathname === "/logout"
                                         ? "nav-link active"
                                         : "nav-link"
                                 }
