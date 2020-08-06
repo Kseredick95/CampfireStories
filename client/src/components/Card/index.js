@@ -3,35 +3,44 @@ import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
 
 // export card whose id is user
-export function UserCard() {
+export function UserCard(props) {
+
+    function handleAchievements(achievements) {
+        achievements.forEach(medal => {
+            return (<i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
+        title="Thanks for signing up" id="badge-0"> {medal} "HELLO" </i>)
+        });
+    }
+    console.log(props)
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: 1010012<a className="action" href="/#">Edit Profile</a>
+                Profile ID: {props.value.id}<a className="action" href="/#">Edit Profile</a>
             </div>
             <img id="userImage" alt="" />
             <div className="card-block">
-                <h4 className="card-title">Welcome, User</h4>
+                <h4 className="card-title">Welcome, {props.value.firstname} </h4>
                 <RowMt size="2">
                     <Col size="1">
                         <i className="fas fa-medal"></i>
                     </Col>
                     <Column><strong>Achievments:</strong><br />
-                        <div id="medal-list">
-                            <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
+                        <ul id="medal-list">
+                            {handleAchievements(props.value.achievements)}
+                            {/* <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
                                 title="Thanks for signing up" id="badge-0"></i>
                             <i className="fas fa-puzzle-piece" data-toggle="tooltip" data-placement="top"
                                 title="Completed 1st Story" id="badge-1"></i>
                             <i className="fas fa-bell" data-toggle="tooltip" data-placement="top"
                                 title="Completed 2 Stories" id="badge-2"></i>
                             <i className="fas fa-user-graduate" data-toggle="tooltip" data-placement="top"
-                                title="Completed All Stories" id="badge-3"></i>
-                        </div>
+                                title="Completed All Stories" id="badge-3"></i> */}
+                        </ul>
                     </Column>
                 </RowMt>
                 <RowMt size="2">
                     <Col size="1"><i className="fas fa-envelope"></i></Col>
-                    <Column>mail@email.com</Column>
+    <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
                     <Column>Joined: 05/10/2010</Column>

@@ -68,11 +68,24 @@ class Register extends Component {
         name : "newUserAchievement",
         date : Date.now()
       }],
-      profileImage: null
+      profileImage: null,
+      lastBook: [],
+      completedBooks : []
+
     }).then( res => {
        const { history } = this.props;
 
-       store.set(`loggedIn`, true);
+       store.set(`user`, {
+        id : res.data._id,
+        firstname: res.data.firstname,
+        lastname: res.data.lastname,
+        email: res.data.email,
+        username: res.data.username,
+        achievements: res.data.achievements,
+        deathCount: res.data.deathCount,
+        profileImage: res.data.profileImage,
+        loggedIn : true
+       });
        history.push(`/profile/${res.data._id}`);
       
     }).catch(err => console.log(err));
