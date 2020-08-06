@@ -1,17 +1,9 @@
-import React from "react";
+import React, { setState } from "react";
 import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
 
 // export card whose id is user
 export function UserCard(props) {
-
-    function handleAchievements(achievements) {
-        achievements.forEach(medal => {
-            return (<i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-        title="Thanks for signing up" id="badge-0"> {medal} "HELLO" </i>)
-        });
-    }
-    console.log(props)
     return (
         <div className="card" id="user">
             <div className="card-header">
@@ -25,17 +17,16 @@ export function UserCard(props) {
                         <i className="fas fa-medal"></i>
                     </Col>
                     <Column><strong>Achievments:</strong><br />
-                        <ul id="medal-list">
-                            {handleAchievements(props.value.achievements)}
-                            {/* <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-                                title="Thanks for signing up" id="badge-0"></i>
-                            <i className="fas fa-puzzle-piece" data-toggle="tooltip" data-placement="top"
-                                title="Completed 1st Story" id="badge-1"></i>
-                            <i className="fas fa-bell" data-toggle="tooltip" data-placement="top"
-                                title="Completed 2 Stories" id="badge-2"></i>
-                            <i className="fas fa-user-graduate" data-toggle="tooltip" data-placement="top"
-                                title="Completed All Stories" id="badge-3"></i> */}
-                        </ul>
+                        <div id="medal-list">
+                            {props.value.achievements.map(medal => (
+                                <Achievement
+                                    key = {medal._id}
+                                    id = {medal._id}
+                                    name = {medal.name}
+                                    date = {medal.date}
+                                />
+                            ))}
+                        </div>
                     </Column>
                 </RowMt>
                 <RowMt size="2">
@@ -135,4 +126,13 @@ export function HistoryCard() {
             </ul>
         </div>
     );
+}
+
+export function Achievement(props) {
+    console.log(props)
+    return (
+        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
+        title={props.name}
+        id={props.id}></i>
+    )
 }
