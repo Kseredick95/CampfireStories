@@ -47,6 +47,8 @@ class Login extends Component {
           achievements: res.data.achievements,
           deathCount: res.data.deathCount,
           profileImage: res.data.profileImage,
+          lastBook: res.data.lastBook,
+          completedBooks : res.data.completedBooks,
           loggedIn : true
         })
 
