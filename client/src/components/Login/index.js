@@ -33,23 +33,22 @@ class Login extends Component {
 
     API.loginUser({
       email: this.state.email,
-      password: this.state.password,
-    }).then((res) => {
-      console.log(res.data._id);
+      password: this.state.password
+    }).then(res => {
+      if(res.data) {
 
-      if (res.data) {
-        this.setState({
-          email: res.data.email,
+        store.set(`user`, {
+          id : res.data._id,
           firstname: res.data.firstname,
           lastname: res.data.lastname,
+          email: res.data.email,
           username: res.data.username,
+          achievements: res.data.achievements,
           deathCount: res.data.deathCount,
           profileImage: res.data.profileImage,
-          achievements: res.data.achievements,
-          isLoggedIn: true,
-        });
+          loggedIn : true
+        })
 
-        store.set(`loggedIn`, true);
         history.push(`/profile/${res.data._id}`);
       }
     });

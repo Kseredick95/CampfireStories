@@ -3,13 +3,14 @@ import { Link } from "react-router-dom";
 import "./style.css";
 import store from "store"
 
-// const handleLogout = history => () => {
-//     store.remove(`loggedIn`)
-//     history.push(`/login`)
-// }
+function handleLogout() {
+    store.remove(`user`)
+    window.location.replace("/login")
+}
 
 const Navbar = () => {
     
+    let user = store.get(`user`)
 
     return (
         <div id="nav-body">
@@ -26,9 +27,8 @@ const Navbar = () => {
                     <ul className="navbar-nav ml-auto" id="nav-menu">
                         <li className="hoverable" id="nav-item1">
                             <Link
-                                to="/profile"
-                                className={
-                                    window.location.pathname === "/" || window.location.pathname === "/profile"
+                                to= {"/profile/" + user.id}
+                                className={ "profile"
                                         ? "nav-link active"
                                         : "nav-link"
                                 }
@@ -49,14 +49,15 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                        <Link to="/Login"
-                                className={
-                                    window.location.pathname === "Login"
+                            <Link to = "#"
+                                className={ "logout"
+                                    
                                         ? "nav-link active"
                                         : "nav-link"
                                 }
-                        >
-                        <i className="fas fa-sign-out-alt"></i>Signout 
+                                onClick = {handleLogout}
+                            >
+                                <i className="fas fa-sign-out-alt"></i> Signout
                         </Link>
                         </li>
                     </ul>
