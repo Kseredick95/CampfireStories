@@ -8,6 +8,7 @@ import Profile from "./pages/Profile";
 import Footer from "./components/Footer"
 
 function App() {
+
   return (
     <Router>
       <div>

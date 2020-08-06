@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
+import store from "store";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -16,27 +17,42 @@ class Login extends Component {
       password: null,
       formErrors: {
         email: "",
-        password: ""
-      }
-    }
-  }
+        password: "",
+      },
+      isLoggedIn: false,
+    };
 
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    
+
+    const { history } = this.props;
+
     API.loginUser({
       email: this.state.email,
       password: this.state.password
     }).then(res => {
-      console.log(res.data._id)
-
       if(res.data) {
-        window.location.replace("/profile/" + res.data._id)
-      }
-    })
-  }
 
+        store.set(`user`, {
+          id : res.data._id,
+          firstname: res.data.firstname,
+          lastname: res.data.lastname,
+          email: res.data.email,
+          username: res.data.username,
+          achievements: res.data.achievements,
+          deathCount: res.data.deathCount,
+          profileImage: res.data.profileImage,
+          loggedIn : true
+        })
+
+        history.push(`/profile/${res.data._id}`);
+      }
+    });
+  };
 
   handleChange = (e) => {
     e.preventDefault();
@@ -60,7 +76,6 @@ class Login extends Component {
 
     this.setState({ formErrors, [name]: value });
   };
-
 
   render() {
     return (
@@ -92,13 +107,9 @@ class Login extends Component {
               />
             </div>
 
-            {
-              //Create Account Button
-            }
             <div className="createAccount">
-              <button type="submit"> Sign In </button>
+              <button type="submit">Sign In</button>
               <Link to="/register">Create an account</Link>
-              <Link to="/storypage">Story Page</Link>
             </div>
           </form>
         </div>

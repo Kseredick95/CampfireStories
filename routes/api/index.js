@@ -3,6 +3,7 @@ const userRoutes = require("./user");
 const bookRoutes = require("./book");
 const achievementRoutes = require("./achievement");
 const db = require("../../models/");
+
 //User routes
 
 router.use("/user", userRoutes);
@@ -20,7 +21,6 @@ router.route("/login").post(async (req, res) => {
         user.comparePassword(req.body.password, (err, match) => {
             if (err) throw err;
             else if (!match) {
-                console.log("Password is not correct")
                 return res.status(400).send({ message: "Password is incorrect" })
             } else {
                 console.log("Password is correct")

@@ -12,14 +12,10 @@ state={
 }
 
 componentDidMount() {
-    API.getLibrary()
+   API.getLibrary()
     .then(res => {this.setState({ library: res.data})})
     .catch(err => console.log(err))
 }
-
-
-// const title=this.state.
-
     render(){
        return( 
     <Container>
