@@ -4,10 +4,10 @@ import BookPic from "../BookPic/BookPic"
 
 function BookCard(props){
     return (           
-        <div className="card">
+        <div className="card LibCard">
             <Link to={`/storypage/${props.bookTitle}`}>
                 <BookPic alt={props.bookTitle}></BookPic>
-                <h3>{props.bookTitle}</h3>
+                <h3 className="libh3">{props.bookTitle}</h3>
             </Link>
         </div>
     )

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import NavbarTwo from "../NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
@@ -56,7 +57,7 @@ class Register extends Component {
     } else {
       console.error("FORM INVALID - SEE ERROR MESSAGES");
       return;
-    }    
+    }
 
     API.saveUser({
       firstname: this.state.firstName,
@@ -125,6 +126,7 @@ class Register extends Component {
     const { formErrors } = this.state;
     return (
       <div className="wrapper">
+        <NavbarTwo />
         <div className="form-wrapper">
           <h1>Create Account</h1>
           <form onSubmit={this.handleSubmit} noValidate>
@@ -132,7 +134,7 @@ class Register extends Component {
               //Input for First Name
             }
             <div className="firstName">
-              <label htmlFor="firstName"> First Name</label>
+              <label htmlFor="firstName"></label>
               <input
                 className={formErrors.firstName.length > 0 ? "error" : null}
                 placeholder="First Name"
@@ -149,7 +151,7 @@ class Register extends Component {
               //Form input for Last Name
             }
             <div className="lastName">
-              <label htmlFor="lastName"> Last Name</label>
+              <label htmlFor="lastName"></label>
               <input
                 className={formErrors.lastName.length > 0 ? "error" : null}
                 placeholder="Last Name"
@@ -166,7 +168,7 @@ class Register extends Component {
               //Form input for Email
             }
             <div className="email">
-              <label htmlFor="email"> Email</label>
+              <label htmlFor="email"></label>
               <input
                 className={formErrors.email.length > 0 ? "error" : null}
                 placeholder="Email"
@@ -183,7 +185,7 @@ class Register extends Component {
               //Form input for Password
             }
             <div className="password">
-              <label htmlFor="password"> Password</label>
+              <label htmlFor="password"></label>
               <input
                 className={formErrors.password.length > 0 ? "error" : null}
                 placeholder="Password"
