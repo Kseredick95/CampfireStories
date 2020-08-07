@@ -5,14 +5,16 @@ import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
 import RestartBtn from "../RestartBtn/RestartBtn";
-import API from "../../../utils/API_book"
+import API from "../../../utils/API_book";
+import store from "store";
 
 class StoryPage extends Component {
    
     state = {
         book: [],
         page: { },
-        prevPage: {}
+        prevPage: {},
+        user: {}
     }
 
 //     achievements: [
@@ -28,9 +30,10 @@ class StoryPage extends Component {
 
    componentDidMount() {
         const {match: {params}} = this.props
+        var user = store.get("user")
 
         API.findByTitle(`${params.bookTitle}`)
-        .then(res => {this.setState({ book: res.data.bookPages, page: res.data.bookPages[0] })})
+        .then(res => {this.setState({user:user, book: res.data.bookPages, page: res.data.bookPages[0] })})
         .catch(err => console.log(err))
     }
 
@@ -49,6 +52,15 @@ class StoryPage extends Component {
     prevPage = e =>{
         this.setState({page: this.state.prevPage})
     }
+
+    // bookComplete = e =>{
+    //     let user = this.state.user
+    //     var completed = user.completedBooks += this.state.page.victory
+    //     console.log(user)
+    //     if(this.state.page.victory){user.setState({...user, completedBooks: completed})}
+    //     else{ return}
+    //     console.log(user)
+    // }
 
     render() {
         return ( <div className = "container" >
@@ -71,7 +83,8 @@ class StoryPage extends Component {
             key = { choice.id }
             id = { choice.id }
             text = { choice.text }
-            choiceSubmit = { this.choiceSubmit }/>
+            choiceSubmit = { this.choiceSubmit }
+            />
             ) : <RestartBtn restartBook={this.restartBook} prevPage={this.prevPage}/>
         }
         </Row>

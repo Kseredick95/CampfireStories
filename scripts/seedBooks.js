@@ -336,7 +336,29 @@ const bookSeed = [{
                     },
                     {
                         "text": "Perhaps a way into the tower?",
-                        "id": "choice cc"
+                        "id": "choice cca"
+                    }
+                ]
+            },
+            {
+                "id": "choice cca",
+                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "text": "You walk to the tower, searching for a way up. It seems there may be foot holes in the crumbling tower walls. You also notice a catapult not too far away. The trajectory would be hard, but it would be a much faster way up...",
+                "choices": [{
+                        "text": "Try the catapult...",
+                        "id": "choice cba"
+                    },
+                    {
+                        "text": "Climb the tower...",
+                        "id": "choice ccb"
+                    },
+                    {
+                        "text": "Back to the front door...",
+                        "id": "choice bbaa"
+                    },
+                    {
+                        "text": "I'm scared!! I wanna go home!!",
+                        "id": "choice cd"
                     }
                 ]
             },
@@ -595,12 +617,14 @@ const bookSeed = [{
             {
                 "id": "victory marcus",
                 "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
-                "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You and Marcus pile as much as you can into your bags and pockets. Your forefathers would be proud!!!"
+                "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You and Marcus pile as much as you can into your bags and pockets. Your forefathers would be proud!!!",
+                "victory": "Fantasy"
             },
             {
                 "id": "victory",
                 "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
-                "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You think of Marcus and wonder what this victory has cost you... With full pockets, you take your riches back home. Your forefathers would be proud!!!"
+                "text": "You've done it!!!! You found your family's treasure room!!! The room glimmers with a golden glow from the piles of wealth. Bookshelfs on bookshelfs explain the advanced technologies your family unravelled eons ago that keep the room well lit. There is even mention of something called the 'internet' and 'email'... You think of Marcus and wonder what this victory has cost you... With full pockets, you take your riches back home. Your forefathers would be proud!!!",
+                "victory": "Fantasy"
             },
 
             {
