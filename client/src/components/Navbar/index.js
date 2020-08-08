@@ -1,13 +1,3 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./style.css";
-import store from "store"
-
-function handleLogout() {
-    store.remove(`user`)
-    window.location.replace("/login")
-}
-
 const Navbar = () => {
     let user = store.get(`user`)
     let profileLink = "/profile/" + user.id;
