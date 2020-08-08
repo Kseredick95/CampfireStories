@@ -9,8 +9,8 @@ function handleLogout() {
 }
 
 const Navbar = () => {
-    
     let user = store.get(`user`)
+    let profileLink = "/profile/" + user.id;
 
     return (
         <div id="nav-body">
@@ -27,10 +27,10 @@ const Navbar = () => {
                     <ul className="navbar-nav ml-auto" id="nav-menu">
                         <li className="hoverable" id="nav-item1">
                             <Link
-                                to= {"/profile/" + user.id}
-                                className={ "profile"
-                                        ? "nav-link active"
-                                        : "nav-link"
+                                to={"/profile/" + user.id}
+                                className={window.location.pathname === profileLink
+                                    ? "nav-link active"
+                                    : "nav-link"
                                 }
                             >
                                 <i className="fas fa-user"></i> My Profile
@@ -49,12 +49,12 @@ const Navbar = () => {
                         </Link>
                         </li>
                         <li className="hoverable" id="nav-item2">
-                            <Link to = "/"
-                                className={ window.location.pathname === "/logout"
-                                        ? "nav-link active"
-                                        : "nav-link"
+                            <Link to="/"
+                                className={ "/logout"
+                                    ? "nav-link"
+                                    : "nav-link"
                                 }
-                                onClick = {handleLogout}
+                                onClick={handleLogout}
                             >
                                 <i className="fas fa-sign-out-alt"></i> Signout
                         </Link>
