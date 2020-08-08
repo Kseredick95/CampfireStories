@@ -176,23 +176,3 @@ a.action:hover {
     align-self: center;
     font-size: 16px;
 }
-
-/* Modal CSS */
-/* .fade-flip {
-    transform: rotateX(-90deg);
-    opacity: 0;
-    -webkit-transition: all .25s linear;
-    -o-transition: all .25s linear;
-    transition: all .25s linear;
-  }
-  .fade-flip.in {
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
-  .fade-flip .modal-dialog {
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 50%;
-      transform: translateY(-50%) !important;
-  } */
