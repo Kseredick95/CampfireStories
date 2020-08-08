@@ -505,7 +505,8 @@ const bookSeed = [{
                     },
                     {
                         "text": "Go to the new door...",
-                        "id": "victory door"
+                        "id": "victory door",
+                        "victory": "Fantasy"
                     }
                 ]
             },
@@ -515,7 +516,8 @@ const bookSeed = [{
                 "text": "You approach the previously undiscovered door, hoping the troll does not come back to its den. Made of steel, this door was obviosuly meant to keep someone out... or someone else in... There is but a keyhole and a handle on the front of the door...",
                 "choices": [{
                         "text": "Use the key...",
-                        "id": "victory marcus"
+                        "id": "victory marcus",
+                        "victory": "Fantasy"
                     },
                     {
                         "text": "I'll take my chances with the other door!!",
@@ -573,7 +575,8 @@ const bookSeed = [{
                 "text": "With rage in your heart, you strike out at the skeleton. Over and over, you swing wildly with tears in your eyes until no more of the skeleton is left. Only a pile of bonedust remains. You kneel by your brother... He is dead... His sacrafice was not in vain however. You follow the secret passage marked on the map. You vow to finish the mission that the two of you set out for and bring the treasure home...",
                 "choices": [{
                     "text": "This is for you Marcus...",
-                    "id": "victory"
+                    "id": "victory",
+                    "victory": "Fantasy"
                 }]
             },
             {
@@ -582,7 +585,8 @@ const bookSeed = [{
                 "text": "You run with faster than you ever had, fueled by fear and hatred. You just hope that the map doesn't lie to you. As you make your way through the passage, you realize the skeleton has dropped it's pursuit. You finally have time to dwell on your brother's death... Your heart pains as you reach the end of the passage...",
                 "choices": [{
                     "text": "This is for you Marcus...",
-                    "id": "victory"
+                    "id": "victory",
+                    "victory": "Fantasy"
                 }]
             },
             {
@@ -601,7 +605,8 @@ const bookSeed = [{
                 "text": "You approach the sarcophagus on the left as Marcus takes the right. You both look at each other then simultaneously push the lids aside. You peek inside to find a man's skeleton, adorned with bright gems and a necklace with the family seal. You rummage through the man's tomb, hoping to find more. but, alas... it seems the tomb is worthless. You turn to Marcus to stell him you found nothing. Suddenly, the skeleton springs to life! In it's hand, an ornate dagger is making it's way towards your throat! You reach out to slow the attack but the skeleton is surprisingly strong for an entity without muscles. Slowly, the dagger inches it's way towards your flesh when your brother steps in to help! He slashes at the skeleton over and over again. Once free, you join in the melee until the skeleton is nothing but scattered bone dust. Gasping for air, you thank Marcus for coming to your aid. He has a peculiar smile on his face and is holding a scrap of paper in his shield hand. The last piece of the map! Upon further inspection, you see that there is a secret passage out of the crypt which leads to the treasure room!",
                 "choices": [{
                     "text": "Hurry to the secret passage!!",
-                    "id": "victory marcus"
+                    "id": "victory marcus",
+                    "victory": "Fantasy"
                 }]
             },
             {
@@ -660,7 +665,8 @@ const bookSeed = [{
                 "text": "You rummage through the sarcophogus after a difficult struggle with the lid. Inside their is a finely adorned skeleton. The man inside is obviously one of your family, the golden crest of your family carved into the bones of his forehead. whether or not that happened before or after death, you do not know. You notice, clutched in his left hand, a small piece of paper. It alost looks like a corner to a map... Your family's map!!! It shows a secret passage way leading out of the tomb to the burial place of your family's treasure!!",
                 "choices": [{
                     "text": "Hurry!! To the treasure!!",
-                    "id": "victory"
+                    "id": "victory",
+                    "victory": "Fantasy"
                 }]
             }
         ]
