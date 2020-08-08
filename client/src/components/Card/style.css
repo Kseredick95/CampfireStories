@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
 
-.card {
+#user,
+#connections,
+#recentActivity {
     font-size: 14px;
 }
 
@@ -16,7 +18,7 @@ h4 {
 .col>strong,
 #medal-list>.fas,
 .row.mt-2>.col {
-    vertical-align: -webkit-baseline-middle;
+    vertical-align: middle;
 }
 
 .label {
@@ -61,14 +63,18 @@ h4 {
     box-shadow: 0 0 0 2px rgba(61, 139, 64, 0.5);
 }
 
-.card {
+#user,
+#connections,
+#recentActivity {
     border: none;
     border-top: 5px solid lightgray;
     border-radius: 0;
     margin-bottom: 30px;
 }
 
-.card .card-header {
+#user .card-header,
+#connections .card-header,
+#recentActivity .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -81,19 +87,21 @@ h4 {
     font-size: 14px;
 }
 
-.card .row {
+#user .row,
+#connections .row,
+#recentActivity .row {
     width: 100%;
 }
 
 a.action {
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 500;
-    color: #03a9f4;
+    color: #95B46A;
 }
 
 a.action:hover {
-    color: #0288d1;
+    color: #709255;
 }
 
 #left {

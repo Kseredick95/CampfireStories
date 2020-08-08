@@ -1,26 +1,59 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Login from "../Login";
-import Register from "../Register";
-import LibraryContainer from "..//Library/LibraryContainer/LibraryContainer";
-import StoryPage from "../StoryPage/Container/Container";
-import Profile from "../../pages/Profile";
-import Footer from "../Footer/";
-function App() {
-  return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
-          <Route exact path="/library" component={LibraryContainer} />
-          <Route exact path="/storypage/:bookTitle" component={StoryPage} />
-          <Route exact path="/profile/:_id" component={Profile} />
-        </Switch>
-        <Footer />
-      </div>
-    </Router>
-  );
+const Navbar = () => {
+    let user = store.get(`user`)
+    let profileLink = "/profile/" + user.id;
+
+    return (
+        <div id="nav-body">
+            <nav className="navbar navbar-inverse navbar-expand-lg navbar-toggleable-sm">
+                <button className="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    data-target="#navCollapse"><span className="navbar-toggler-icon"></span>
+                </button>
+                <div id="logo">
+                    <Link className="navbar-brand" to="/">
+                        <img src={process.env.PUBLIC_URL + '/images/CampfireLogo.png'} alt="Campfire Stories Logo" loading="lazy" />
+                    </Link>
+                </div>
+                <div className="collapse navbar-collapse" id="navCollapse">
+                    <ul className="navbar-nav ml-auto" id="nav-menu">
+                        <li className="hoverable" id="nav-item1">
+                            <Link
+                                to={"/profile/" + user.id}
+                                className={window.location.pathname === profileLink
+                                    ? "nav-link active"
+                                    : "nav-link"
+                                }
+                            >
+                                <i className="fas fa-user"></i> My Profile
+                        </Link>
+                        </li>
+                        <li className="hoverable" id="nav-item2">
+                            <Link
+                                to="/library"
+                                className={
+                                    window.location.pathname === "/library"
+                                        ? "nav-link active"
+                                        : "nav-link"
+                                }
+                            >
+                                <i className="fas fa-book"></i> Library
+                        </Link>
+                        </li>
+                        <li className="hoverable" id="nav-item2">
+                            <Link to="/"
+                                className={ "/logout"
+                                    ? "nav-link"
+                                    : "nav-link"
+                                }
+                                onClick={handleLogout}
+                            >
+                                <i className="fas fa-sign-out-alt"></i> Signout
+                        </Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    );
 }
-export default App;
+
+export default Navbar;

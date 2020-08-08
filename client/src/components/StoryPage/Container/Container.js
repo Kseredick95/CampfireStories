@@ -54,12 +54,12 @@ class StoryPage extends Component {
         return (
             <div>
                 <Navbar />
-                <Row>
-                    {this.state.page.image ?
-                        <StoryImg image={this.state.page.image} /> :
-                        <div></div>}
-                </Row>
                 <Container>
+                    <Row>
+                        {this.state.page.image ?
+                            <StoryImg image={this.state.page.image} /> :
+                            <div></div>}
+                    </Row>
                     <Row>
                         {this.state.page.text ?
                             <StoryText text={this.state.page.text} /> :
