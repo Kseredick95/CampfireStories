@@ -4,6 +4,7 @@ import "./style.css";
 
 function Footer() {
 <<<<<<< HEAD
+<<<<<<< HEAD
   return (
     <footer className="site-footer">
       <Container fluid>
@@ -20,12 +21,14 @@ function Footer() {
   );
 =======
 
+=======
+>>>>>>> bb2cc56e5e41ee9e8eb997f4310ec8bb8508b9c5
     return (
-        <footer className="site-footer">
+        <footer className="site-footer" id="sticky-footer">
             <Container fluid>
                 <Row>
                     <Col size="12">
-                        <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by <a href= "/">Campfire Stories</a>. </p>
+                        <p className="copyright-text">Copyright &copy; 2020 All Rights Reserved by <a href="/">Campfire Stories</a>. </p>
                     </Col>
                 </Row>
             </Container>
