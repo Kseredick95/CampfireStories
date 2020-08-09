@@ -54,7 +54,7 @@ export function UserCard(props) {
                     <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
-                            <Column>Joined: {props.value.created.split("T")[0]}</Column>
+                    <Column>Joined: {props.value.created.split("T")[0]}</Column>
                 </RowMt>
             </div>
         </div>
@@ -104,30 +104,117 @@ export function UserActivity(props) {
 */
 
 // export recent activity card
-export function HistoryCard() {
+export function HistoryCard(props) {
     return (
         <div className="card" id="recentActivity">
             <div className="card-header">Recent Activity</div>
             <ul className="list-group">
-                <li className="list-group-item">
+            <li className="list-group-item">
                     <div className="row no-gutters">
-                        <Column>
-                            <div className="row no-gutters align-content-center">
-                                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
-                                <Column classType="activity-text">You have recently viewed <em>story name goes here!</em>
-                                </Column>
-                            </div>
-                        </Column>
-                        <Column classType="right">
-                            <div className="row no-gutters justify-content-center align-items-center">
-                                <div className="view"><button className="btn btn-primary">Resume</button></div>
-                                <div className="text-center">5 Days Ago</div>
-                            </div>
-                        </Column>
+                        {handleLastBook(props.value.lastBook)}
                     </div>
                 </li>
                 <li className="list-group-item">
                     <div className="row no-gutters">
+                        {handleBook(props.value.completedBook)}
+                    </div>
+                </li>
+                <li className="list-group-item">
+
+                </li>
+            </ul>
+        </div>
+    );
+}
+
+
+//FINISH LINKS!!!!!!!!!======================================
+export function handleLastBook(props){
+    console.log(props.length)
+    if (props.length === 0){
+        return;
+    } else {
+        return(<div className="row no-gutters">
+        <Column>
+            <div className="row no-gutters align-content-center">
+                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
+                <Column classType="activity-text">Continue on your adventure in <em>{props.name}</em></Column>
+            </div>
+        </Column>
+        <Column classType="right">
+            <div className="row no-gutters justify-content-center align-items-center">
+                <div className="view"><button className="btn btn-primary">Again</button></div>
+
+            </div>
+        </Column>
+    </div>)
+    }
+}
+
+export function handleBook(props) {
+    console.log(props)
+    if (props === undefined) {
+        return (
+            <Book />
+        )
+    } else {
+        {
+            props.value.completedBooks.map(book => (
+                <CompleteBook
+                    key={book.id}
+                    name={book.name}
+                    date={book.date}
+                />
+            ))
+        }
+    }
+}
+
+export function Achievement(props) {
+    return (
+        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
+            title={props.name}
+            id={props.id}></i>
+    )
+}
+
+export function Book() {
+    return (<div className="row no-gutters">
+        <Column>
+            <div className="row no-gutters align-content-center">
+                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
+                <Column classType="activity-text">Oh no! You have not started any stories yet.</Column>
+            </div>
+        </Column>
+        <Column classType="right">
+            <div className="row no-gutters justify-content-center align-items-center">
+                <div className="view"><button className="btn btn-primary">Library</button></div>
+            </div>
+        </Column>
+    </div>)
+}
+
+export function CompleteBook(props) {
+    return (<div className="row no-gutters">
+        <Column>
+            <div className="row no-gutters align-content-center">
+                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
+                <Column classType="activity-text">{props.name} has been completed!</Column>
+            </div>
+        </Column>
+    </div>)
+}
+
+// {props.value.completedBooks.map(book => (
+//     <CompleteBook
+//         key={book.id}
+//         name={book.name}
+//         date={book.date}
+//     />
+// ))}
+
+
+{/* <div className="row no-gutters">
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
@@ -138,20 +225,7 @@ export function HistoryCard() {
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
                                 <div className="view"><button className="btn btn-primary">Again</button></div>
-                                <div className="text-center">7 Days Ago</div>
+            
                             </div>
                         </Column>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    );
-}
-
-export function Achievement(props) {
-    return (
-        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-            title={props.name}
-            id={props.id}></i>
-    )
-}
+                    </div> */}
