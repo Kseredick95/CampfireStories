@@ -7,7 +7,27 @@ export function UserCard(props) {
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: {props.value.id}<a className="action" href="/#">Edit Profile</a>
+                Profile ID: {props.value.id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
+            </div>
+            {/* Edit Profile Modal */}
+            <div class="modal" id="profileModal" data-easein="bounceIn" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="profileModalLabel">Modify Profile</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
             </div>
             <img id="userImage" alt="" />
             <div className="card-block">
@@ -20,10 +40,10 @@ export function UserCard(props) {
                         <div id="medal-list">
                             {props.value.achievements.map(medal => (
                                 <Achievement
-                                    key = {medal._id}
-                                    id = {medal._id}
-                                    name = {medal.name}
-                                    date = {medal.date}
+                                    key={medal._id}
+                                    id={medal._id}
+                                    name={medal.name}
+                                    date={medal.date}
                                 />
                             ))}
                         </div>
@@ -31,7 +51,7 @@ export function UserCard(props) {
                 </RowMt>
                 <RowMt size="2">
                     <Col size="1"><i className="fas fa-envelope"></i></Col>
-    <Column>{props.value.email}</Column>
+                    <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
                     <Column>Joined: 05/10/2010</Column>
@@ -131,7 +151,7 @@ export function HistoryCard() {
 export function Achievement(props) {
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-        title={props.name}
-        id={props.id}></i>
+            title={props.name}
+            id={props.id}></i>
     )
 }
