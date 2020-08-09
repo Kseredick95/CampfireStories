@@ -39,12 +39,8 @@ class Login extends Component {
     }).then((res) => {
       if (res.data) {
         store.set(`user`, {
-<<<<<<< HEAD
           created: res.data.created,
           id : res.data._id,
-=======
-          id: res.data._id,
->>>>>>> 6c89363ebd16e24ee0e1da18df817c536701202b
           firstname: res.data.firstname,
           lastname: res.data.lastname,
           email: res.data.email,
