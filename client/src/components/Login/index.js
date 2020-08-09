@@ -51,7 +51,7 @@ class Login extends Component {
           completedBooks: res.data.completedBooks,
           loggedIn: true,
         });
-
+        store.set("user", res.data);
         history.push(`/profile/${res.data._id}`);
       }
       // else {
