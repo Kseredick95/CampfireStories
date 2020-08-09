@@ -5,40 +5,43 @@ import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
 import RestartBtn from "../RestartBtn/RestartBtn";
-import API from "../../../utils/API_book"
+import API from "../../../utils/API_book";
+import userAPI from "../../../utils/APIuser";
+import store from "store";
 
 class StoryPage extends Component {
 
     state = {
         book: [],
         page: {},
-        prevPage: {}
+        prevPage: {},
+        user: {}
     }
-
-    //     achievements: [
-    //         {achievement: "At what cost..."},
-    //     {achievement: "At what cost..."},
-    //     {achievement: "At what cost..."}
-    // ]
-
-    //     const achievement=this.state.page.achievement
-    //     if(achievement) {this.setState({achievement: achievement})}
-    //     pull the user... add the achievements array items to the user.achievements... push the user info
-
 
     componentDidMount() {
         const { match: { params } } = this.props
+        var user = store.get("user")
 
         API.findByTitle(`${params.bookTitle}`)
-            .then(res => { this.setState({ book: res.data.bookPages, page: res.data.bookPages[0] }) })
+            .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
             .catch(err => console.log(err))
     }
 
     choiceSubmit = e => {
         const choice = this.state.book.find(choice => {
-            console.log(choice)
             return choice.id === e
         })
+        const user = this.state.user
+
+        if (choice.victory && user.completedBooks.some(obj => obj.title === choice.victory) === false) {
+            user.completedBooks.push({ "title": choice.victory });
+            console.log(user)
+            userAPI.update(user._id, user)
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err))
+        }
+
+        store.set("user", user)
         this.setState({ prevPage: this.state.page, page: choice })
     }
 
@@ -84,4 +87,4 @@ class StoryPage extends Component {
     }
 }
 
-export default StoryPage
+            export default StoryPage

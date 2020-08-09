@@ -14,23 +14,22 @@ const userSchema = new Schema({
     profileImage: { type: String, required: false },
     achievements: [{
         name: { type: String },
+        description: { type: String },
         date: { type: Date }
     }],
-    lastBook: [{
+    lastBook: {
         bookTitle: { type: String },
         bookPages: [{
             id: { type: String },
             image: { type: String },
             text: { type: String },
             choices: [{ text: { type: String } },
-            { id: { type: String } }
+                { id: { type: String } }
             ]
         }]
-    }],
+    },
     completedBooks: [{
-        id: { type: String },
-        name: { type: String },
-        date: { type: Date }
+        title: { type: String }
     }]
 });
 

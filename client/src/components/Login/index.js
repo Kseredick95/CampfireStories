@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+// import { Alert } from "react-native";
 import NavbarTwo from "../NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
@@ -34,13 +35,16 @@ class Login extends Component {
 
     API.loginUser({
       email: this.state.email,
-      password: this.state.password
-    }).then(res => {
-      if(res.data) {
-
+      password: this.state.password,
+    }).then((res) => {
+      if (res.data) {
         store.set(`user`, {
+<<<<<<< HEAD
           created: res.data.created,
           id : res.data._id,
+=======
+          id: res.data._id,
+>>>>>>> 6c89363ebd16e24ee0e1da18df817c536701202b
           firstname: res.data.firstname,
           lastname: res.data.lastname,
           email: res.data.email,
@@ -49,12 +53,21 @@ class Login extends Component {
           deathCount: res.data.deathCount,
           profileImage: res.data.profileImage,
           lastBook: res.data.lastBook,
-          completedBooks : res.data.completedBooks,
-          loggedIn : true
-        })
-
+          completedBooks: res.data.completedBooks,
+          loggedIn: true,
+        });
+        store.set("user", res.data);
         history.push(`/profile/${res.data._id}`);
       }
+      // else {
+      //   Alert.alert("Invalid Input", "Invalid Email or Password entered...", [
+      //     {
+      //       text: "Let's try again",
+      //       onPress: () => console.log("He's gonna try one mo 'gen"),
+      //     },
+      //   ]);
+      // }
+      // else this.props.alert.show("Invalid Email or Password Entered");
     });
   };
 
@@ -84,7 +97,7 @@ class Login extends Component {
   render() {
     return (
       <div className="wrapper">
-      <NavbarTwo />
+        <NavbarTwo />
         <div className="form-wrapper">
           <h1>Login</h1>
           <form onSubmit={this.handleSubmit} noValidate>
@@ -124,3 +137,4 @@ class Login extends Component {
 }
 
 export default Login;
+// export default withAlert(Login);

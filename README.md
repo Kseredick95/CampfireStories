@@ -44,4 +44,4 @@ Email: danygrimaldo@gmail.com
 
 Terry Cetoute-
 Github: [terry212](https://github.com/terry212)
-Email: 
+Email: terrycetoute@gmail.com
