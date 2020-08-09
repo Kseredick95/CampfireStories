@@ -60,6 +60,7 @@ class Register extends Component {
     }
 
     API.saveUser({
+      created: Date.now(),
       firstname: this.state.firstName,
       lastname: this.state.lastName,
       email: this.state.email,
@@ -77,6 +78,7 @@ class Register extends Component {
        const { history } = this.props;
 
        store.set(`user`, {
+        created: res.data.created,
         id : res.data._id,
         firstname: res.data.firstname,
         lastname: res.data.lastname,
@@ -131,7 +133,7 @@ class Register extends Component {
         <NavbarTwo />
         <div className="form-wrapper">
           <h1>Create Account</h1>
-          <form onSubmit={this.handleSubmit} noValidate>
+          <form onSubmit={this.handleSubmit} noVcreated>
             {
               //Input for First Name
             }

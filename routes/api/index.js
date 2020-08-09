@@ -23,7 +23,6 @@ router.route("/login").post(async (req, res) => {
             else if (!match) {
                 return res.status(400).send({ message: "Password is incorrect" })
             } else {
-                console.log("Password is correct")
                 return res.json(user)
             }
         })

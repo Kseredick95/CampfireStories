@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
+    created: { type: Date },
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     username: { type: String, required: false },
@@ -34,7 +35,6 @@ const userSchema = new Schema({
 });
 
 userSchema.methods.comparePassword = function (password, callback) {
-    console.log(this.password + " and " + password)
     return callback(null, bcrypt.compareSync(password, this.password));
 };
 

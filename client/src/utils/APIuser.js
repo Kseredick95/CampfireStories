@@ -10,7 +10,6 @@ export default {
     return axios.get("/api/user/" + email);
   },
   getById: function(id) {
-    console.log(id)
     return axios.get("/api/user/" + id)
   },
   // Deletes the saved user with the given id
