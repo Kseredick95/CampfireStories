@@ -18,8 +18,8 @@ export default {
         return axios.delete("/api/user/" + id);
     },
     // Updates user by given id
-    update: function(id) {
-        return axios.put("api/user/" + id)
+    update: function(id, obj) {
+        return axios.put("/api/user/" + id, obj)
     },
     // Saves an user to the database
     saveUser: function(userData) {

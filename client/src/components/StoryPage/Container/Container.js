@@ -18,7 +18,6 @@ class StoryPage extends Component {
         user: {}
     }
 
-
     componentDidMount() {
         const { match: { params } } = this.props
         var user = store.get("user")
@@ -34,17 +33,14 @@ class StoryPage extends Component {
         })
         const user = this.state.user
 
-        // user.completedBooks.pop()
+        if (choice.victory && user.completedBooks.some(obj => obj.title === choice.victory) === false) {
+            user.completedBooks.push({ "title": choice.victory });
+            console.log(user)
+            userAPI.update(user._id, user)
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err))
+        }
 
-        // if(choice.victory && user.completedBooks.every(function(obj){
-        //     return obj.title === choice.victory
-        // }) === true)
-        // {
-        // user.completedBooks.push({"title": choice.victory});
-        // this.updateDatabase()
-        // // userAPI.update(user._id, {userInfo})
-        // // .then(res => console.log(res))
-        // // .catch(err => console.log(err))}
         store.set("user", user)
         this.setState({ prevPage: this.state.page, page: choice })
     }

@@ -129,7 +129,6 @@ export function HistoryCard() {
 }
 
 export function Achievement(props) {
-    console.log(props)
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
         title={props.name}
