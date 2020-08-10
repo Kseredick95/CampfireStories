@@ -41,7 +41,7 @@ class Login extends Component {
       if (res.data) {
         store.set(`user`, {
           created: res.data.created,
-          id : res.data._id,
+          _id : res.data._id,
           firstname: res.data.firstname,
           lastname: res.data.lastname,
           email: res.data.email,

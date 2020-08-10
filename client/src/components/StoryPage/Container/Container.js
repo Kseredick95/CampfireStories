@@ -21,9 +21,10 @@ class StoryPage extends Component {
         user: {}
     }
 
-    componentWillMount() {
+    componentDidMount() {
         const { match: { params } } = this.props
         var user = store.get("user")
+
         console.log(isEmpty(user.lastBook))
         if(isEmpty(user.lastBook)=== true){
         API.findByTitle(`${params.bookTitle}`)
@@ -35,6 +36,7 @@ class StoryPage extends Component {
     componentWillUnmount(){
         const { match: { params } } = this.props;
         const user = this.state.user;
+
         const lastBookInfo = {
         bookTitle: params.bookTitle,
         bookPages: this.state.book,
@@ -42,7 +44,7 @@ class StoryPage extends Component {
         };
         user.lastBook = {};
         user.lastBook = lastBookInfo;
-        userAPI.update(user._id, user)
+        userAPI.update(user.id, user)
                 .then(res => console.log(res.data))
                 .catch(err => console.log(err));
         store.set("user", user)
@@ -110,4 +112,4 @@ class StoryPage extends Component {
     }
 }
 
-            export default StoryPage
+export default StoryPage

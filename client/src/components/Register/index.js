@@ -72,7 +72,7 @@ class Register extends Component {
         date : Date.now()
       }],
       profileImage: null,
-      lastBook: [],
+      lastBook: {},
       completedBooks : []
 
     }).then( res => {
@@ -80,7 +80,7 @@ class Register extends Component {
 
        store.set(`user`, {
         created: res.data.created,
-        id : res.data._id,
+        _id : res.data._id,
         firstname: res.data.firstname,
         lastname: res.data.lastname,
         email: res.data.email,

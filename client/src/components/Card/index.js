@@ -60,7 +60,7 @@ export function UserCard(props) {
                     <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
-                    <Column>Joined: {props.value.created.split("T")[0]}</Column>
+                    <Column>Joined: 05/10/2010</Column>
                 </RowMt>
             </div>
         </div>
@@ -166,7 +166,6 @@ export function HistoryCard(props) {
         </div>
     );
 }
-
 
 export function Achievement(props) {
     return (
