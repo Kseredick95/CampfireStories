@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row } from "../../Grid";
+import { Container } from "../../Grid";
 import {Link} from "react-router-dom"
 import BookPic from "../BookPic/BookPic"
 
