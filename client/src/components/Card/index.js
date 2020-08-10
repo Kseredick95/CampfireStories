@@ -3,6 +3,10 @@ import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
 
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
+
 // export card whose id is user
 export function UserCard(props) {
     return (
@@ -117,7 +121,7 @@ export function HistoryCard(props) {
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
                                 <Column classType="activity-text">You have recently viewed <em>{
-                                    props.value.completedBooks? 
+                                    isEmpty(props.value.completedBooks) === false? 
                                     props.value.lastBook.bookTitle:
                                     "None"
                                     }</em>
@@ -126,9 +130,10 @@ export function HistoryCard(props) {
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
+                            {isEmpty(props.value.completedBooks) === false?
                                 <Link to={`/storypage/${props.value.lastBook.bookTitle}`}>
-                                <div className="view"><button className="btn btn-primary">Resume</button></div>
-                                </Link>
+                                <div className="view"><button className="btn btn-primary">Resume</button></div></Link>:
+                                <div className="view"><button className="btn btn-primary">Resume</button></div>}
                                 <div className="text-center">5 Days Ago</div>
                             </div>
                         </Column>
@@ -140,7 +145,7 @@ export function HistoryCard(props) {
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
                                 <Column classType="activity-text">You have recently completed <em>{
-                                    props.value.completedBooks? 
+                                    isEmpty(props.value.completedBooks) === false? 
                                     props.value.completedBooks[0].title:
                                     "None"
                                     }</em></Column>
@@ -148,9 +153,10 @@ export function HistoryCard(props) {
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
+                            {isEmpty(props.value.completedBooks) === false?
                             <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
-                                <div className="view"><button className="btn btn-primary">Again?</button></div>
-                                </Link>
+                                <div className="view"><button className="btn btn-primary">Again?</button></div></Link>:
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>}
                                 <div className="text-center">7 Days Ago</div>
                             </div>
                         </Column>
@@ -164,7 +170,7 @@ export function HistoryCard(props) {
 export function Achievement(props) {
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
-            title={`<strong>${props.name}:</strong><br /><br />${props.description}`}
+            title={`<strong>${props.name}:</strong><br/><br/>${props.description}`}
             id={props.id}></i>
     )
 }
