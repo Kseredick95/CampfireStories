@@ -9,6 +9,9 @@ import API from "../../../utils/API_book";
 import userAPI from "../../../utils/APIuser";
 import store from "store";
 
+function isEmpty(obj) {
+    return Object.keys(obj).length === 0;
+}
 class StoryPage extends Component {
 
     state = {
@@ -18,13 +21,31 @@ class StoryPage extends Component {
         user: {}
     }
 
-    componentDidMount() {
+    componentWillMount() {
         const { match: { params } } = this.props
         var user = store.get("user")
-
+        console.log(isEmpty(user.lastBook))
+        if(isEmpty(user.lastBook)=== true){
         API.findByTitle(`${params.bookTitle}`)
             .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err))}
+        else{this.setState({user: user, book: user.lastBook.bookPages, page: user.lastBook.currentPage})}
+    }
+
+    componentWillUnmount(){
+        const { match: { params } } = this.props;
+        const user = this.state.user;
+        const lastBookInfo = {
+        bookTitle: params.bookTitle,
+        bookPages: this.state.book,
+        currentPage: this.state.page
+        };
+        user.lastBook = {};
+        user.lastBook = lastBookInfo;
+        userAPI.update(user._id, user)
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err));
+        store.set("user", user)
     }
 
     choiceSubmit = e => {
@@ -46,7 +67,9 @@ class StoryPage extends Component {
     }
 
     restartBook = e => {
-        this.setState({ page: this.state.book[0] })
+        const user = this.state.user
+        user.lastBook = {};
+        this.setState({ page: this.state.book[0], user: user })
     }
 
     prevPage = e => {

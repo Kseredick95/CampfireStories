@@ -26,7 +26,16 @@ const userSchema = new Schema({
             choices: [{ text: { type: String } },
                 { id: { type: String } }
             ]
-        }]
+        }],
+        currentPage: {
+            id: { type: String },
+            image: { type: String },
+            text: { type: String },
+            choices: [
+                { text: { type: String } },
+                { id: { type: String } }
+            ]
+        }
     },
     completedBooks: [{
         title: { type: String }

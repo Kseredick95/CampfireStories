@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-// import { Alert } from "react-native";
 import NavbarTwo from "../NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 import store from "store";
+import Alert from "react-bootstrap/Alert";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -22,6 +22,7 @@ class Login extends Component {
         password: "",
       },
       isLoggedIn: false,
+      invalidAlert: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -127,10 +128,12 @@ class Login extends Component {
             </div>
           </form>
         </div>
+        <Alert show={this.state.invalidAlert} variant="danger">
+          Invalid email and/or password
+        </Alert>
       </div>
     );
   }
 }
 
 export default Login;
-// export default withAlert(Login);

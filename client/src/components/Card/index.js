@@ -7,7 +7,7 @@ export function UserCard(props) {
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: {props.value.id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
+                Profile ID: {props.value._id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
             </div>
             {/* Edit Profile Modal */}
             <div className="modal" id="profileModal" data-easein="bounceIn" tabIndex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
@@ -43,6 +43,7 @@ export function UserCard(props) {
                                     key={medal._id}
                                     id={medal._id}
                                     name={medal.name}
+                                    description={medal.description}
                                     date={medal.date}
                                 />
                             ))}
@@ -172,8 +173,8 @@ export function handleBook(props) {
 
 export function Achievement(props) {
     return (
-        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-            title={props.name}
+        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
+            title={`<strong>${props.name}:</strong><br /><br />${props.description}`}
             id={props.id}></i>
     )
 }
@@ -204,28 +205,3 @@ export function CompleteBook(props) {
         </Column>
     </div>)
 }
-
-// {props.value.completedBooks.map(book => (
-//     <CompleteBook
-//         key={book.id}
-//         name={book.name}
-//         date={book.date}
-//     />
-// ))}
-
-
-{/* <div className="row no-gutters">
-                        <Column>
-                            <div className="row no-gutters align-content-center">
-                                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                                <Column classType="activity-text">You have recently completed <em>story name goes
-                                    here</em></Column>
-                            </div>
-                        </Column>
-                        <Column classType="right">
-                            <div className="row no-gutters justify-content-center align-items-center">
-                                <div className="view"><button className="btn btn-primary">Again</button></div>
-            
-                            </div>
-                        </Column>
-                    </div> */}
