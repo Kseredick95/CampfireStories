@@ -1,21 +1,32 @@
 import React, { Component } from "react";
 import { Container, Row } from "../../Grid";
-import Navbar from "../../Navbar/index"
-import BookCard from "../BookCard/BookCard"
-import API from "../../../utils/API_book"
-import "./LibraryContainer.css"
+import Navbar from "../../Navbar/index";
+import BookCard from "../BookCard/BookCard";
+import RestartBookBtn from "../RestartBookBtn/RestartBookBtn";
+import API from "../../../utils/API_book";
+import store from "store";
+import "./LibraryContainer.css";
 
 class LibraryContainer extends Component {
 
     state = {
-        library: []
+        library: [],
+        user: {}
     }
 
     componentDidMount() {
+        var user = store.get("user")
         API.getLibrary()
-            .then(res => { this.setState({ library: res.data }) })
+            .then(res => { this.setState({ library: res.data, user: user }) })
             .catch(err => console.log(err))
     }
+
+    restartBook = e => {
+        const user = this.state.user
+        user.lastBook = {}
+        store.set("user", user)
+    }
+
     render() {
         return (
             <div>
@@ -23,7 +34,7 @@ class LibraryContainer extends Component {
                 <Container>
                     <Row>
                         {this.state.library.map(book =>
-                            <BookCard key={book.bookTitle} id={book._id} bookTitle={book.bookTitle} />
+                            <BookCard key={book.bookTitle} id={book._id} bookTitle={book.bookTitle} restartBook={this.restartBook}/>
                         )}
                     </Row>
                 </Container>

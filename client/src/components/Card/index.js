@@ -1,4 +1,5 @@
 import React, { setState } from "react";
+import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
 
@@ -7,24 +8,24 @@ export function UserCard(props) {
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: {props.value.id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
+                Profile ID: {props.value._id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
             </div>
             {/* Edit Profile Modal */}
-            <div class="modal" id="profileModal" data-easein="bounceIn" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h4 class="modal-title" id="profileModalLabel">Modify Profile</h4>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <div className="modal" id="profileModal" data-easein="bounceIn" tabIndex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
+                <div className="modal-dialog" role="document">
+                    <div className="modal-content">
+                        <div className="modal-header">
+                            <h4 className="modal-title" id="profileModalLabel">Modify Profile</h4>
+                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
+                        <div className="modal-body">
                             ...
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" className="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
@@ -43,6 +44,7 @@ export function UserCard(props) {
                                     key={medal._id}
                                     id={medal._id}
                                     name={medal.name}
+                                    description={medal.description}
                                     date={medal.date}
                                 />
                             ))}
@@ -104,7 +106,7 @@ export function UserActivity(props) {
 */
 
 // export recent activity card
-export function HistoryCard() {
+export function HistoryCard(props) {
     return (
         <div className="card" id="recentActivity">
             <div className="card-header">Recent Activity</div>
@@ -114,13 +116,19 @@ export function HistoryCard() {
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
-                                <Column classType="activity-text">You have recently viewed <em>story name goes here!</em>
+                                <Column classType="activity-text">You have recently viewed <em>{
+                                    props.value.completedBooks? 
+                                    props.value.lastBook.bookTitle:
+                                    "None"
+                                    }</em>
                                 </Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
+                                <Link to={`/storypage/${props.value.lastBook.bookTitle}`}>
                                 <div className="view"><button className="btn btn-primary">Resume</button></div>
+                                </Link>
                                 <div className="text-center">5 Days Ago</div>
                             </div>
                         </Column>
@@ -131,13 +139,18 @@ export function HistoryCard() {
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                                <Column classType="activity-text">You have recently completed <em>story name goes
-                                    here</em></Column>
+                                <Column classType="activity-text">You have recently completed <em>{
+                                    props.value.completedBooks? 
+                                    props.value.completedBooks[0].title:
+                                    "None"
+                                    }</em></Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                                <div className="view"><button className="btn btn-primary">Again</button></div>
+                            <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>
+                                </Link>
                                 <div className="text-center">7 Days Ago</div>
                             </div>
                         </Column>
@@ -150,8 +163,8 @@ export function HistoryCard() {
 
 export function Achievement(props) {
     return (
-        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-            title={props.name}
+        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
+            title={`<strong>${props.name}:</strong><br /><br />${props.description}`}
             id={props.id}></i>
     )
 }
