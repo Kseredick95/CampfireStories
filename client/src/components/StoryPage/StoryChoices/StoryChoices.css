@@ -1,4 +1,4 @@
-#storyChoices>button,
+/* #storyChoices>button,
 #restartBtn>button {
     width: 500px;
     height: 50px;
@@ -8,6 +8,35 @@
 
 #restartBtn>button {
     margin-left: 3rem;
+} */
+
+body {
+    font-family: "Jost", sans-serif;
+    font-size: medium;
+    text-align: center;
+    width: 100%;
+    color: #322a26;
+    font-weight: 600;
+}
+
+button {
+    background-color: #709255;
+    color: #fff;
+    border: 2px solid #709255;
+    border-radius: 10px;
+    width: 100%;
+    margin: 1em;
+    padding: 8px 0px;
+    font-size: 1em;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    margin-bottom: 0.25em;
+}
+
+button:hover {
+    color: #322a26;
+    background-color: #709255;
+    border: 2px solid #95b46a;
 }
 
 #choiceAlign {
@@ -15,15 +44,13 @@
 }
 
 @media (max-width: 1136px) {
-    #storyChoices>button,
-    #restartBtn>button {
+    #storyChoices>button, #restartBtn>button {
         width: 400px;
     }
 }
 
 @media (max-width: 902px) {
-    #storyChoices>button,
-    #restartBtn>button {
+    #storyChoices>button, #restartBtn>button {
         width: 350px;
     }
 }
