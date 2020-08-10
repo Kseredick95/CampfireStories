@@ -18,3 +18,13 @@
     width: 50%;
     cursor: pointer
 }
+
+.libBtn {
+    display: block;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background: #322a26;
+    width: fit-content;
+}

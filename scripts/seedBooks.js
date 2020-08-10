@@ -243,6 +243,28 @@ const bookSeed = [{
                 ]
             },
             {
+                "id": "choice ccb",
+                "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
+                "text": "You decide to try the crumbling footholds in the potched tower walls. It is a hard climb but you seem to manage little by little. Marcus is slightly larger and has a hard time with the ascent but even he seems to manage. As you approach the top, you begin to hear singing. It is a haunting song, both beautiful and chilling at the same time. As you round finally pull yourself up, you are surprised to see a woman sitting in the moonlit room at a weaving wheel. Specks of light, almost like an aura, dance around her and the wheel as she spins. The woman, who is sitting with her back towards you, does not notice you or your brother...",
+                "choices": [{
+                        "text": "Call out to the woman...",
+                        "id": "tower a"
+                    },
+                    {
+                        "text": "Attack the woman...",
+                        "id": "tower b"
+                    },
+                    {
+                        "text": "Go back down the stairs",
+                        "id": "tower c"
+                    },
+                    {
+                        "text": "Have Marcus approach her...",
+                        "id": "tower d"
+                    }
+                ]
+            },
+            {
                 "id": "choice cd",
                 "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "Like the coward you are, you and your brother return home. Treasure-less and not fulfilling your family's legacy, you feel the weight of your shame your whole life until you die of old age..."
