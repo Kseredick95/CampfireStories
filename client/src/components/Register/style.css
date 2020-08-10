@@ -82,7 +82,7 @@ input.error {
     margin-left: 1%;
 }
 
-.firstName, .lastName, .email, .password {
+.firstName, .lastName, .email, .username, .password {
     display: flex;
     flex-direction: column;
     margin-bottom: 15px;
@@ -92,7 +92,7 @@ input.error {
     width: 49%;
 }
 
-.email, .password {
+.email, .username, .password {
     width: 100%;
 }
 
