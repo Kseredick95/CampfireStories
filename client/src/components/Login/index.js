@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-// import { Alert } from "react-native";
 import NavbarTwo from "../NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 import store from "store";
+import Alert from "react-bootstrap/Alert";
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
@@ -22,6 +22,7 @@ class Login extends Component {
         password: "",
       },
       isLoggedIn: false,
+      invalidAlert: false,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -36,34 +37,29 @@ class Login extends Component {
     API.loginUser({
       email: this.state.email,
       password: this.state.password,
-    }).then((res) => {
-      if (res.data) {
-        store.set(`user`, {
-          id: res.data._id,
-          firstname: res.data.firstname,
-          lastname: res.data.lastname,
-          email: res.data.email,
-          username: res.data.username,
-          achievements: res.data.achievements,
-          deathCount: res.data.deathCount,
-          profileImage: res.data.profileImage,
-          lastBook: res.data.lastBook,
-          completedBooks: res.data.completedBooks,
-          loggedIn: true,
-        });
-        store.set("user", res.data);
-        history.push(`/profile/${res.data._id}`);
-      }
-      // else {
-      //   Alert.alert("Invalid Input", "Invalid Email or Password entered...", [
-      //     {
-      //       text: "Let's try again",
-      //       onPress: () => console.log("He's gonna try one mo 'gen"),
-      //     },
-      //   ]);
-      // }
-      // else this.props.alert.show("Invalid Email or Password Entered");
-    });
+    })
+      .then((res) => {
+        if (res.data) {
+          store.set(`user`, {
+            id: res.data._id,
+            firstname: res.data.firstname,
+            lastname: res.data.lastname,
+            email: res.data.email,
+            username: res.data.username,
+            achievements: res.data.achievements,
+            deathCount: res.data.deathCount,
+            profileImage: res.data.profileImage,
+            lastBook: res.data.lastBook,
+            completedBooks: res.data.completedBooks,
+            loggedIn: true,
+          });
+          store.set("user", res.data);
+          history.push(`/profile/${res.data._id}`);
+        }
+      })
+      .catch((error) => {
+        if (error) this.setState({ invalidAlert: true });
+      });
   };
 
   handleChange = (e) => {
@@ -126,10 +122,12 @@ class Login extends Component {
             </div>
           </form>
         </div>
+        <Alert show={this.state.invalidAlert} variant="danger">
+          Invalid email and/or password
+        </Alert>
       </div>
     );
   }
 }
 
 export default Login;
-// export default withAlert(Login);
