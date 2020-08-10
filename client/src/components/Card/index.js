@@ -155,8 +155,7 @@ export function HistoryCard(props) {
                             <div className="row no-gutters justify-content-center align-items-center">
                             {isEmpty(props.value.completedBooks) === false?
                             <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
-                                <div className="view"><button className="btn btn-primary">Again?</button></div>
-                                </Link>:
+                                <div className="view"><button className="btn btn-primary">Again?</button></div></Link>:
                                 <div className="view"><button className="btn btn-primary">Again?</button></div>}
                                 <div className="text-center">7 Days Ago</div>
                             </div>
