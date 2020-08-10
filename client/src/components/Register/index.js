@@ -67,6 +67,7 @@ class Register extends Component {
       deathCount: 0,
       achievements: [{
         name : "New user achievement",
+        description: "Achieved by signing up",
         date : Date.now()
       }],
       profileImage: null,

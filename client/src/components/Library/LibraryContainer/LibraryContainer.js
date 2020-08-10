@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Container, Row } from "../../Grid";
 import Navbar from "../../Navbar/index";
 import BookCard from "../BookCard/BookCard";
-import RestartBookBtn from "../RestartBookBtn/RestartBookBtn";
 import API from "../../../utils/API_book";
 import store from "store";
 import "./LibraryContainer.css";

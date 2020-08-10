@@ -24,7 +24,7 @@ class StoryPage extends Component {
     componentWillMount() {
         const { match: { params } } = this.props
         var user = store.get("user")
-        console.log(isEmpty(user.lastBook))
+        // console.log(isEmpty(user.lastBook))
         if(isEmpty(user.lastBook)=== true){
         API.findByTitle(`${params.bookTitle}`)
             .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
