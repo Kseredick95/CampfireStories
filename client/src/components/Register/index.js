@@ -72,7 +72,7 @@ class Register extends Component {
         date: Date.now()
       }],
       profileImage: null,
-      lastBook: {},
+      lastBook: null,
       completedBooks: []
 
     }).then(res => {
@@ -134,7 +134,7 @@ class Register extends Component {
         <NavbarTwo />
         <div className="form-wrapper">
           <h1>Create Account</h1>
-          <form onSubmit={this.handleSubmit} noVcreated>
+          <form onSubmit={this.handleSubmit} novcreated>
             {
               //Input for First Name
             }
