@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
 
@@ -110,18 +111,50 @@ export function HistoryCard(props) {
         <div className="card" id="recentActivity">
             <div className="card-header">Recent Activity</div>
             <ul className="list-group">
-            <li className="list-group-item">
+                <li className="list-group-item">
                     <div className="row no-gutters">
-                        {handleLastBook(props.value.lastBook)}
+                        <Column>
+                            <div className="row no-gutters align-content-center">
+                                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
+                                <Column classType="activity-text">You have recently viewed <em>{
+                                    props.value.completedBooks? 
+                                    props.value.lastBook.bookTitle:
+                                    "None"
+                                    }</em>
+                                </Column>
+                            </div>
+                        </Column>
+                        <Column classType="right">
+                            <div className="row no-gutters justify-content-center align-items-center">
+                                <Link to={`/storypage/${props.value.lastBook.bookTitle}`}>
+                                <div className="view"><button className="btn btn-primary">Resume</button></div>
+                                </Link>
+                                <div className="text-center">5 Days Ago</div>
+                            </div>
+                        </Column>
                     </div>
                 </li>
                 <li className="list-group-item">
                     <div className="row no-gutters">
-                        {handleBook(props.value.completedBook)}
+                        <Column>
+                            <div className="row no-gutters align-content-center">
+                                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
+                                <Column classType="activity-text">You have recently completed <em>{
+                                    props.value.completedBooks? 
+                                    props.value.completedBooks[0].title:
+                                    "None"
+                                    }</em></Column>
+                            </div>
+                        </Column>
+                        <Column classType="right">
+                            <div className="row no-gutters justify-content-center align-items-center">
+                            <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>
+                                </Link>
+                                <div className="text-center">7 Days Ago</div>
+                            </div>
+                        </Column>
                     </div>
-                </li>
-                <li className="list-group-item">
-
                 </li>
             </ul>
         </div>
@@ -129,79 +162,10 @@ export function HistoryCard(props) {
 }
 
 
-//FINISH LINKS!!!!!!!!!======================================
-export function handleLastBook(props){
-    console.log(props.length)
-    if (props.length === 0){
-        return;
-    } else {
-        return(<div className="row no-gutters">
-        <Column>
-            <div className="row no-gutters align-content-center">
-                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                <Column classType="activity-text">Continue on your adventure in <em>{props.name}</em></Column>
-            </div>
-        </Column>
-        <Column classType="right">
-            <div className="row no-gutters justify-content-center align-items-center">
-                <div className="view"><button className="btn btn-primary">Again</button></div>
-
-            </div>
-        </Column>
-    </div>)
-    }
-}
-
-export function handleBook(props) {
-    console.log(props)
-    if (props === undefined) {
-        return (
-            <Book />
-        )
-    } else {
-        {
-            props.value.completedBooks.map(book => (
-                <CompleteBook
-                    key={book.id}
-                    name={book.name}
-                    date={book.date}
-                />
-            ))
-        }
-    }
-}
-
 export function Achievement(props) {
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
             title={`<strong>${props.name}:</strong><br /><br />${props.description}`}
             id={props.id}></i>
     )
-}
-
-export function Book() {
-    return (<div className="row no-gutters">
-        <Column>
-            <div className="row no-gutters align-content-center">
-                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                <Column classType="activity-text">Oh no! You have not started any stories yet.</Column>
-            </div>
-        </Column>
-        <Column classType="right">
-            <div className="row no-gutters justify-content-center align-items-center">
-                <div className="view"><button className="btn btn-primary">Library</button></div>
-            </div>
-        </Column>
-    </div>)
-}
-
-export function CompleteBook(props) {
-    return (<div className="row no-gutters">
-        <Column>
-            <div className="row no-gutters align-content-center">
-                <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                <Column classType="activity-text">{props.name} has been completed!</Column>
-            </div>
-        </Column>
-    </div>)
 }
