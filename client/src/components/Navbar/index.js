@@ -8,8 +8,7 @@ function handleLogout() {
 }
 
 const Navbar = () => {
-  let user = store.get(`user`);
-  let profileLink = "/profile/" + user.id;
+  let user = store.get("user")
 
   return (
     <div id="nav-body">
@@ -35,9 +34,9 @@ const Navbar = () => {
           <ul className="navbar-nav ml-auto" id="nav-menu">
             <li className="hoverable" id="nav-item1">
               <Link
-                to={"/profile/" + user.id}
-                className={
-                  window.location.pathname === profileLink
+                to={"/profile/" + user._id}
+                className={ "profile"
+                  
                     ? "nav-link active"
                     : "nav-link"
                 }
@@ -48,8 +47,7 @@ const Navbar = () => {
             <li className="hoverable" id="nav-item2">
               <Link
                 to="/library"
-                className={
-                  window.location.pathname === "/library"
+                className={ "library"
                     ? "nav-link active"
                     : "nav-link"
                 }

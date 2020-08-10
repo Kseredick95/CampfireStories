@@ -14,22 +14,21 @@ router.route("/login").post(async (req, res) => {
   try {
     let user = await db.User.findOne({ email: req.body.email }).exec();
 
-    if (!user) {
-      return res.status(400).send({ message: "This email does not exist" });
+        if (!user) {
+            return res.status(400).send({ message: "This email does not exist" });
+        }
+        
+        user.comparePassword(req.body.password, (err, match) => {
+            if (err) throw err;
+            else if (!match) {
+                return res.status(400).send({ message: "Password is incorrect" })
+            } else {
+                return res.json(user)
+            }
+        })
+    } catch (error) {
+        res.status(500).send(error);
     }
-
-    user.comparePassword(req.body.password, (err, match) => {
-      if (err) throw err;
-      else if (!match) {
-        return res.status(400).send({ message: "Password is incorrect" });
-      } else {
-        console.log("Password is correct");
-        return res.json(user);
-      }
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
 });
 
 //If no api - reroute
