@@ -2,7 +2,6 @@ import React from "react";
 import { Container } from "../../Grid";
 import {Link} from "react-router-dom"
 import BookPic from "../BookPic/BookPic"
-
 function BookCard(props){
     return (           
         <div className="card LibCard">
@@ -16,5 +15,4 @@ function BookCard(props){
         </div>
     )
 }
-
 export default BookCard

@@ -67,20 +67,20 @@ class Register extends Component {
       password: this.state.password,
       deathCount: 0,
       achievements: [{
-        name : "New user achievement",
+        name: "New user achievement",
         description: "Achieved by signing up",
-        date : Date.now()
+        date: Date.now()
       }],
       profileImage: null,
       lastBook: {},
-      completedBooks : []
+      completedBooks: []
 
-    }).then( res => {
-       const { history } = this.props;
+    }).then(res => {
+      const { history } = this.props;
 
-       store.set(`user`, {
+      store.set(`user`, {
         created: res.data.created,
-        _id : res.data._id,
+        _id: res.data._id,
         firstname: res.data.firstname,
         lastname: res.data.lastname,
         email: res.data.email,
@@ -89,11 +89,11 @@ class Register extends Component {
         deathCount: res.data.deathCount,
         profileImage: res.data.profileImage,
         lastBook: res.data.lastBook,
-        completedBooks : res.data.completedBooks,
-        loggedIn : true
-       });
-       history.push(`/profile/${res.data._id}`);
-      
+        completedBooks: res.data.completedBooks,
+        loggedIn: true
+      });
+      history.push(`/profile/${res.data._id}`);
+
     }).catch(err => console.log(err));
   };
 
