@@ -76,7 +76,7 @@ class Register extends Component {
         },
       ],
       profileImage: null,
-      lastBook: {},
+      lastBook: null,
       completedBooks: [],
     })
       .then((res) => {

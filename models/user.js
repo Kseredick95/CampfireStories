@@ -18,31 +18,31 @@ const userSchema = new Schema({
         date: { type: Date }
     }],
     lastBook: {
-        bookTitle: { type: String },
-        bookPages: [{
-            id: { type: String },
-            image: { type: String },
-            text: { type: String },
-            choices: [{ text: { type: String } },
-                { id: { type: String } }
-            ]
-        }],
-        currentPage: {
-            id: { type: String },
-            image: { type: String },
-            text: { type: String },
-            choices: [
-                { text: { type: String } },
-                { id: { type: String } }
-            ]
-        }
+        // bookTitle: { type: String },
+        // bookPages: [{
+        //     id: { type: String },
+        //     image: { type: String },
+        //     text: { type: String },
+        //     choices: [{ text: { type: String } },
+        //         { id: { type: String } }
+        //     ]
+        // }],
+        // currentPage: {
+        //     id: { type: String },
+        //     image: { type: String },
+        //     text: { type: String },
+        //     choices: [
+        //         { text: { type: String } },
+        //         { id: { type: String } }
+        //     ]
+        // }
     },
     completedBooks: [{
         title: { type: String }
     }]
 });
 
-userSchema.methods.comparePassword = function (password, callback) {
+userSchema.methods.comparePassword = function(password, callback) {
     return callback(null, bcrypt.compareSync(password, this.password));
 };
 
