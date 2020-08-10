@@ -1,10 +1,9 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
+import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions"
 import "./style.css";
-function isEmpty(obj) {
-    return Object.keys(obj).length === 0;
-}
+
 // export card whose id is user
 export function UserCard(props) {
     return (
@@ -115,19 +114,14 @@ export function HistoryCard(props) {
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
                                 <Column classType="activity-text">You have recently viewed <em>{
-                                    isEmpty(props.value.completedBooks) === false? 
-                                    props.value.lastBook.bookTitle:
-                                    "None"
+                                    lastBookCheckName(props.value.lastBook)
                                     }</em>
                                 </Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                            {isEmpty(props.value.completedBooks) === false?
-                                <Link to={`/storypage/${props.value.lastBook.bookTitle}`}>
-                                <div className="view"><button className="btn btn-primary">Resume</button></div></Link>:
-                                <div className="view"><button className="btn btn-primary">Resume</button></div>}
+                            {lastBookCheckBtn(props.value.lastBook)}
                                 <div className="text-center">5 Days Ago</div>
                             </div>
                         </Column>
