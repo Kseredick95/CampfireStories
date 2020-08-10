@@ -1,12 +1,10 @@
-import React, { setState } from "react";
+import React from "react";
 import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
 import "./style.css";
-
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
-
 // export card whose id is user
 export function UserCard(props) {
     return (
@@ -66,7 +64,6 @@ export function UserCard(props) {
         </div>
     );
 }
-
 // export card whose id is connections
 export function ConnectCard() {
     return (
@@ -83,10 +80,8 @@ export function ConnectCard() {
         </div>
     );
 }
-
 // export the acivity for appending and prepending purposes
 // need props of the icon, timestamp
-
 /* 
 export function UserActivity(props) {
     return (
@@ -108,7 +103,6 @@ export function UserActivity(props) {
     );
 }
 */
-
 // export recent activity card
 export function HistoryCard(props) {
     return (
@@ -155,7 +149,8 @@ export function HistoryCard(props) {
                             <div className="row no-gutters justify-content-center align-items-center">
                             {isEmpty(props.value.completedBooks) === false?
                             <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
-                                <div className="view"><button className="btn btn-primary">Again?</button></div></Link>:
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>
+                                </Link>:
                                 <div className="view"><button className="btn btn-primary">Again?</button></div>}
                                 <div className="text-center">7 Days Ago</div>
                             </div>
@@ -166,7 +161,6 @@ export function HistoryCard(props) {
         </div>
     );
 }
-
 export function Achievement(props) {
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"

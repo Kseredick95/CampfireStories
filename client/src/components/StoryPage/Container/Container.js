@@ -8,52 +8,47 @@ import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book";
 import userAPI from "../../../utils/APIuser";
 import store from "store";
-
 function isEmpty(obj) {
     return Object.keys(obj).length === 0;
 }
 class StoryPage extends Component {
-
     state = {
         book: [],
         page: {},
         prevPage: {},
         user: {}
     }
-
     componentWillMount() {
         const { match: { params } } = this.props
         var user = store.get("user")
-        console.log(isEmpty(user.lastBook))
-        if(isEmpty(user.lastBook)=== true){
-        API.findByTitle(`${params.bookTitle}`)
-            .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
-            .catch(err => console.log(err))}
-        else{this.setState({user: user, book: user.lastBook.bookPages, page: user.lastBook.currentPage})}
+        // console.log(isEmpty(user.lastBook))
+        if (isEmpty(user.lastBook) === true) {
+            API.findByTitle(`${params.bookTitle}`)
+                .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
+                .catch(err => console.log(err))
+        }
+        else { this.setState({ user: user, book: user.lastBook.bookPages, page: user.lastBook.currentPage }) }
     }
-
-    componentWillUnmount(){
+    componentWillUnmount() {
         const { match: { params } } = this.props;
         const user = this.state.user;
         const lastBookInfo = {
-        bookTitle: params.bookTitle,
-        bookPages: this.state.book,
-        currentPage: this.state.page
+            bookTitle: params.bookTitle,
+            bookPages: this.state.book,
+            currentPage: this.state.page
         };
         user.lastBook = {};
         user.lastBook = lastBookInfo;
         userAPI.update(user._id, user)
-                .then(res => console.log(res.data))
-                .catch(err => console.log(err));
+            .then(res => console.log(res.data))
+            .catch(err => console.log(err));
         store.set("user", user)
     }
-
     choiceSubmit = e => {
         const choice = this.state.book.find(choice => {
             return choice.id === e
         })
         const user = this.state.user
-
         if (choice.victory && user.completedBooks.some(obj => obj.title === choice.victory) === false) {
             user.completedBooks.push({ "title": choice.victory });
             console.log(user)
@@ -61,21 +56,17 @@ class StoryPage extends Component {
                 .then(res => console.log(res.data))
                 .catch(err => console.log(err))
         }
-
         store.set("user", user)
         this.setState({ prevPage: this.state.page, page: choice })
     }
-
     restartBook = e => {
         const user = this.state.user
         user.lastBook = {};
         this.setState({ page: this.state.book[0], user: user })
     }
-
     prevPage = e => {
         this.setState({ page: this.state.prevPage })
     }
-
     render() {
         return (
             <div>
@@ -109,5 +100,4 @@ class StoryPage extends Component {
         )
     }
 }
-
-            export default StoryPage
+export default StoryPage

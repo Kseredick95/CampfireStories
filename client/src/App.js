@@ -6,6 +6,7 @@ import LibraryContainer from "./components/Library/LibraryContainer/LibraryConta
 import StoryPage from "./components/StoryPage/Container/Container";
 import Profile from "./pages/Profile";
 import Footer from "./components/Footer"
+import Aboutus from "./pages/Aboutus"
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
           <Route exact path="/library" component={LibraryContainer} />
           <Route exact path="/storypage/:bookTitle" component={StoryPage} />
           <Route exact path="/profile/:_id" component={Profile} />
+          <Route exact path= "/about" component={Aboutus} />
         </Switch>
         <Footer />
       </div>

@@ -60,25 +60,27 @@ class Register extends Component {
     }
 
     API.saveUser({
+      created: Date.now(),
       firstname: this.state.firstName,
       lastname: this.state.lastName,
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,
       achievements: [{
-        name : "New user achievement",
+        name: "New user achievement",
         description: "Achieved by signing up",
-        date : Date.now()
+        date: Date.now()
       }],
       profileImage: null,
-      lastBook: [],
-      completedBooks : []
+      lastBook: {},
+      completedBooks: []
 
-    }).then( res => {
-       const { history } = this.props;
+    }).then(res => {
+      const { history } = this.props;
 
-       store.set(`user`, {
-        id : res.data._id,
+      store.set(`user`, {
+        created: res.data.created,
+        _id: res.data._id,
         firstname: res.data.firstname,
         lastname: res.data.lastname,
         email: res.data.email,
@@ -87,11 +89,11 @@ class Register extends Component {
         deathCount: res.data.deathCount,
         profileImage: res.data.profileImage,
         lastBook: res.data.lastBook,
-        completedBooks : res.data.completedBooks,
-        loggedIn : true
-       });
-       history.push(`/profile/${res.data._id}`);
-      
+        completedBooks: res.data.completedBooks,
+        loggedIn: true
+      });
+      history.push(`/profile/${res.data._id}`);
+
     }).catch(err => console.log(err));
   };
 
@@ -132,7 +134,7 @@ class Register extends Component {
         <NavbarTwo />
         <div className="form-wrapper">
           <h1>Create Account</h1>
-          <form onSubmit={this.handleSubmit} noValidate>
+          <form onSubmit={this.handleSubmit} noVcreated>
             {
               //Input for First Name
             }

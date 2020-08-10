@@ -5,27 +5,22 @@ import BookCard from "../BookCard/BookCard";
 import API from "../../../utils/API_book";
 import store from "store";
 import "./LibraryContainer.css";
-
 class LibraryContainer extends Component {
-
     state = {
         library: [],
         user: {}
     }
-
     componentDidMount() {
         var user = store.get("user")
         API.getLibrary()
             .then(res => { this.setState({ library: res.data, user: user }) })
             .catch(err => console.log(err))
     }
-
     restartBook = e => {
         const user = this.state.user
         user.lastBook = {}
         store.set("user", user)
     }
-
     render() {
         return (
             <div>
@@ -41,5 +36,4 @@ class LibraryContainer extends Component {
         )
     }
 }
-
 export default LibraryContainer

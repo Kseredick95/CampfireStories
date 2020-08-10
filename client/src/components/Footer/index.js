@@ -10,7 +10,7 @@ function Footer() {
           <Col size="12">
             <p className="copyright-text">
               Copyright &copy; 2020 All Rights Reserved by{" "}
-              <a href="/">Campfire Stories</a>.{" "}
+              <a href="/about">Campfire Stories</a>.{" "}
             </p>
           </Col>
         </Row>
