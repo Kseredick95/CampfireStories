@@ -6,10 +6,11 @@ import "./style.css";
 
 // export card whose id is user
 export function UserCard(props) {
+    console.log(props)
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: {props.value._id}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
+                Username: {props.value.username}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
             </div>
             {/* Edit Profile Modal */}
             <div className="modal" id="profileModal" data-easein="bounceIn" tabIndex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">

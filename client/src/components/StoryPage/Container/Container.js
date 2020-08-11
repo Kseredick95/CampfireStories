@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, RowMt } from "../../Grid";
+import { Row, RowMt } from "../../Grid";
 import Navbar from "../../Navbar";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
@@ -12,28 +12,6 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 class StoryPage extends Component {
-<<<<<<< HEAD
-  state = {
-    book: [],
-    page: {},
-    prevPage: {},
-    user: {},
-  };
-  componentWillMount() {
-    const {
-      match: { params },
-    } = this.props;
-    var user = store.get("user");
-    // console.log(isEmpty(user.lastBook))
-    if (isEmpty(user.lastBook) === true) {
-      API.findByTitle(`${params.bookTitle}`)
-        .then((res) => {
-          this.setState({
-            user: user,
-            book: res.data.bookPages,
-            page: res.data.bookPages[0],
-          });
-=======
     state = {
         book: [],
         page: {},
@@ -73,38 +51,7 @@ class StoryPage extends Component {
     choiceSubmit = e => {
         const choice = this.state.book.find(choice => {
             return choice.id === e
->>>>>>> e71ae0d7fd54278a358f73e2add7750b4c7c9c95
-        })
-        .catch((err) => console.log(err));
-    } else {
-      this.setState({
-        user: user,
-        book: user.lastBook.bookPages,
-        page: user.lastBook.currentPage,
-      });
-    }
-  }
-  componentWillUnmount() {
-    const {
-      match: { params },
-    } = this.props;
-    const user = this.state.user;
-    const lastBookInfo = {
-      bookTitle: params.bookTitle,
-      bookPages: this.state.book,
-      currentPage: this.state.page,
-    };
-    user.lastBook = {};
-    user.lastBook = lastBookInfo;
-    userAPI
-      .update(user._id, user)
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
-    store.set("user", user);
-  }
-  choiceSubmit = (e) => {
-    const choice = this.state.book.find((choice) => {
-      return choice.id === e;
+        
     });
     const user = this.state.user;
     if (
