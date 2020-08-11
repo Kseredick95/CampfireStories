@@ -8,8 +8,10 @@ const bookSchema = new Schema({
         image: { type: String, required: true },
         text: { type: String, required: true },
         choices: [{ text: { type: String } },
-            { id: { type: String } }
-        ]
+            { id: { type: String } },
+            { victory: {type: String} }
+        ],
+    
     }]
 });
 

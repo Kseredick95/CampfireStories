@@ -1,7 +1,8 @@
-import React, { setState } from "react";
-import { RowMt, Col, Column, Row } from "../Grid";
+import React from "react";
+import {Link} from "react-router-dom"
+import { RowMt, Col, Column } from "../Grid";
+import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions";
 import ProfileMemoji from '../ProfileImage/index';
-import memojiLoader from '../ProfileImage/memojis';
 import API from '../../utils/APIuser';
 import "./style.css";
 // export card whose id is user
@@ -20,38 +21,12 @@ export function UserCard(props) {
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Profile ID: {props.value.id}
+                Username: {props.value.username}
             </div>
             <ProfileMemoji />
-            {/* Edit Profile Modal */}
-            {/* <div className="modal" id="memojisModal" data-easein="fade" tabIndex="-1" role="dialog" aria-labelledby="memojisModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title" id="memojisModalLabel">Modify Profile Picture</h4>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            {memojiLoader().map(memoji => (
-                                <button type="button" onClick={this.setState({memojiSelect:this})}>
-                                    <ProfileImage
-                                        src={memoji.src}
-                                        alt={memoji.alt} />
-                                </button>
-                            ))}
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
             {/* <ProfileImage /> */}
             <div id="userImage">
-                <img src={props.value.profileImage} alt="" />
+                <img src={props.value.profileImage} alt={props.value.username} />
             </div>
             <div className="card-block">
                 <h4 className="card-title">Welcome, {props.value.firstname} </h4>
@@ -66,6 +41,7 @@ export function UserCard(props) {
                                     key={medal._id}
                                     id={medal._id}
                                     name={medal.name}
+                                    description={medal.description}
                                     date={medal.date}
                                 />
                             ))}
@@ -83,7 +59,6 @@ export function UserCard(props) {
         </div>
     );
 }
-
 // export card whose id is connections
 export function ConnectCard() {
     return (
@@ -100,8 +75,10 @@ export function ConnectCard() {
         </div>
     );
 }
-
-export function UserBooks(props) {
+// export the acivity for appending and prepending purposes
+// need props of the icon, timestamp
+/* 
+export function UserActivity(props) {
     return (
         <Column>
             <div className="row no-gutters align-content-center">
@@ -112,8 +89,7 @@ export function UserBooks(props) {
         </Column>
     );
 }
-
-
+*/
 // export recent activity card
 export function HistoryCard(props) {
     return (
@@ -122,11 +98,19 @@ export function HistoryCard(props) {
             <ul className="list-group">
                 <li className="list-group-item">
                     <div className="row no-gutters">
-                        <UserBooks />
+                        <Column>
+                            <div className="row no-gutters align-content-center">
+                                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
+                                <Column classType="activity-text">You have recently viewed <em>{
+                                    lastBookCheckName(props.value.lastBook)
+                                    }</em>
+                                </Column>
+                            </div>
+                        </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                                <div className="view"><button className="btn btn-primary">Resume</button></div>
-                                <div className="text-center">5 Days Ago</div>
+                            {lastBookCheckBtn(props.value.lastBook)}
+                                <div className="text-center"></div>
                             </div>
                         </Column>
                     </div>
@@ -136,14 +120,21 @@ export function HistoryCard(props) {
                         <Column>
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
-                                <Column classType="activity-text">You have recently completed <em>story name goes
-                                    here</em></Column>
+                                <Column classType="activity-text">You have recently completed <em>{
+                                    isEmpty(props.value.completedBooks) === false? 
+                                    props.value.completedBooks[0].title:
+                                    "None"
+                                    }</em></Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                                <div className="view"><button className="btn btn-primary">Again</button></div>
-                                <div className="text-center">7 Days Ago</div>
+                            {isEmpty(props.value.completedBooks) === false?
+                            <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>
+                                </Link>:
+                                <div className="view"><button className="btn btn-primary">Again?</button></div>}
+                                <div className="text-center"></div>
                             </div>
                         </Column>
                     </div>
@@ -152,12 +143,10 @@ export function HistoryCard(props) {
         </div>
     );
 }
-
 export function Achievement(props) {
-    console.log(props)
     return (
-        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top"
-            title={props.name}
+        <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
+            title={`<strong>${props.name}:</strong><br/><br/>${props.description}`}
             id={props.id}></i>
     )
 }

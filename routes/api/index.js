@@ -11,8 +11,8 @@ router.use("/book", bookRoutes);
 router.use("/achievment", achievementRoutes);
 
 router.route("/login").post(async (req, res) => {
-    try {
-        let user = await db.User.findOne({ email: req.body.email }).exec();
+  try {
+    let user = await db.User.findOne({ email: req.body.email }).exec();
 
         if (!user) {
             return res.status(400).send({ message: "This email does not exist" });
@@ -23,7 +23,6 @@ router.route("/login").post(async (req, res) => {
             else if (!match) {
                 return res.status(400).send({ message: "Password is incorrect" })
             } else {
-                console.log("Password is correct")
                 return res.json(user)
             }
         })
@@ -33,8 +32,8 @@ router.route("/login").post(async (req, res) => {
 });
 
 //If no api - reroute
-router.use(function(req, res) {
-    res.sendFile(path.join(__dirname, "../client/build/index.html"));
-  });
+router.use(function (req, res) {
+  res.sendFile(path.join(__dirname, "../client/build/index.html"));
+});
 
 module.exports = router;

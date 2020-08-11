@@ -39,11 +39,13 @@ class Register extends Component {
     this.state = {
       firstName: null,
       lastName: null,
+      username: null,
       email: null,
       password: null,
       formErrors: {
         firstName: "",
         lastName: "",
+        username: "",
         email: "",
         password: "",
       },
@@ -59,6 +61,7 @@ class Register extends Component {
       First Name: ${this.state.firstName}
       Last Name: ${this.state.lastName}
       Email: ${this.state.email}
+      Username: ${this.state.username}
       Password: ${this.state.password}
       `);
     } else {
@@ -67,38 +70,44 @@ class Register extends Component {
     }
 
     API.saveUser({
+      created: Date.now(),
       firstname: this.state.firstName,
       lastname: this.state.lastName,
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,
-      achievements: [{
-        name: "New user achievement",
-        date: Date.now()
-      }],
-      profileImage: this.props.MemImage,
-      lastBook: [],
-      completedBooks: []
+      achievements: [
+        {
+          name: "New user achievement",
+          description: "Achieved by signing up",
+          date: Date.now(),
+        },
+      ],
+      profileImage: null,
+      lastBook: null,
+      completedBooks: [],
+    })
+      .then((res) => {
+        const { history } = this.props;
 
-    }).then(res => {
-      const { history } = this.props;
-
-      store.set(`user`, {
-        _id: res.data._id,
-        firstname: res.data.firstname,
-        lastname: res.data.lastname,
-        email: res.data.email,
-        username: res.data.username,
-        achievements: res.data.achievements,
-        deathCount: res.data.deathCount,
-        profileImage: res.data.profileImage,
-        lastBook: res.data.lastBook,
-        completedBooks: res.data.completedBooks,
-        loggedIn: true
-      });
-      history.push(`/profile/${res.data._id}`);
-
-    }).catch(err => console.log(err));
+        store.set(`user`, {
+          created: res.data.created,
+          _id: res.data._id,
+          firstname: res.data.firstname,
+          lastname: res.data.lastname,
+          email: res.data.email,
+          username: res.data.username,
+          achievements: res.data.achievements,
+          deathCount: res.data.deathCount,
+          profileImage: res.data.profileImage,
+          lastBook: res.data.lastBook,
+          completedBooks: res.data.completedBooks,
+          loggedIn: true,
+        });
+        history.push(`/profile/${res.data._id}`);
+      })
+      .catch((err) => console.log(err));
   };
 
   handleChange = (e) => {
@@ -119,6 +128,10 @@ class Register extends Component {
         formErrors.email = emailRegex.test(value)
           ? ""
           : "invalid email address";
+        break;
+      case "username":
+        formErrors.username =
+          value.length < 6 ? "minimum 6 characters required" : "";
         break;
       case "password":
         formErrors.password =
@@ -188,6 +201,23 @@ class Register extends Component {
               />
               {formErrors.email.length > 0 && (
                 <span className="errorMessage">{formErrors.email}</span>
+              )}
+            </div>
+            {
+              //Form input for Username
+            }
+            <div className="username">
+              <label htmlFor="username"></label>
+              <input
+                className={formErrors.username.length > 0 ? "error" : null}
+                placeholder="Username"
+                type="username"
+                name="username"
+                formNoValidate
+                onChange={this.handleChange}
+              />
+              {formErrors.username.length > 6 && (
+                <span className="errorMessage">{formErrors.username}</span>
               )}
             </div>
             {
