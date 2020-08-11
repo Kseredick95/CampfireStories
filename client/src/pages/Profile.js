@@ -19,7 +19,7 @@ function Profile () {
 
     
     return (
-        <div>
+        <div id="main">
             <Navbar />
             <Banner />
             <Container>
