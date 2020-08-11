@@ -505,7 +505,7 @@ const bookSeed = [{
                 "text": "The woman's aura scares you. There is something sinister in that room so you will try your luck with the troll. You make your way back down the stairs, quietly in an effort to sneak up on the troll. Your stealthy efforts were not needed apparently. The troll is not there. You guess that upon waking and losing prey, it's hunger remains abated and it went to stave it's appetite. You hurry across the main hall to the door left unexplored from your previous encounter in the room...",
                 "choices": [{
                     "text": "What is behind the door?",
-                    "id": "The cellar marcus"
+                    "id": "the cellar marcus"
                 }]
             },
             {
