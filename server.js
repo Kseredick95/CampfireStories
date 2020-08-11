@@ -25,7 +25,7 @@ app.use(
 
 //Database connection
 mongoose.connect(
-    process.env.MONGOLAB_RED_URI || "mongodb://kseredick95:Sparkl3s@ds359868.mlab.com:59868/heroku_rkknxr3s", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
+    process.env.MONGOLAB_RED_URI || "mongodb://localhost/campfirestories", { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
 );
 
 //Routes

@@ -505,7 +505,7 @@ const bookSeed = [{
                 "text": "The woman's aura scares you. There is something sinister in that room so you will try your luck with the troll. You make your way back down the stairs, quietly in an effort to sneak up on the troll. Your stealthy efforts were not needed apparently. The troll is not there. You guess that upon waking and losing prey, it's hunger remains abated and it went to stave it's appetite. You hurry across the main hall to the door left unexplored from your previous encounter in the room...",
                 "choices": [{
                     "text": "What is behind the door?",
-                    "id": "The cellar marcus"
+                    "id": "the cellar marcus"
                 }]
             },
             {
@@ -592,7 +592,7 @@ const bookSeed = [{
                 ]
             },
             {
-                "id": "cellar skelton a",
+                "id": "cellar skeleton a",
                 "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
                 "text": "With rage in your heart, you strike out at the skeleton. Over and over, you swing wildly with tears in your eyes until no more of the skeleton is left. Only a pile of bonedust remains. You kneel by your brother... He is dead... His sacrafice was not in vain however. You follow the secret passage marked on the map. You vow to finish the mission that the two of you set out for and bring the treasure home...",
                 "choices": [{
@@ -602,7 +602,7 @@ const bookSeed = [{
                 }]
             },
             {
-                "id": "cellar skelton b",
+                "id": "cellar skeleton b",
                 "image": "https://ozorianprophet.eu/wp-content/uploads/sites/3/2019/10/fantasy-eyes-forest-300x129.jpg",
                 "text": "You run with faster than you ever had, fueled by fear and hatred. You just hope that the map doesn't lie to you. As you make your way through the passage, you realize the skeleton has dropped it's pursuit. You finally have time to dwell on your brother's death... Your heart pains as you reach the end of the passage...",
                 "choices": [{
@@ -612,12 +612,12 @@ const bookSeed = [{
                 }]
             },
             {
-                "id": "cellar skelton c",
+                "id": "cellar skeleton c",
                 "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "You decide enough is enough! No more scary crypt for you! You sprint back up the stairs, terified at what you just witnessed. Unfortunately, your first passage was enough to weaken the stairs and walls beyond what it's years could bear. As you climb, the ceiling gives way and you are crushed under a millinia of rocks... The end of the tomb raider..."
             },
             {
-                "id": "cellar skelton d",
+                "id": "cellar skeleton d",
                 "image": "https://i.pinimg.com/originals/50/52/4b/50524ba8c96b027837224e2b62131514.jpg",
                 "text": "Terrified and torn by your brother's death right in front of your eyes, you venture further into the crypt. Not long into your venturing, does the crypt break in to a large room. You are standing on the cliff of a large hole so deep you cannot see the bottom. As you turn to go back the way you came, the walls begin to move. Slowly you recognize that skeletons are pouring out of the walls. Hundreds of them group up at the passage from where you just came from... the only exit out... You fight valiantly but their numbers are too great... You are boned...."
             },
