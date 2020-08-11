@@ -58,7 +58,7 @@ export function UserCard(props) {
                     <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
-                    <Column>Joined: 05/10/2010</Column>
+                    <Column>Joined on: {props.value.created.split("T")[0]}</Column>
                 </RowMt>
             </div>
         </div>
@@ -123,7 +123,7 @@ export function HistoryCard(props) {
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
                             {lastBookCheckBtn(props.value.lastBook)}
-                                <div className="text-center">5 Days Ago</div>
+                                <div className="text-center"></div>
                             </div>
                         </Column>
                     </div>
@@ -147,7 +147,7 @@ export function HistoryCard(props) {
                                 <div className="view"><button className="btn btn-primary">Again?</button></div>
                                 </Link>:
                                 <div className="view"><button className="btn btn-primary">Again?</button></div>}
-                                <div className="text-center">7 Days Ago</div>
+                                <div className="text-center"></div>
                             </div>
                         </Column>
                     </div>
