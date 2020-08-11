@@ -69,7 +69,7 @@ export function ConnectCard() {
     return (
         <div className="card" id="connections">
             <div className="card-header">
-                <div className="label">All Stories</div><a className="action" href="/#">Find</a>
+                <div className="label">All Stories</div><a className="action" href="/library">Find</a>
             </div>
             <div className="list d-flex justify-content-between flex-wrap">
                 <img className="list-item" alt="" />
