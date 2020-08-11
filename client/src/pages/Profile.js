@@ -15,6 +15,7 @@ function Profile () {
     }
 
     let user = store.get(`user`)
+    console.log("====>" + user)
 
     
     return (

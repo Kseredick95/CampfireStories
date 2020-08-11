@@ -118,6 +118,11 @@ a.action:hover {
     height: 200px;
 }
 
+#user #userImage>img {
+    display: block;
+    margin: 0 auto;
+}
+
 #user .row {
     width: auto;
 }
@@ -175,4 +180,10 @@ a.action:hover {
 .activity-text {
     align-self: center;
     font-size: 16px;
+}
+
+@media (min-width: 576px) {
+    .modal-dialog {
+        max-width: 700px;
+    }
 }

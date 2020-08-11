@@ -5,6 +5,12 @@ import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 import store from "store";
 
+// const selectMemoji = () => {
+//   const memojiFolder = process.env.PUBLIC_URL + '/images/MemojiPack';
+//   let memoji = fs.readdirSync(memojiFolder);
+//   return memoji[Math.floor(Math.random() * memoji.length)];
+// }
+
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 );
@@ -24,6 +30,7 @@ const formValid = ({ formErrors, ...rest }) => {
 
   return valid;
 };
+
 
 class Register extends Component {
   constructor(props) {
@@ -66,18 +73,18 @@ class Register extends Component {
       password: this.state.password,
       deathCount: 0,
       achievements: [{
-        name : "New user achievement",
-        date : Date.now()
+        name: "New user achievement",
+        date: Date.now()
       }],
-      profileImage: null,
+      profileImage: this.props.MemImage,
       lastBook: [],
-      completedBooks : []
+      completedBooks: []
 
-    }).then( res => {
-       const { history } = this.props;
+    }).then(res => {
+      const { history } = this.props;
 
-       store.set(`user`, {
-        id : res.data._id,
+      store.set(`user`, {
+        _id: res.data._id,
         firstname: res.data.firstname,
         lastname: res.data.lastname,
         email: res.data.email,
@@ -86,11 +93,11 @@ class Register extends Component {
         deathCount: res.data.deathCount,
         profileImage: res.data.profileImage,
         lastBook: res.data.lastBook,
-        completedBooks : res.data.completedBooks,
-        loggedIn : true
-       });
-       history.push(`/profile/${res.data._id}`);
-      
+        completedBooks: res.data.completedBooks,
+        loggedIn: true
+      });
+      history.push(`/profile/${res.data._id}`);
+
     }).catch(err => console.log(err));
   };
 
