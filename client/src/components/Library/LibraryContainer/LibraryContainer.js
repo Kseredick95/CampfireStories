@@ -23,7 +23,7 @@ class LibraryContainer extends Component {
     }
     render() {
         return (
-            <div>
+            <div id="main">
                 <Navbar />
                 <Container>
                     <Row>

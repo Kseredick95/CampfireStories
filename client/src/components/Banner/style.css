@@ -2,6 +2,11 @@
     height: 200px;
 }
 
+#main {
+    position: relative;
+    min-height: 100vh;
+}
+
 @media (min-width: 1200px) {
     .cover>img {
         max-width: -webkit-fill-available;
