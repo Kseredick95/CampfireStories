@@ -6,40 +6,35 @@ import store from "store"
 
 
 class ProfileMemoji extends Component {
-    state = { memoji: {} }
+    state = { 
+        memoji: {},
+        user: {} }
 
     handleSubmit = (e) => {
         e.preventDefault();
-        let user = store.get("user");
+        let user = this.state.user;
 
         API.update(user._id, user).then(res => {
             console.log(res);
-            store.set("user", res.data)
             window.location.replace("/profile/" + user._id)
         })
+        store.set("user", user)
     }
 
     handleChange = (e) => {
         e.preventDefault();
-        let user = store.get("user");
-
+        let user = this.state.user;
         const memoji = e.target.src;
-        this.setState({ memoji });
-        // console.log(memoji)
         user.profileImage = memoji;
-
-        API.update(user._id, user).then(res => {
-            console.log(res);
-            store.set("user", res.data)
-        })
+        this.setState({ memoji: memoji, user: user });
     }
 
-    // componentDidMount() {
-    //     let user = store.get("user");
-    //     const memoji = user.profileImage;
+    componentDidMount() {
+        let user = store.get("user");
+        const memoji = user.profileImage;
 
-    //     this.setState({memoji});
-    // }
+        this.setState({memoji: memoji, user: user});
+    }
 
     render() {
         return (
