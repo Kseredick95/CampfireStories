@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./style.css";
 import store from "store";
+
 function handleLogout() {
   store.remove(`user`);
   window.location.replace("/login");
@@ -35,8 +36,7 @@ const Navbar = () => {
             <li className="hoverable" id="nav-item1">
               <Link
                 to={"/profile/" + user._id}
-                className={ "profile"
-                  
+                className={ "profile"                  
                     ? "nav-link active"
                     : "nav-link"
                 }
