@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Row, RowMt } from "../../Grid";
+import { Row, RowMt, Container } from "../../Grid";
 import Navbar from "../../Navbar";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
