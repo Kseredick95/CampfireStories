@@ -1,38 +1,28 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
-import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions"
+import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions";
+import ProfileMemoji from '../ProfileImage/index';
 import "./style.css";
 
 // export card whose id is user
 export function UserCard(props) {
-    console.log(props)
+    // Date user was created
+    const createdDate = new Intl.DateTimeFormat('en-US', {
+        year: "numeric",
+        month: "long",
+        day: "2-digit"
+    }).format(new Date(props.value.achievements[0].date));
+
     return (
         <div className="card" id="user">
             <div className="card-header">
-                Username: {props.value.username}<a className="action" data-toggle="modal" href="#profileModal">Edit Profile</a>
+                Username: {props.value.username}
+            <ProfileMemoji />
             </div>
-            {/* Edit Profile Modal */}
-            <div className="modal" id="profileModal" data-easein="bounceIn" tabIndex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
-                <div className="modal-dialog" role="document">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h4 className="modal-title" id="profileModalLabel">Modify Profile</h4>
-                            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div className="modal-body">
-                            ...
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" className="btn btn-primary">Save changes</button>
-                        </div>
-                    </div>
-                </div>
+            <div id="userImage">
+                <img src={props.value.profileImage} alt="" />
             </div>
-            <img id="userImage" alt="" />
             <div className="card-block">
                 <h4 className="card-title">Welcome, {props.value.firstname} </h4>
                 <RowMt size="2">
@@ -58,7 +48,7 @@ export function UserCard(props) {
                     <Column>{props.value.email}</Column>
                 </RowMt>
                 <RowMt size="2">
-                    <Column>Joined on: {props.value.created.split("T")[0]}</Column>
+                    <Column>Joined: {createdDate}</Column>
                 </RowMt>
             </div>
         </div>
@@ -72,10 +62,10 @@ export function ConnectCard() {
                 <div className="label">All Stories</div><a className="action" href="/library">Find</a>
             </div>
             <div className="list d-flex justify-content-between flex-wrap">
+                {/* <img className="list-item" alt="" />
                 <img className="list-item" alt="" />
                 <img className="list-item" alt="" />
-                <img className="list-item" alt="" />
-                <img className="list-item" alt="" />
+                <img className="list-item" alt="" /> */}
             </div>
         </div>
     );
@@ -85,21 +75,13 @@ export function ConnectCard() {
 /* 
 export function UserActivity(props) {
     return (
-        <div className="row no-gutters">
-            <Column>
-                <div className="row no-gutters align-content-center">
-                    <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
-                    <Column classType="activity-text">You have recently viewed <em>story name goes here!</em>
-                    </Column>
-                </div>
-            </Column>
-            <Column classType="right">
-                <div className="row no-gutters justify-content-center align-items-center">
-                    <div className="view"><button className="btn btn-primary">Resume</button></div>
-                    <div className="text-center">5 Days Ago</div>
-                </div>
-            </Column>
-        </div>
+        <Column>
+            <div className="row no-gutters align-content-center">
+                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
+                <Column classType="activity-text">You're last completed book <em>NAME GOES HERE</em>
+                </Column>
+            </div>
+        </Column>
     );
 }
 */
@@ -162,4 +144,13 @@ export function Achievement(props) {
             title={`<strong>${props.name}:</strong><br/><br/>${props.description}`}
             id={props.id}></i>
     )
+}
+
+export function ProfileImage(props) {
+    return (
+        <div>
+            <img src={props.src}
+                 alt={props.alt} />
+        </div>
+    );
 }

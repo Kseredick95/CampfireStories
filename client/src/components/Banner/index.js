@@ -2,8 +2,14 @@ import React from "react";
 import { Row, Col, Column, RowMt } from "../Grid";
 import "./style.css";
 
-export function Banner({ children }) {
-  return <div className={"cover"}>{children}</div>;
+export function Banner() {
+    return (
+        <Row fluid>
+            <div className={"cover"}>
+                <img src={process.env.PUBLIC_URL + '/images/CampFireBanner.png'} alt="campfireBanner" loading="lazy" />
+            </div>
+        </Row>
+    );
 }
 
 export function CTA() {
