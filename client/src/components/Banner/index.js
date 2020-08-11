@@ -1,7 +1,6 @@
 import React from "react";
 import { Row, Col, Column, RowMt } from "../Grid";
 import "./style.css";
-import "./CampFire_Banner.png";
 
 export function Banner({ children }) {
   return <div className={"cover"}>{children}</div>;

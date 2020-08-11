@@ -12,7 +12,6 @@ function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 class StoryPage extends Component {
-<<<<<<< HEAD
   state = {
     book: [],
     page: {},
@@ -24,8 +23,7 @@ class StoryPage extends Component {
       match: { params },
     } = this.props;
     var user = store.get("user");
-    // console.log(isEmpty(user.lastBook))
-    if (isEmpty(user.lastBook) === true) {
+    if (user.lastBook === null) {
       API.findByTitle(`${params.bookTitle}`)
         .then((res) => {
           this.setState({
@@ -33,47 +31,16 @@ class StoryPage extends Component {
             book: res.data.bookPages,
             page: res.data.bookPages[0],
           });
-=======
-    state = {
-        book: [],
-        page: {},
-        prevPage: {},
-        user: {}
-    }
-    componentWillMount() {
-        const { match: { params } } = this.props
-        var user = store.get("user")
-        if (user.lastBook === null) {
-            API.findByTitle(`${params.bookTitle}`)
-                .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
-                .catch(err => console.log(err))
-        }
-        else if(isEmpty(user.lastBook) === true ){
-            API.findByTitle(`${params.bookTitle}`)
-                .then(res => { this.setState({ user: user, book: res.data.bookPages, page: res.data.bookPages[0] }) })
-                .catch(err => console.log(err))
-        }
-        else { this.setState({ user: user, book: user.lastBook.bookPages, page: user.lastBook.currentPage }) }
-    }
-    componentWillUnmount() {
-        const { match: { params } } = this.props;
-        const user = this.state.user;
-        const lastBookInfo = {
-            bookTitle: params.bookTitle,
-            bookPages: this.state.book,
-            currentPage: this.state.page
-        };
-        user.lastBook = {};
-        user.lastBook = lastBookInfo;
-        userAPI.update(user._id, user)
-            .then(res => console.log(res.data))
-            .catch(err => console.log(err));
-        store.set("user", user)
-    }
-    choiceSubmit = e => {
-        const choice = this.state.book.find(choice => {
-            return choice.id === e
->>>>>>> e71ae0d7fd54278a358f73e2add7750b4c7c9c95
+        })
+        .catch((err) => console.log(err));
+    } else if (isEmpty(user.lastBook) === true) {
+      API.findByTitle(`${params.bookTitle}`)
+        .then((res) => {
+          this.setState({
+            user: user,
+            book: res.data.bookPages,
+            page: res.data.bookPages[0],
+          });
         })
         .catch((err) => console.log(err));
     } else {
@@ -133,40 +100,42 @@ class StoryPage extends Component {
     return (
       <div>
         <Navbar />
-        <Row>
-          {this.state.page.image ? (
-            <StoryImg image={this.state.page.image} />
-          ) : (
-            <div></div>
-          )}
-        </Row>
-        <Row>
-          {this.state.page.text ? (
-            <StoryText text={this.state.page.text} />
-          ) : (
-            <div></div>
-          )}
-        </Row>
-        <div id="choiceAlign">
-          <RowMt size="12">
-            {this.state.page.choices ? (
-              this.state.page.choices.map((choice) => (
-                <StoryChoices
-                  className="col-md"
-                  key={choice.id}
-                  id={choice.id}
-                  text={choice.text}
-                  choiceSubmit={this.choiceSubmit}
-                />
-              ))
+        <Container>
+          <Row>
+            {this.state.page.image ? (
+              <StoryImg image={this.state.page.image} />
             ) : (
-              <RestartBtn
-                restartBook={this.restartBook}
-                prevPage={this.prevPage}
-              />
+              <div></div>
             )}
-          </RowMt>
-        </div>
+          </Row>
+          <Row>
+            {this.state.page.text ? (
+              <StoryText text={this.state.page.text} />
+            ) : (
+              <div></div>
+            )}
+          </Row>
+          <div id="choiceAlign">
+            <RowMt size="12">
+              {this.state.page.choices ? (
+                this.state.page.choices.map((choice) => (
+                  <StoryChoices
+                    className="col-md"
+                    key={choice.id}
+                    id={choice.id}
+                    text={choice.text}
+                    choiceSubmit={this.choiceSubmit}
+                  />
+                ))
+              ) : (
+                <RestartBtn
+                  restartBook={this.restartBook}
+                  prevPage={this.prevPage}
+                />
+              )}
+            </RowMt>
+          </div>
+        </Container>
       </div>
     );
   }
