@@ -1,4 +1,4 @@
-/* #storyChoices>button, #restartBtn>button {
+#storyChoices>button, #restartBtn>button {
     width: 500px;
     height: 50px;
     font-size: large;
@@ -7,7 +7,7 @@
 
 #restartBtn>button {
     margin-left: 3rem;
-} */
+}
 
 body {
     font-family: "Jost", sans-serif;
@@ -17,7 +17,7 @@ body {
     font-weight: 600;
 }
 
-button {
+.libRestartButton {
     background-color: #709255;
     color: #fff;
     border: 2px solid #709255;
@@ -31,7 +31,7 @@ button {
     margin-bottom: 0.25em;
 }
 
-button:hover {
+.libRestartButton:hover {
     color: #322a26;
     background-color: #709255;
     border: 2px solid #95b46a;
