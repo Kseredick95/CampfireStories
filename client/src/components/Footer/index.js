@@ -4,7 +4,7 @@ import "./style.css";
 
 function Footer() {
   return (
-    <footer className="site-footer" id="sticky-footer">
+    <footer className="site-footer">
       <Container fluid>
         <Row>
           <Col size="12">
