@@ -1,3 +1,10 @@
+body {
+    font-family: "Jost", sans-serif;
+    font-size: medium;
+    width: 100%;
+    font-weight: 600;
+}
+
 .hoverable {
     display: inline-block;
     backface-visibility: hidden;
@@ -25,21 +32,16 @@
     transition-property: transform, opacity;
 }
 
-.hoverable:hover,
-.hoverable:active,
-.hoverable:focus {
+.hoverable:hover, .hoverable:active, .hoverable:focus {
     transform: translateY(-5px);
 }
 
-.hoverable:hover:before,
-.hoverable:active:before,
-.hoverable:focus:before {
+.hoverable:hover:before, .hoverable:active:before, .hoverable:focus:before {
     opacity: 1;
     transform: translateY(-5px);
 }
 
-.navbar-inverse .navbar-nav .nav-link:focus,
-.navbar-inverse .navbar-nav .nav-link:hover {
+.navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
     color: rgba(255, 255, 255, 0.85);
 }
 
@@ -48,27 +50,22 @@
         -webkit-transform: translateY(8px);
         transform: translateY(8px);
     }
-
     33.3% {
         -webkit-transform: translateY(-6px);
         transform: translateY(-6px);
     }
-
     49.95% {
         -webkit-transform: translateY(4px);
         transform: translateY(4px);
     }
-
     66.6% {
         -webkit-transform: translateY(-2px);
         transform: translateY(-2px);
     }
-
     83.25% {
         -webkit-transform: translateY(1px);
         transform: translateY(1px);
     }
-
     100% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
@@ -98,8 +95,7 @@ nav ul {
     margin-bottom: 5%;
 }
 
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
+.navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     margin-top: 2%;
 }
 
@@ -121,8 +117,7 @@ nav ul {
     }
 }
 
-#nav-body,
-#nav-body-two {
+#nav-body, #nav-body-two {
     background-color: #322a26;
     font-weight: 600;
     text-align: center !important;
@@ -179,7 +174,6 @@ li:hover {
         padding-top: 0;
         padding-bottom: 0;
     }
-
     .navbar.navbar-inverse.navbar-expand-sm .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
@@ -187,7 +181,6 @@ li:hover {
         top: 0;
         line-height: 24px;
     }
-
 }
 
 @media (min-width: 768px) {
@@ -199,7 +192,6 @@ li:hover {
         padding-top: 0;
         padding-bottom: 0;
     }
-
     .navbar.navbar-inverse.navbar-expand-md .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
@@ -207,7 +199,6 @@ li:hover {
         top: 0;
         line-height: 24px;
     }
-
     #nav-body-two {
         margin-bottom: 100px;
     }
@@ -222,7 +213,6 @@ li:hover {
         padding-top: 0;
         padding-bottom: 0;
     }
-
     .navbar.navbar-inverse.navbar-expand-lg .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;
@@ -230,7 +220,6 @@ li:hover {
         top: 0;
         line-height: 24px;
     }
-
     #nav-body-two {
         margin-bottom: 100px;
     }
@@ -245,7 +234,6 @@ li:hover {
         padding-top: 0;
         padding-bottom: 0;
     }
-
     .navbar.navbar-inverse.navbar-expand-xl .navbar-nav .hoverable .nav-link>.fas {
         display: block;
         width: 48px;

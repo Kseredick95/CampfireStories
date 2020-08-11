@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700");
-
 .cover {
     height: 200px;
     background: #709255;
@@ -29,8 +28,7 @@
     flex: 0 0 125px;
 }
 
-#dashboard,
-#banner-title>strong {
+#dashboard, #banner-title>strong {
     font-size: 18px;
 }
 
