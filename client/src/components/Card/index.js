@@ -3,8 +3,8 @@ import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
 import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions";
 import ProfileMemoji from '../ProfileImage/index';
-import API from '../../utils/APIuser';
 import "./style.css";
+
 // export card whose id is user
 export function UserCard(props) {
     // Date user was created
@@ -14,19 +14,14 @@ export function UserCard(props) {
         day: "2-digit"
     }).format(new Date(props.value.achievements[0].date));
 
-    // let state = {
-    //     memojiSelect: 
-    // }
-
     return (
         <div className="card" id="user">
             <div className="card-header">
                 Username: {props.value.username}
-            </div>
             <ProfileMemoji />
-            {/* <ProfileImage /> */}
+            </div>
             <div id="userImage">
-                <img src={props.value.profileImage} alt={props.value.username} />
+                <img src={props.value.profileImage} alt="" />
             </div>
             <div className="card-block">
                 <h4 className="card-title">Welcome, {props.value.firstname} </h4>
@@ -152,12 +147,10 @@ export function Achievement(props) {
 }
 
 export function ProfileImage(props) {
-
     return (
         <div>
             <img src={props.src}
-                alt={props.alt}
-            />
+                 alt={props.alt} />
         </div>
     );
 }

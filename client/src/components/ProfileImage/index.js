@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import memojiLoader from "./memojis";
-import {ProfileImage} from "../Card"
+import { ProfileImage } from "../Card"
 import API from "../../utils/APIuser"
 import store from "store"
 
@@ -8,31 +8,37 @@ import store from "store"
 class ProfileMemoji extends Component {
     state = { memoji: {} }
 
-    // componentDidMount() {
-    //     const memojis = memojiLoader();
-    //     this.setState({memojis});
-    // }
     handleSubmit = (e) => {
         e.preventDefault();
-        let user = store.get("user")
-        console.log(this.state.memoji)
-        user.profileImage = this.state.memoji
+        let user = store.get("user");
 
         API.update(user._id, user).then(res => {
-            console.log(res)
+            console.log(res);
             store.set("user", res.data)
         })
     }
 
     handleChange = (e) => {
         e.preventDefault();
-        const memoji = e.target.src;
-        this.setState({ memoji })
-        console.log(this.state)
-        console.log(e.target.src)
+        let user = store.get("user");
 
+        const memoji = e.target.src;
+        this.setState({ memoji });
+        // console.log(memoji)
+        user.profileImage = memoji;
+
+        API.update(user._id, user).then(res => {
+            console.log(res);
+            store.set("user", res.data)
+        })
     }
 
+    // componentDidMount() {
+    //     let user = store.get("user");
+    //     const memoji = user.profileImage;
+
+    //     this.setState({memoji});
+    // }
 
     render() {
         return (
@@ -52,14 +58,13 @@ class ProfileMemoji extends Component {
                                 {memojiLoader().map(memoji => (
                                     <button type="button" onClick={this.handleChange}>
                                         <ProfileImage
-                                            key={memoji.title}
                                             src={memoji.src}
                                             alt={memoji.alt} />
                                     </button>
                                 ))}
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-primary" onClick = {this.handleSubmit}>Save changes</button>
+                                <button type="button" className="btn btn-primary" data-dismiss="modal" onClick = {this.handleSubmit}>Save changes</button>
                                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
                             </div>
                         </div>
