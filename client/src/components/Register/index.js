@@ -32,6 +32,7 @@ class Register extends Component {
     this.state = {
       firstName: null,
       lastName: null,
+      username: null,
       email: null,
       password: null,
       formErrors: {
@@ -65,6 +66,7 @@ class Register extends Component {
       created: Date.now(),
       firstname: this.state.firstName,
       lastname: this.state.lastName,
+      username: this.state.username,
       email: this.state.email,
       password: this.state.password,
       deathCount: 0,

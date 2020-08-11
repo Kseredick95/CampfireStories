@@ -1,6 +1,6 @@
 import React from "react";
 import { Banner } from "../components/Banner/index";
-import { Container, Col, RowMt, Row, Column } from "../components/Grid";
+import { Container } from "../components/Grid";
 import Navbar from "./../components/NavbarTwo"
 
 function AboutUs () {
@@ -20,10 +20,10 @@ function AboutUs () {
         <br></br>
         Terry - Profile framework, CSS assosicated with user profiles.
         <br></br>
-        Karolyn - User database, login JavaScript, routing and user profile JavaScript
+        Karolyn - User database, login JavaScript, deployment, routing and user profile JavaScript
         <br></br>
         <br></br>
-        A special thank you to our amazing teacher Stanley and all the wonderful TAs who helped us along our journey. We could have never gotten as far as we did without your instruction and support. We're cookin' with gas (or is it a campfire?) now!</div>
+        A special thank you to our amazing teacher Stanley and all the wonderful TAs who helped us along our journey. We could have never gotten as far as we did without your instruction and support. We're cookin' with gas (or is it a campfire?)!</div>
         <br></br>
     </Container>
     </div>
