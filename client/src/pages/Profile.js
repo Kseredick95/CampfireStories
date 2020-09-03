@@ -3,16 +3,10 @@ import { Banner, CTA, Header } from "../components/Banner";
 import { Container, Col, RowMt, Row, Column } from "../components/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
-import { Redirect } from "react-router-dom";
-import isLoggedIn from "./authenticate"
 import store from "store"
 
 
 function Profile () {
-
-    if(isLoggedIn()) {
-        return <Redirect to = "/login" />
-    }
 
     let user = store.get(`user`)
     console.log(user)
