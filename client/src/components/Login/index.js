@@ -89,7 +89,7 @@ class Login extends Component {
     return (
       <div className="wrapper">
         <NavbarTwo />
-        <div className="form-wrapper">
+        <div id="login">
           <h1>Login</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="email">
