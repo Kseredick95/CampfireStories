@@ -4,16 +4,17 @@ import { Container, Col, RowMt, Row, Column } from "../components/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
 import Navbar from "../components/Navbar";
 import store from "store"
+// import Timer from "../helpers/AutoLogout"
 
 
 function Profile () {
 
     let user = store.get(`user`)
-    console.log(user)
 
     
     return (
         <div id="main">
+            {/* <Timer/> */}
             <Navbar />
             <Banner />
             <Container>

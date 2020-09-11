@@ -2,6 +2,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import store from "store";
+import Timer from '../helpers/AutoLogout'
 
 class ProtectedRoute extends React.Component {
 
@@ -11,7 +12,10 @@ class ProtectedRoute extends React.Component {
         const isAuthenticated = store.get("user")
        
         return isAuthenticated ? (
+            <div>
             <Component />
+            <Timer />
+            </div>
         ) : (
             <Redirect to={{ pathname: '/login' }} />
         );
