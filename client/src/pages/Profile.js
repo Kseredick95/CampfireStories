@@ -1,8 +1,8 @@
 import React from "react";
-import { Banner, CTA, Header } from "../components/Banner";
-import { Container, Col, RowMt, Row, Column } from "../components/Grid";
-import { UserCard, ConnectCard, HistoryCard } from '../components/Card';
-import Navbar from "../components/Navbar";
+import { Banner, CTA, Header } from "../components/Toolkit/Banner";
+import { Container, Col, RowMt, Row, Column } from "../components/Toolkit/Grid";
+import { UserCard, ConnectCard, HistoryCard } from '../components/Toolkit/Card';
+import Navbar from "../components/Toolkit/Navbar";
 import { Redirect } from "react-router-dom";
 import isLoggedIn from "./authenticate"
 import store from "store"

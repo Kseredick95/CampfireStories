@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import NavbarTwo from "../NavbarTwo";
+import NavbarTwo from "../Toolkit/NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import memojiLoader from "./memojis";
-import { ProfileImage } from "../Card"
+import { ProfileImage } from "../Toolkit/Card"
 import API from "../../utils/APIuser"
 import store from "store"
 

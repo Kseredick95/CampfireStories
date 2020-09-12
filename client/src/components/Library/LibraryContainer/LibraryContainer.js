@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Container, Row } from "../../Grid";
-import Navbar from "../../Navbar/index";
+import { Container, Row } from "../../Toolkit/Grid";
+import Navbar from "../../Toolkit/Navbar/index";
 import BookCard from "../BookCard/BookCard";
 import API from "../../../utils/API_book";
 import store from "store";

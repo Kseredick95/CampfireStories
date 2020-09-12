@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import LibraryContainer from "./components/Library/LibraryContainer/LibraryContainer";
 import StoryPage from "./components/StoryPage/Container/Container";
 import Profile from "./pages/Profile";
-import Footer from "./components/Footer";
+import Footer from "./components/Toolkit/Footer";
 import Aboutus from "./pages/Aboutus";
 
 function App() {

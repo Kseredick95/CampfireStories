@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Row, RowMt, Container } from "../../Grid";
-import Navbar from "../../Navbar";
+import { Row, RowMt, Container } from "../../Toolkit/Grid";
+import Navbar from "../../Toolkit/Navbar";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";

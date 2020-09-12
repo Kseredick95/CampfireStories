@@ -1,8 +1,8 @@
 import React from "react";
 import {Link} from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
-import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions";
-import ProfileMemoji from '../ProfileImage/index';
+import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../../helpers/HelperFunctions";
+import ProfileMemoji from '../../ProfileImage/index';
 import "./style.css";
 
 // export card whose id is user
