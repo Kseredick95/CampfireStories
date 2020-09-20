@@ -114,8 +114,8 @@ a.action:hover {
 }
 
 #user #userImage {
-    background: #95B46A;
-    height: 200px;
+    background: #fff;
+    height: 190px;
 }
 
 #user #userImage>img {

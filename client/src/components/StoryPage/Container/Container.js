@@ -8,6 +8,7 @@ import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book";
 import userAPI from "../../../utils/APIuser";
 import store from "store";
+
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
@@ -17,7 +18,9 @@ class StoryPage extends Component {
     page: {},
     prevPage: {},
     user: {},
+    death: 0
   };
+
   componentWillMount() {
     const {
       match: { params },
@@ -51,6 +54,7 @@ class StoryPage extends Component {
       });
     }
   }
+
   componentWillUnmount() {
     const {
       match: { params },
@@ -69,6 +73,7 @@ class StoryPage extends Component {
       .catch((err) => console.log(err));
     store.set("user", user);
   }
+
   choiceSubmit = (e) => {
     const choice = this.state.book.find((choice) => {
       return choice.id === e;
@@ -85,17 +90,27 @@ class StoryPage extends Component {
         .then((res) => console.log(res.data))
         .catch((err) => console.log(err));
     }
-    store.set("user", user);
     this.setState({ prevPage: this.state.page, page: choice });
+
+    if (choice.death === "true") {
+      user.deathCount += 1;
+      var userDeath = user.deathCount;
+      // this.deathIncrement();
+      this.setState({ userDeath: userDeath });
+    }
+    store.set("user", user);
   };
+
   restartBook = (e) => {
     const user = this.state.user;
     user.lastBook = {};
     this.setState({ page: this.state.book[0], user: user });
   };
+
   prevPage = (e) => {
     this.setState({ page: this.state.prevPage });
   };
+
   render() {
     return (
       <div>
@@ -105,15 +120,15 @@ class StoryPage extends Component {
             {this.state.page.image ? (
               <StoryImg image={this.state.page.image} />
             ) : (
-              <div></div>
-            )}
+                <div></div>
+              )}
           </Row>
           <Row>
             {this.state.page.text ? (
               <StoryText text={this.state.page.text} />
             ) : (
-              <div></div>
-            )}
+                <div></div>
+              )}
           </Row>
           <div id="choiceAlign">
             <RowMt size="12">
@@ -128,11 +143,12 @@ class StoryPage extends Component {
                   />
                 ))
               ) : (
-                <RestartBtn
-                  restartBook={this.restartBook}
-                  prevPage={this.prevPage}
-                />
-              )}
+                  <RestartBtn
+                    restartBook={this.restartBook}
+                    prevPage={this.prevPage}
+                  />
+                )}
+              <p>Death Count: {this.state.user.deathCount}</p>
             </RowMt>
           </div>
         </Container>
