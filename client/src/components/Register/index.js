@@ -78,11 +78,11 @@ class Register extends Component {
       password: this.state.password,
       deathCount: 0,
       achievements: [
-        {
+        {type: "user",
           name: "New user achievement",
           description: "Achieved by signing up",
-          date: Date.now(),
-        },
+          date: Date.now()
+      }
       ],
       profileImage: null,
       lastBook: null,

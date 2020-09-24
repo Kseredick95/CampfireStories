@@ -18,7 +18,6 @@ function NavbarTwo(){
         </div>
     )
 };
-
 function handleRedirect(user) {
     if (user === undefined) {
         return ("/")
