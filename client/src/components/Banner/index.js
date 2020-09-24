@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Column, RowMt } from "../Grid";
 import "./style.css";
+import { Link } from "react-router-dom";
 
 export function Banner() {
     return (
@@ -27,8 +28,8 @@ export function CTA() {
                               <div className="col small text-white">Check to see if new stories has been created!</div>
                           </RowMt>
                       </Col>
-                      <div className="col-lg story-btn"><button className="btn btn-secondary" href="/storypage">Story
-                          Time!</button></div>
+                      <div className="col-lg story-btn"><Link to="/library"><button className="btn btn-secondary">Story
+                            Time!</button></Link></div>
                   </Row>
               </div>
           </Column>

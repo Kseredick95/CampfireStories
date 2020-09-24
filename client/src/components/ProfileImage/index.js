@@ -8,12 +8,12 @@ import store from "store"
 class ProfileMemoji extends Component {
     state = { 
         memoji: {},
-        user: {} }
+        user: {}
+     }
 
     handleSubmit = (e) => {
         e.preventDefault();
         let user = this.state.user;
-
         API.update(user._id, user).then(res => {
             console.log(res);
             window.location.replace("/profile/" + user._id)
@@ -28,11 +28,10 @@ class ProfileMemoji extends Component {
         user.profileImage = memoji;
         this.setState({ memoji: memoji, user: user });
     }
-
+    
     componentDidMount() {
         let user = store.get("user");
         const memoji = user.profileImage;
-
         this.setState({memoji: memoji, user: user});
     }
 

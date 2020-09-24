@@ -1,12 +1,10 @@
 import React from "react";
-import { Banner } from "../components/Banner/index";
 import { Container } from "../components/Grid";
 import Navbar from "./../components/NavbarTwo"
 
 function AboutUs () {
     return (
         <div>
-        <Banner/>
         <Navbar/>
     <Container>
         <div className="row justify-content-center">We are a small team that created this website to test our abilities as full stack web-developers. This site was created in just a few weeks using technologies such as: React, Node.js, JavaScript, MongoDB and a few others. We are proud of what we could accomplish within such a small time frame.
