@@ -55,14 +55,7 @@ class Register extends Component {
     e.preventDefault();
 
     if (formValid(this.state)) {
-      console.log(`
-      ---SUBMITTING---
-      First Name: ${this.state.firstName}
-      Last Name: ${this.state.lastName}
-      Email: ${this.state.email}
-      Username: ${this.state.username}
-      Password: ${this.state.password}
-      `);
+      //Can add code in for console log validation
     } else {
       console.error("FORM INVALID - SEE ERROR MESSAGES");
       return;

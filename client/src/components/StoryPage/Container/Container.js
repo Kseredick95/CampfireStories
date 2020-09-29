@@ -28,7 +28,7 @@ class StoryPage extends Component {
 
   componentWillMount() {
     const {
-      match: { params },
+      computedMatch: { params },
     } = this.props;
     var user = store.get("user");
     if (user.lastBook === null || isEmpty(user.lastBook) === true || user.lastBook.bookTitle !== params.bookTitle) {
@@ -52,7 +52,7 @@ class StoryPage extends Component {
 
   componentWillUnmount() {
     const {
-      match: { params },
+      computedMatch: { params },
     } = this.props;
     const user = this.state.user;
     const lastBookInfo = {
@@ -64,14 +64,14 @@ class StoryPage extends Component {
     user.lastBook = lastBookInfo;
     userAPI
       .update(user._id, user)
-      .then((res) => console.log(res.data))
+      // .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
     store.set("user", user);
   }
 
   choiceSubmit = (e) => {
     const {
-      match: { params },
+      computedMatch: { params },
     } = this.props;
     console.log(params.bookTitle)
     const choice = this.state.book.find((choice) => {

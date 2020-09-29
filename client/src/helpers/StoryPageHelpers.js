@@ -10,11 +10,9 @@ export function storyPageHelpers() {
             user.completedBooks.some((obj) => obj.title === choice.victory) === false
         ) {
             user.completedBooks.push({ title: choice.victory });
-            let userData = user
-            console.log(userData);
             userAPI
                 .update(user._id, user)
-                .then((res) => console.log(res.data))
+                // .then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
         }
     }
@@ -31,10 +29,10 @@ export function storyPageHelpers() {
                 type: choice.achievement.type,
                 date: Date.now()
             });
-            console.log(user);
+
             userAPI
                 .update(user._id, user)
-                .then((res) => console.log(res.data))
+                //.then((res) => console.log(res.data))
                 .catch((err) => console.log(err));
         };
     }

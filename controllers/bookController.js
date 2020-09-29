@@ -7,8 +7,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
     },
     findByTitle: function(req, res) {
-            console.log(req.params)
-            console.log(req.params.bookTitle)
             db.Book.findOne({ bookTitle: req.params.bookTitle }).lean()
                 .then(dbBook => res.json(dbBook))
                 .catch(err => res.status(422).json(err));
