@@ -1,30 +1,37 @@
 .LibCard {
-    /* height: 50%; */
-    width: 33%;
-    padding: 50px;
-    background: #95B46A;
+  /* height: 50%; */
+  text-align: center;
+  width: 33%;
+  padding: 5%;
+  background: #95b46a;
 }
 
-.libh3 {
-    text-align: center;
-    padding-top: 20px;
-    cursor: pointer
-}
+/* .libh3 {
+  text-align: center;
+  padding: 5%;
+  cursor: pointer;
+} */
 
 .libImg {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    cursor: pointer
+  width: 100%;
+  cursor: pointer;
 }
 
 .libBtn {
-    display: block;
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    background: #322a26;
-    width: fit-content;
+  border-left-width: 0px;
+  margin-left: 0px;
+  /* text-align: center;
+  margin: auto;
+  width: 50%;
+  background: #322a26; */
+}
+
+@media screen and (max-width: 414px) {
+  #main {
+    width: 100%;
+  }
+  .libBtn {
+    margin: 0;
+    padding: 0;
+  }
 }

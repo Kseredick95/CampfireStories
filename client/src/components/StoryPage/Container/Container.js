@@ -8,22 +8,30 @@ import RestartBtn from "../RestartBtn/RestartBtn";
 import API from "../../../utils/API_book";
 import userAPI from "../../../utils/APIuser";
 import store from "store";
+import { storyPageHelpers } from "../../../helpers/StoryPageHelpers";
+import Reward from "react-rewards";
+import colorsArray from "./rewardColorsArray";
+import "./Reward.css";
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
+
 class StoryPage extends Component {
+  
   state = {
     book: [],
     page: {},
     prevPage: {},
     user: {},
+    rewardDisabled: false
   };
+
   componentWillMount() {
     const {
       match: { params },
     } = this.props;
     var user = store.get("user");
-    if (user.lastBook === null) {
+    if (user.lastBook === null || isEmpty(user.lastBook) === true || user.lastBook.bookTitle !== params.bookTitle) {
       API.findByTitle(`${params.bookTitle}`)
         .then((res) => {
           this.setState({
@@ -33,17 +41,7 @@ class StoryPage extends Component {
           });
         })
         .catch((err) => console.log(err));
-    } else if (isEmpty(user.lastBook) === true) {
-      API.findByTitle(`${params.bookTitle}`)
-        .then((res) => {
-          this.setState({
-            user: user,
-            book: res.data.bookPages,
-            page: res.data.bookPages[0],
-          });
-        })
-        .catch((err) => console.log(err));
-    } else {
+      } else {
       this.setState({
         user: user,
         book: user.lastBook.bookPages,
@@ -51,6 +49,7 @@ class StoryPage extends Component {
       });
     }
   }
+
   componentWillUnmount() {
     const {
       match: { params },
@@ -69,33 +68,41 @@ class StoryPage extends Component {
       .catch((err) => console.log(err));
     store.set("user", user);
   }
+
   choiceSubmit = (e) => {
+    const {
+      match: { params },
+    } = this.props;
+    console.log(params.bookTitle)
     const choice = this.state.book.find((choice) => {
       return choice.id === e;
     });
     const user = this.state.user;
-    if (
-      choice.victory &&
-      user.completedBooks.some((obj) => obj.title === choice.victory) === false
-    ) {
-      user.completedBooks.push({ title: choice.victory });
-      console.log(user);
-      userAPI
-        .update(user._id, user)
-        .then((res) => console.log(res.data))
-        .catch((err) => console.log(err));
-    }
+    var helpers = storyPageHelpers()
+    helpers.completedBooksCheck(choice, user);
+    helpers.achievementsCheck(choice, user);
     store.set("user", user);
     this.setState({ prevPage: this.state.page, page: choice });
   };
+
   restartBook = (e) => {
     const user = this.state.user;
     user.lastBook = {};
     this.setState({ page: this.state.book[0], user: user });
   };
+
   prevPage = (e) => {
     this.setState({ page: this.state.prevPage });
   };
+
+  rewardPlayer = () => {
+    this.setState({
+        rewardDisabled:true
+    });
+    setTimeout(() => this.setState({ rewardDisabled: false}), 3000);
+    this.reward.rewardMe()
+  }
+
   render() {
     return (
       <div>
@@ -105,7 +112,19 @@ class StoryPage extends Component {
             {this.state.page.image ? (
               <StoryImg image={this.state.page.image} />
             ) : (
-              <div></div>
+              <div id="reward" className="d-flex justify-content-center container">
+              <div className="col-3"></div>
+              <div className="col-6">
+                <img id="rewardImg" src={process.env.PUBLIC_URL + "/images/CampfireLogo.png"}
+              alt="Campfire Stories Logo"></img>
+              <Reward ref={(ref) => { this.reward = ref }} type='confetti' config={{spread: 360, elementCount: 200, elementSize: 8, lifetime: 280, colors: colorsArray}} >
+                <button id="rewardBtn" className="btn btn-outline-success btn-lg" disabled={this.state.rewardDisabled} onClick={this.rewardPlayer} >
+                  click for your reward
+                </button>
+              </Reward>
+              </div>
+              <div className="col-3"></div>
+              </div>
             )}
           </Row>
           <Row>

@@ -21,7 +21,7 @@ body {
     background-color: #322a26;
 }
 
-.form-wrapper {
+#login {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -130,4 +130,10 @@ input.error {
 
 .createAccount a:hover {
     color: #fff;
+}
+
+@media screen and (max-width: 414px) {
+    #login {
+        width: 90%;
+    }
 }
