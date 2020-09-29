@@ -6,32 +6,13 @@
   background: #95b46a;
 }
 
-/* .libh3 {
-  text-align: center;
-  padding: 5%;
-  cursor: pointer;
-} */
-
 .libImg {
   width: 100%;
   cursor: pointer;
 }
 
-.libBtn {
-  border-left-width: 0px;
-  margin-left: 0px;
-  /* text-align: center;
-  margin: auto;
-  width: 50%;
-  background: #322a26; */
-}
-
 @media screen and (max-width: 414px) {
   #main {
     width: 100%;
-  }
-  .libBtn {
-    margin: 0;
-    padding: 0;
   }
 }
