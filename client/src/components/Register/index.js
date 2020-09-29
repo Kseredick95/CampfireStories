@@ -31,7 +31,6 @@ const formValid = ({ formErrors, ...rest }) => {
   return valid;
 };
 
-
 class Register extends Component {
   constructor(props) {
     super(props);
@@ -149,7 +148,7 @@ class Register extends Component {
     return (
       <div className="wrapper">
         <NavbarTwo />
-        <div className="form-wrapper">
+        <div id="register">
           <h1>Create Account</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             {

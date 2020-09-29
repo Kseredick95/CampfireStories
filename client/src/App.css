@@ -20,7 +20,7 @@ body {
   background-color: #322a26;
 }
 
-.form-wrapper {
+#login {
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -81,22 +81,17 @@ input.error {
   margin-left: 1%;
 }
 
-.firstName,
-.lastName,
-.email,
-.password {
+.firstName, .lastName, .email, .password {
   display: flex;
   flex-direction: column;
   margin-bottom: 15px;
 }
 
-.firstName,
-.lastName {
+.firstName, .lastName {
   width: 49%;
 }
 
-.email,
-.password {
+.email, .password {
   width: 100%;
 }
 
@@ -130,4 +125,10 @@ input.error {
 .createAccount small {
   color: #322a26;
   font-weight: lighter;
+}
+
+@media screen and (max-width: 414px) {
+  #login {
+    width: 90%;
+  }
 }

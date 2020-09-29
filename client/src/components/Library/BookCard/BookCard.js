@@ -10,12 +10,13 @@ function BookCard(props) {
           <BookPic alt={props.bookTitle}></BookPic>
           <h3 className="libh3">{props.bookTitle}</h3>
           <button
+            class="libBtn"
             className="btn libRestartButton"
             onClick={() => {
               props.restartBook();
             }}
           >
-            Restart Book
+            Restart
           </button>
         </Link>
       </Container>

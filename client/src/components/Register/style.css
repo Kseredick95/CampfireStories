@@ -21,7 +21,7 @@ body {
     background-color: #322a26;
 }
 
-.form-wrapper {
+#register {
     width: 400px;
     display: flex;
     flex-direction: column;
@@ -126,4 +126,11 @@ input.error {
 .createAccount small {
     color: #322a26;
     font-weight: lighter;
+}
+
+@media screen and (max-width: 414px) {
+    #register {
+        width: 90%;
+        padding: 20px 20px;
+    }
 }
