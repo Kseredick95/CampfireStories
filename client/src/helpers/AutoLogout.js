@@ -17,7 +17,8 @@ class Timer extends Component {
           <div>
             <IdleTimer
               ref={ref => { this.idleTimer = ref }}
-              timeout={100 * 60 * 15}
+              //Change the int on the right to change timeout amount by minutes
+              timeout={60000 * 10}
               onActive={this.handleOnActive}
               onIdle={this.handleOnIdle}
               onAction={this.handleOnAction}
@@ -27,18 +28,16 @@ class Timer extends Component {
         )
       }
      
+      //On action commands (console log purposes)
       handleOnAction (event) {
-        console.log('user did something', event)
       }
-     
+      
+      //User is active (console log purposes)
       handleOnActive (event) {
-        console.log('user is active', event)
-        console.log('time remaining', this.idleTimer.getRemainingTime())
       }
      
+      //When user has switched to idle then run logout function
       handleOnIdle (event) {
-        console.log('user is idle')
-        console.log('last active', this.idleTimer.getLastActiveTime())
         this.handleLogout()
       }
 

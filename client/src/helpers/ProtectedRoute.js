@@ -13,7 +13,7 @@ class ProtectedRoute extends React.Component {
        
         return isAuthenticated ? (
             <div>
-            <Component />
+            <Component {...this.props}/>
             <Timer />
             </div>
         ) : (
