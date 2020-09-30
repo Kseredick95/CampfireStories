@@ -53,7 +53,6 @@ class Login extends Component {
             completedBooks: res.data.completedBooks,
             loggedIn: true,
           });
-          store.set("user", res.data);
           history.push(`/profile/${res.data._id}`);
         }
       })
@@ -89,7 +88,7 @@ class Login extends Component {
     return (
       <div className="wrapper">
         <NavbarTwo />
-        <div className="form-wrapper">
+        <div id="login">
           <h1>Login</h1>
           <form onSubmit={this.handleSubmit} noValidate>
             <div className="email">

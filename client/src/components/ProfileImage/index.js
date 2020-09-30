@@ -15,6 +15,7 @@ class ProfileMemoji extends Component {
         e.preventDefault();
         let user = this.state.user;
         API.update(user._id, user).then(res => {
+            //console.log(res);
             window.location.replace("/profile/" + user._id)
         })
         store.set("user", user)

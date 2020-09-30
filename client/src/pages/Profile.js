@@ -30,6 +30,7 @@ function Profile() {
 
     return (
         <div id="main">
+            {/* <Timer/> */}
             <Navbar />
             <Banner />
             <Container>

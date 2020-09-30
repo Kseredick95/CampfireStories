@@ -13,30 +13,12 @@ const userSchema = new Schema({
     deathCount: { type: Number, required: true },
     profileImage: { type: String, required: false },
     achievements: [{
-        name: { type: String },
-        description: { type: String },
-        date: { type: Date }
+        type: { type: String },
+            name: { type: String },
+            description: { type: String },
+            date: { type: Date }
     }],
-    lastBook: {
-        // bookTitle: { type: String },
-        // bookPages: [{
-        //     id: { type: String },
-        //     image: { type: String },
-        //     text: { type: String },
-        //     choices: [{ text: { type: String } },
-        //         { id: { type: String } }
-        //     ]
-        // }],
-        // currentPage: {
-        //     id: { type: String },
-        //     image: { type: String },
-        //     text: { type: String },
-        //     choices: [
-        //         { text: { type: String } },
-        //         { id: { type: String } }
-        //     ]
-        // }
-    },
+    lastBook: {},
     completedBooks: [{
         title: { type: String }
     }]
