@@ -1,15 +1,9 @@
 import React, { Component } from "react";
-import NavbarTwo from "../NavbarTwo";
+import NavbarTwo from "../Toolkit/NavbarTwo";
 import "./style.css";
 import { Link } from "react-router-dom";
 import API from "../../utils/APIuser";
 import store from "store";
-
-// const selectMemoji = () => {
-//   const memojiFolder = process.env.PUBLIC_URL + '/images/MemojiPack';
-//   let memoji = fs.readdirSync(memojiFolder);
-//   return memoji[Math.floor(Math.random() * memoji.length)];
-// }
 
 const emailRegex = RegExp(
   /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/

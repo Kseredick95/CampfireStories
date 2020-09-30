@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import LibraryContainer from "./components/Library/LibraryContainer/LibraryContainer";
 import StoryPage from "./components/StoryPage/Container/Container";
 import Profile from "./pages/Profile";
-import Footer from "./components/Footer";
+import Footer from "./components/Toolkit/Footer";
 import Aboutus from "./pages/Aboutus";
 import ProtectedRoute from "./helpers/ProtectedRoute"
 
@@ -20,6 +20,7 @@ function App() {
           <ProtectedRoute exact path="/library" component={LibraryContainer} />
           <ProtectedRoute exact path="/storypage/:bookTitle" component={StoryPage} />
           <ProtectedRoute exact path="/profile/:_id" component={Profile} />
+          <ProtectedRoute exact path="/profile/:_id/edit-profile" component={Profile} />
           <Route exact path="/about" component={Aboutus} />
         </Switch>
         <Footer />

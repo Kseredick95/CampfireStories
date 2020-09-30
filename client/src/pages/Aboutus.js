@@ -1,6 +1,6 @@
 import React from "react";
-import { Container } from "../components/Grid";
-import Navbar from "./../components/NavbarTwo"
+import { Container } from "../components/Toolkit/Grid";
+import Navbar from "./../components/Toolkit/NavbarTwo";
 
 function AboutUs () {
     return (

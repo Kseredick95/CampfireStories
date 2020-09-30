@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Row, RowMt, Container } from "../../Grid";
-import Navbar from "../../Navbar";
+import { Row, RowMt, Container } from "../../Toolkit/Grid";
+import Navbar from "../../Toolkit/Navbar";
 import StoryImg from "../StoryImg/StoryImg";
 import StoryText from "../StoryText/StoryText";
 import StoryChoices from "../StoryChoices/StoryChoices";
@@ -12,17 +12,19 @@ import { storyPageHelpers } from "../../../helpers/StoryPageHelpers";
 import Reward from "react-rewards";
 import colorsArray from "./rewardColorsArray";
 import "./Reward.css";
+
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
 
 class StoryPage extends Component {
-  
+
   state = {
     book: [],
     page: {},
     prevPage: {},
     user: {},
+    death: 0,
     rewardDisabled: false
   };
 
@@ -41,7 +43,7 @@ class StoryPage extends Component {
           });
         })
         .catch((err) => console.log(err));
-      } else {
+    } else {
       this.setState({
         user: user,
         book: user.lastBook.bookPages,
@@ -83,6 +85,14 @@ class StoryPage extends Component {
     helpers.achievementsCheck(choice, user);
     store.set("user", user);
     this.setState({ prevPage: this.state.page, page: choice });
+    // Death increment and storing
+    if (choice.death === "true") {
+      user.deathCount += 1;
+      var userDeath = user.deathCount;
+      this.setState({ userDeath: userDeath });
+    }
+
+    store.set("user", user);
   };
 
   restartBook = (e) => {
@@ -97,9 +107,9 @@ class StoryPage extends Component {
 
   rewardPlayer = () => {
     this.setState({
-        rewardDisabled:true
+      rewardDisabled: true
     });
-    setTimeout(() => this.setState({ rewardDisabled: false}), 3000);
+    setTimeout(() => this.setState({ rewardDisabled: false }), 3000);
     this.reward.rewardMe()
   }
 
@@ -159,4 +169,5 @@ class StoryPage extends Component {
     );
   }
 }
+
 export default StoryPage;

@@ -1,8 +1,8 @@
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { RowMt, Col, Column } from "../Grid";
-import {isEmpty, lastBookCheckBtn, lastBookCheckName} from "../../helpers/HelperFunctions";
-import ProfileMemoji from '../ProfileImage/index';
+import { isEmpty, lastBookCheckBtn, lastBookCheckName } from "../../../helpers/HelperFunctions";
+import ProfileMemoji from '../../ProfileImage/index';
 import "./style.css";
 
 // export card whose id is user
@@ -14,15 +14,20 @@ export function UserCard(props) {
         day: "2-digit"
     }).format(new Date(props.value.achievements[0].date));
 
+   let editUrl = "/profile/" + props.value._id + "/edit-profile";
+
     return (
         <div className="card" id="user">
             <div className="card-header">
                 Username: {props.value.username}
+                <a className="action" href={editUrl}>Edit Profile</a>
+            </div>
             <ProfileMemoji />
-            </div>
-            <div id="userImage">
-                <img src={props.value.profileImage} alt="" />
-            </div>
+            <a className="action" data-toggle="modal" href="#memojisModal">
+                <div id="userImage">
+                    <img src={props.value.profileImage} alt="" />
+                </div>
+            </a>
             <div className="card-block">
                 <h4 className="card-title">Welcome, {props.value.firstname} </h4>
                 <RowMt size="2">
@@ -70,21 +75,7 @@ export function ConnectCard() {
         </div>
     );
 }
-// export the acivity for appending and prepending purposes
-// need props of the icon, timestamp
-/* 
-export function UserActivity(props) {
-    return (
-        <Column>
-            <div className="row no-gutters align-content-center">
-                <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
-                <Column classType="activity-text">You're last completed book <em>NAME GOES HERE</em>
-                </Column>
-            </div>
-        </Column>
-    );
-}
-*/
+
 // export recent activity card
 export function HistoryCard(props) {
     return (
@@ -98,13 +89,13 @@ export function HistoryCard(props) {
                                 <Column classType="icon"><i className="fas fa-book-reader fa-2x"></i></Column>
                                 <Column classType="activity-text">You have recently viewed <em>{
                                     lastBookCheckName(props.value.lastBook)
-                                    }</em>
+                                }</em>
                                 </Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                            {lastBookCheckBtn(props.value.lastBook)}
+                                {lastBookCheckBtn(props.value.lastBook)}
                                 <div className="text-center"></div>
                             </div>
                         </Column>
@@ -116,19 +107,19 @@ export function HistoryCard(props) {
                             <div className="row no-gutters align-content-center">
                                 <Column classType="icon"><i className="fas fa-book fa-2x"></i></Column>
                                 <Column classType="activity-text">You have recently completed <em>{
-                                    isEmpty(props.value.completedBooks) === false? 
-                                    props.value.completedBooks[0].title:
-                                    "None"
-                                    }</em></Column>
+                                    isEmpty(props.value.completedBooks) === false ?
+                                        props.value.completedBooks[0].title :
+                                        "None"
+                                }</em></Column>
                             </div>
                         </Column>
                         <Column classType="right">
                             <div className="row no-gutters justify-content-center align-items-center">
-                            {isEmpty(props.value.completedBooks) === false?
-                            <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
-                                <div className="view"><button className="btn btn-primary">Again?</button></div>
-                                </Link>:
-                                <div className="view"><button className="btn btn-primary">Again?</button></div>}
+                                {isEmpty(props.value.completedBooks) === false ?
+                                    <Link to={`/storypage/${props.value.completedBooks[0].title}`}>
+                                        <div className="view"><button className="btn btn-primary">Again?</button></div>
+                                    </Link> :
+                                    <div className="view"><button className="btn btn-primary">Again?</button></div>}
                                 <div className="text-center"></div>
                             </div>
                         </Column>
@@ -138,6 +129,7 @@ export function HistoryCard(props) {
         </div>
     );
 }
+
 export function Achievement(props) {
     return (
         <i className="fas fa-file-signature" data-toggle="tooltip" data-placement="top" data-animation="false" data-html="true"
@@ -150,7 +142,7 @@ export function ProfileImage(props) {
     return (
         <div>
             <img src={props.src}
-                 alt={props.alt} />
+                alt={props.alt} />
         </div>
     );
 }

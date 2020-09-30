@@ -79,7 +79,7 @@ h4 {
     justify-content: space-between;
     align-items: center;
     font-weight: 700;
-    font-variant-caps: petite-caps;
+    /* font-variant-caps: petite-caps; */
     font-size: 18px;
 }
 
@@ -114,8 +114,8 @@ a.action:hover {
 }
 
 #user #userImage {
-    background: #95B46A;
-    height: 200px;
+    background: #fff;
+    height: 190px;
 }
 
 #user #userImage>img {

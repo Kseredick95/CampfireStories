@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import store from "store";
-import Timer from "../../helpers/AutoLogout"
+import Timer from "../../../helpers/AutoLogout";
 
 function NavbarTwo(){
     let user = store.get("user")
