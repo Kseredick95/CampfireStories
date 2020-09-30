@@ -3,17 +3,12 @@ import { Banner, CTA, Header } from "../components/Toolkit/Banner";
 import { Container, Col, RowMt, Row, Column } from "../components/Toolkit/Grid";
 import { UserCard, ConnectCard, HistoryCard } from '../components/Toolkit/Card';
 import Navbar from "../components/Toolkit/Navbar";
-import { Redirect } from "react-router-dom";
-import isLoggedIn from "./authenticate";
 import store from "store";
 import ProfileCard  from "../components/ProfileEdit";
+// import Timer from "../helpers/AutoLogout"
 
 
 function Profile() {
-
-    if (isLoggedIn()) {
-        return <Redirect to="/login" />
-    }
 
     let user = store.get(`user`);
 
@@ -48,7 +43,7 @@ function Profile() {
                             </Header>
                         </RowMt>
                         <CTA />
-                        <Row fluid>
+                        <Row>
                             <Column>
                                 {renderPage()}
                             </Column>

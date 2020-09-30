@@ -18,7 +18,7 @@ function isEmpty(obj) {
 }
 
 class StoryPage extends Component {
-  
+
   state = {
     book: [],
     page: {},
@@ -43,7 +43,7 @@ class StoryPage extends Component {
           });
         })
         .catch((err) => console.log(err));
-      } else {
+    } else {
       this.setState({
         user: user,
         book: user.lastBook.bookPages,
@@ -107,9 +107,9 @@ class StoryPage extends Component {
 
   rewardPlayer = () => {
     this.setState({
-        rewardDisabled:true
+      rewardDisabled: true
     });
-    setTimeout(() => this.setState({ rewardDisabled: false}), 3000);
+    setTimeout(() => this.setState({ rewardDisabled: false }), 3000);
     this.reward.rewardMe()
   }
 
@@ -141,8 +141,8 @@ class StoryPage extends Component {
             {this.state.page.text ? (
               <StoryText text={this.state.page.text} />
             ) : (
-                <div></div>
-              )}
+              <div></div>
+            )}
           </Row>
           <div id="choiceAlign">
             <RowMt size="12">
@@ -157,12 +157,11 @@ class StoryPage extends Component {
                   />
                 ))
               ) : (
-                  <RestartBtn
-                    restartBook={this.restartBook}
-                    prevPage={this.prevPage}
-                  />
-                )}
-              {/* <p>Death Count: {this.state.user.deathCount}</p> */}
+                <RestartBtn
+                  restartBook={this.restartBook}
+                  prevPage={this.prevPage}
+                />
+              )}
             </RowMt>
           </div>
         </Container>
@@ -170,4 +169,5 @@ class StoryPage extends Component {
     );
   }
 }
+
 export default StoryPage;

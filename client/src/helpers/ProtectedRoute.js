@@ -2,7 +2,7 @@
 import React from 'react'
 import { Redirect } from 'react-router-dom'
 import store from "store";
-import Timer from '../helpers/AutoLogout'
+import Timer from './AutoLogout'
 
 class ProtectedRoute extends React.Component {
 
