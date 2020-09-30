@@ -1,0 +1,12 @@
+#saveProfileEdit button {
+    margin-bottom: 10px;
+    margin-left: 25px;
+}
+
+.form-control {
+    font-size: 16px;
+}
+
+form#profileForm {
+    margin-top: 10px;
+}

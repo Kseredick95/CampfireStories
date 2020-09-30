@@ -1,0 +1,10 @@
+TODO:
+
+Add victoryCount to userSchema
+Add "victory" : "true" to the seedBook.js
+Add condition for victory in the Container.js
+Add ratio calculations to the profile
+
+Add editing of user profile
+
+Add forgot password functionality

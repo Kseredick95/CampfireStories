@@ -12,6 +12,7 @@ import store from "store";
 function isEmpty(obj) {
   return Object.keys(obj).length === 0;
 }
+
 class StoryPage extends Component {
   state = {
     book: [],
@@ -91,13 +92,13 @@ class StoryPage extends Component {
         .catch((err) => console.log(err));
     }
     this.setState({ prevPage: this.state.page, page: choice });
-
+    // Death increment and storing
     if (choice.death === "true") {
       user.deathCount += 1;
       var userDeath = user.deathCount;
-      // this.deathIncrement();
       this.setState({ userDeath: userDeath });
     }
+
     store.set("user", user);
   };
 
@@ -148,7 +149,7 @@ class StoryPage extends Component {
                     prevPage={this.prevPage}
                   />
                 )}
-              <p>Death Count: {this.state.user.deathCount}</p>
+              {/* <p>Death Count: {this.state.user.deathCount}</p> */}
             </RowMt>
           </div>
         </Container>

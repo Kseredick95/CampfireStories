@@ -19,6 +19,7 @@ function App() {
           <Route exact path="/library" component={LibraryContainer} />
           <Route exact path="/storypage/:bookTitle" component={StoryPage} />
           <Route exact path="/profile/:_id" component={Profile} />
+          <Route exact path="/profile/:_id/edit-profile" component={Profile} />
           <Route exact path="/about" component={Aboutus} />
         </Switch>
         <Footer />
